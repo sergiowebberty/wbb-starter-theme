@@ -1,12 +1,12 @@
 <?php
 /**
- * Template part for displaying posts.
+ * The template used for displaying page content in page.php
  *
  * @package wbb-starter-theme
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemType="http://schema.org/WebPage">
 
     <header class="entry-header">
 

@@ -16,67 +16,70 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-section header {
+header {
   float: left;
   display: block;
   margin-right: 2.63158%;
   width: 100%; }
-  section header:last-child {
+  header:last-child {
     margin-right: 0; }
+
 @media screen and (min-width: 320px) {
-  section article {
+  article {
     float: left;
     display: block;
     margin-right: 2.63158%;
     width: 100%; }
-    section article:last-child {
+    article:last-child {
       margin-right: 0; } }
 @media screen and (min-width: 480px) {
-  section article {
+  article {
     float: left;
     display: block;
     margin-right: 2.63158%;
     width: 65.78947%; }
-    section article:last-child {
+    article:last-child {
       margin-right: 0; } }
 @media screen and (min-width: 768px) {
-  section article {
+  article {
     float: left;
     display: block;
     margin-right: 2.63158%;
     width: 74.34211%; }
-    section article:last-child {
+    article:last-child {
       margin-right: 0; } }
+
 @media screen and (min-width: 320px) {
-  section aside {
+  aside {
     float: left;
     display: block;
     margin-right: 2.63158%;
     width: 100%; }
-    section aside:last-child {
+    aside:last-child {
       margin-right: 0; } }
 @media screen and (min-width: 480px) {
-  section aside {
+  aside {
     float: left;
     display: block;
     margin-right: 2.63158%;
     width: 31.57895%; }
-    section aside:last-child {
+    aside:last-child {
       margin-right: 0; } }
 @media screen and (min-width: 768px) {
-  section aside {
+  aside {
     float: left;
     display: block;
     margin-right: 2.63158%;
     width: 23.02632%; }
-    section aside:last-child {
+    aside:last-child {
       margin-right: 0; } }
-section footer {
+
+footer {
   float: left;
   display: block;
   margin-right: 2.63158%;
   width: 100%; }
-  section footer:last-child {
+  footer:last-child {
     margin-right: 0; }
 
 @media only screen and (max-width: 767px) {

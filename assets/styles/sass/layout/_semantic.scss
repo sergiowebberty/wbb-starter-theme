@@ -5,13 +5,13 @@ $desktop: new-breakpoint(min-width 992px);
 $wide: new-breakpoint(min-width 1200px);
 
 
-section{
 
   header{
     @include span-columns(12);
   }
 
   main{
+
   }
 
   article{
@@ -46,4 +46,3 @@ section{
     @include span-columns(12);
   }
 
-}

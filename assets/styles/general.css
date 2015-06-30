@@ -8,9 +8,6 @@ Version:	beta
 Last change:	14/05/2015 [Start point]
 -------------------------------------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,100);
-@import url(vendor/normalize.css);
-@import url(vendor/fixedsticky.css);
-@import url(vendor/prism.css);
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300; }

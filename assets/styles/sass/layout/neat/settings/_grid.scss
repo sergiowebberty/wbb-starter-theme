@@ -12,7 +12,8 @@ $column: modular-scale(3, 1em, $perfect-fifth) !default;
 ///
 /// @type Number (Unit)
 
-$gutter: modular-scale(1, $gutter-status, $perfect-fifth) !default;
+$gutter: modular-scale(1, 1em, $perfect-fifth) !default;
+//$gutter: modular-scale(1, $gutter-status, $perfect-fifth) !default;
 
 
 /// Sets the total number of columns in the grid. Its value can be overridden inside a media query using the `media()` mixin. Set with the `!global` flag.

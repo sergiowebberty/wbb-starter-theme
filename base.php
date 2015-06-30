@@ -25,13 +25,23 @@ if ( ! defined ( 'WPINC' ) )
 
 <?php echo get_template_part ( 'templates/header' ); ?>
 
-<section class="site-content" role=main">
+<main class="site-main" role=main">
 
 <?php include WBB_System_Core::load_content(); ?>
 
-</section>
+</main>
 
-<?php echo get_template_part ( 'templates/footer' ); ?>
+<?php
+
+if (display_sidebar()) :
+
+echo get_template_part ( 'templates/sidebar' );
+
+endif;
+
+echo get_template_part ( 'templates/footer' );
+
+?>
 
 </body>
 

@@ -10,7 +10,7 @@
  */
 function themeScripts ()
 {
-	wp_enqueue_script ( 'modernizr' , '' . get_template_directory_uri () . '/assets/scripts/modernizr.js' , array ( 'jquery' ) , NULL , FALSE );
+	wp_enqueue_script ( 'modernizr' , '' . get_template_directory_uri () . '/assets/scripts/vendor/modernizr.js' , array ( 'jquery' ) , NULL , FALSE );
 }
 
 add_action ( 'wp_enqueue_scripts' , 'themeScripts' );

@@ -25,7 +25,7 @@ if ( ! defined ( 'WPINC' ) )
 
 <?php echo get_template_part ( 'templates/header' ); ?>
 
-<h1><?php include WBB_System_Core::load_content(); ?></h1>
+<?php include WBB_System_Core::load_content(); ?>
 
 <?php echo get_template_part ( 'templates/footer' ); ?>
 

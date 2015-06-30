@@ -25,7 +25,7 @@ require_once locate_template ( 'config/theme-lib-includes.php' );
 /**********************************************************************************************************************
  * Load system helpers ..
  *********************************************************************************************************************/
-require_once locate_template ( 'system/WBB-Core/System-helpers.php' );
+require_once locate_template ( 'system/WBB-Core/WBB-System-helpers.php' );
 
 /**********************************************************************************************************************
  * Load Theme Configuration

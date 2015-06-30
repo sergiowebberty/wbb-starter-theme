@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * TODO: Hey , man don't forgot to finish this class....
+ * Class Neat_Walker
+ */
 class Neat_Walker extends Walker_Nav_Menu
 {
 

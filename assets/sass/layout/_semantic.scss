@@ -1,0 +1,49 @@
+$mobile: new-breakpoint(min-width 320px);
+$landscape: new-breakpoint(min-width 480px);
+$tablet: new-breakpoint(min-width 768px);
+$desktop: new-breakpoint(min-width 992px);
+$wide: new-breakpoint(min-width 1200px);
+
+
+section{
+
+  header{
+    @include span-columns(12);
+  }
+
+  main{
+  }
+
+  article{
+    @include media($mobile) {
+      @include span-columns(12);
+    }
+
+    @include media($landscape) {
+      @include span-columns(8);
+    }
+
+    @include media($tablet) {
+      @include span-columns(9);
+    }
+  }
+
+  aside{
+    @include media($mobile) {
+      @include span-columns(12);
+    }
+
+    @include media($landscape) {
+      @include span-columns(4);
+    }
+
+    @include media($tablet) {
+      @include span-columns(3);
+    }
+  }
+
+  footer{
+    @include span-columns(12);
+  }
+
+}

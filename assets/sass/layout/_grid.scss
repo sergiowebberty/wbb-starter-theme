@@ -1,0 +1,1722 @@
+// GRID SETUP
+
+/*------------------------------------------------------------------
+
+                              ==============================[ GRID ]
+
+-------------------------------------------------------------------*/
+
+
+$max-width: 960px;
+
+.clear{
+  clear: both;
+}
+
+/*.container{
+  @include outer-container;
+}*/
+
+
+/*------------------------------------------------------------------
+
+                              ==============================[ GRID ]
+
+-------------------------------------------------------------------*/
+
+section {
+  margin: 10px 0;
+
+  //@include row;
+
+  @include outer-container;
+
+  .l-1, .m-1, .s-1,
+  .l-2, .m-2, .s-2,
+  .l-3, .m-3, .s-3,
+  .l-4, .m-4, .s-4,
+  .l-5, .m-5, .s-5,
+  .l-6, .m-6, .s-6,
+  .l-7, .m-7, .s-7,
+  .l-8, .m-8, .s-8,
+  .l-9, .m-9, .s-9,
+  .l-10, .m-10, .s-10,
+  .l-11, .m-11, .s-11,
+  .l-12, .m-12, .s-12 {
+    float: left;
+
+
+    @include media(min-width 320px) {
+      @include span-columns(12);
+      @include omega;
+    }
+
+    @include media(min-width 480px) {
+      @include omega;
+    }
+
+    @include media(min-width 768px) {
+      @include omega;
+    }
+  }
+
+  // LARGE l-
+
+  .l-1 {
+    @include media(min-width 768px) {
+      @include span-columns(1);
+    }
+  }
+  .l-2 {
+    @include media(min-width 768px) {
+      @include span-columns(2);
+    }
+  }
+  .l-3 {
+    @include media(min-width 768px) {
+      @include span-columns(3);
+    }
+  }
+  .l-4 {
+    @include media(min-width 768px) {
+      @include span-columns(4);
+    }
+  }
+  .l-5 {
+    @include media(min-width 768px) {
+      @include span-columns(5);
+    }
+  }
+  .l-6 {
+    @include media(min-width 768px) {
+      @include span-columns(6);
+    }
+  }
+  .l-7 {
+    @include media(min-width 768px) {
+      @include span-columns(7);
+    }
+
+  }
+  .l-8 {
+    @include media(min-width 768px) {
+      @include span-columns(8);
+    }
+  }
+  .l-9 {
+    @include media(min-width 768px) {
+      @include span-columns(9);
+    }
+  }
+  .l-10 {
+    @include media(min-width 768px) {
+      @include span-columns(10);
+    }
+  }
+  .l-11 {
+    @include media(min-width 768px) {
+      @include span-columns(11);
+    }
+  }
+  .l-12 {
+    @include media(min-width 768px) {
+      @include span-columns(12);
+    }
+  }
+
+  // MEDIUM m-
+
+  .m-1 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(1);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(1);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-2 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(2);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(2);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-3 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(3);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(3);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-4 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(4);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(4);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-5 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(5);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(5);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-6 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(6);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(6);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+         @include span-columns(6);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+    }
+  }
+
+  .m-7 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(7);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(7);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-8 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(8);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(8);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-9 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(9);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(9);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-10 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(10);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(10);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m-11 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(11);
+    }
+    @include media(min-width 768px) {
+      @include span-columns(11);
+    }
+
+    // COMBINATION (m- & s-)
+    &.s-1 {
+      @include media(min-width 320px) {
+        @include span-columns(1);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(1);
+      }
+    }
+    &.s-2 {
+      @include media(min-width 320px) {
+        @include span-columns(2);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(2);
+      }
+    }
+    &.s-3 {
+      @include media(min-width 320px) {
+        @include span-columns(3);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(3);
+      }
+    }
+    &.s-4 {
+      @include media(min-width 320px) {
+        @include span-columns(4);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(4);
+      }
+    }
+    &.s-5 {
+      @include media(min-width 320px) {
+        @include span-columns(5);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(5);
+      }
+    }
+    &.s-6 {
+      @include media(min-width 320px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(6);
+      }
+    }
+    &.s-7 {
+      @include media(min-width 320px) {
+        @include span-columns(7);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(7);
+      }
+    }
+    &.s-8 {
+      @include media(min-width 320px) {
+        @include span-columns(8);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(8);
+      }
+    }
+    &.s-9 {
+      @include media(min-width 320px) {
+        @include span-columns(9);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(9);
+      }
+    }
+    &.s-10 {
+      @include media(min-width 320px) {
+        @include span-columns(10);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(10);
+      }
+    }
+    &.s-11 {
+      @include media(min-width 320px) {
+        @include span-columns(11);
+      }
+      @include media(min-width 480px) {
+        @include span-columns(6);
+      }
+      @include media(min-width 768px) {
+        @include span-columns(11);
+      }
+    }
+  }
+
+  .m12 {
+    @include media(min-width 768px) {
+      @include span-columns(12);
+    }
+  }
+
+  // SMALL s-
+
+  .s-1 {
+    @include media(min-width 320px) {
+      @include span-columns(1);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(1);
+    }
+  }
+  .s-2 {
+    @include media(min-width 320px) {
+      @include span-columns(2);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(2);
+    }
+  }
+  .s-3 {
+    @include media(min-width 320px) {
+      @include span-columns(3);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(3);
+    }
+  }
+  .s-4 {
+    @include media(min-width 320px) {
+      @include span-columns(4);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(4);
+    }
+  }
+  .s-5 {
+    @include media(min-width 320px) {
+      @include span-columns(5);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(5);
+    }
+  }
+  .s-6 {
+    @include media(min-width 320px) {
+      @include span-columns(6);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(6);
+    }
+  }
+  .s-7 {
+    @include media(min-width 320px) {
+      @include span-columns(7);
+    }
+    @include media(min-width 320px) {
+      @include span-columns(7);
+    }
+  }
+  .s-8 {
+    @include media(min-width 320px) {
+      @include span-columns(8);
+    }
+    @include media(min-width 320px) {
+      @include span-columns(8);
+    }
+  }
+  .s-9 {
+    @include media(min-width 320px) {
+      @include span-columns(9);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(9);
+    }
+  }
+  .s-10 {
+    @include media(min-width 320px) {
+      @include span-columns(10);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(10);
+    }
+  }
+  .s-11 {
+    @include media(min-width 320px) {
+      @include span-columns(11);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(11);
+    }
+  }
+  .s-12 {
+    @include media(min-width 320px) {
+      @include span-columns(12);
+    }
+    @include media(min-width 480px) {
+      @include span-columns(12);
+    }
+  }
+}
+
+
+
+

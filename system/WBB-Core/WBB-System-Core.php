@@ -44,6 +44,8 @@ class WBB_System_Core
 			array_unshift ( $templates , sprintf ( 'base-%s.php' , self::$base_template ) );
 		}
 
+		//print_R($template)  ;
+
 		return locate_template ( $templates );
 	}
 

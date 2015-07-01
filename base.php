@@ -6,54 +6,42 @@
  */
 if ( ! defined ( 'WPINC' ) )
 {
-    header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
-    die("404 Not Found");
+	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
+	die( "404 Not Found" );
 }
 ?>
 <!DOCTYPE html>
-<html class="no-js" <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes (); ?>>
 
 <?php echo get_template_part ( 'templates/head' ); ?>
 
 <body <?php body_class (); ?>>
 
-
-
 <!--[if lt IE 7]>
 <div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different
-    browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
-    experience this site
+	browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
+	experience this site
 </div><![endif]-->
 
 <?php echo get_template_part ( 'templates/header' ); ?>
 
 <div class="main-container">
 
-    <main class="site-main" role=main">
+	<main class="site-main" role=main">
 
-    <?php include WBB_System_Core::load_content(); ?>
+		<?php include WBB_System_Core::load_content (); ?>
 
-    </main>
+	</main>
 
+	<?php if ( wbb_display_sidebar () ) : ?>
 
+		<?php echo wbb_get_template_part ( 'templates/sidebar' ); ?>
 
-<?php
-
-if (display_sidebar()) :
-
-echo get_template_part ( 'templates/sidebar' );
-
-endif;
-
-?>
+	<?php endif; ?>
 
 </div>
 
-<?php
-
-echo get_template_part ( 'templates/footer' );
-
-?>
+<?php echo get_template_part ( 'templates/footer' ); ?>
 
 </body>
 

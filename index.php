@@ -10,10 +10,10 @@
 
 <?php endif; ?>
 
-<?php while (have_posts()) : the_post(); ?>
+<?php //while (have_posts()) : the_post(); ?>
 
     <?php get_template_part('templates/content', get_post_type() == 'post' ? 'single' : get_post_type() ); ?>
 
-<?php endwhile; ?>
+<?php //endwhile; ?>
 
 <?php the_posts_navigation(); ?>

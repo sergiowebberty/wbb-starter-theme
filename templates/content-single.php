@@ -27,7 +27,7 @@
 			<?php the_content (); ?>
 
 			<?php wp_link_pages ( array (
-				'before' => '<nav class="page-nav"><p>' . __ ( 'Pages:' , 'webberty' ) ,
+				'before' => '<nav class="page-nav"><p>' . __ ( 'Pages:' , WBB_THEME_SLUG ) ,
 				'after'  => '</p></nav>'
 			) ); ?>
 

@@ -2,7 +2,7 @@
 
 	<div class="alert alert-warning">
 
-		<?php _e ( 'Sorry, no results were found.' , 'webberty' ); ?>
+		<?php _e ( 'Sorry, no results were found.' , WBB_THEME_SLUG ); ?>
 
 	</div>
 

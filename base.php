@@ -17,6 +17,8 @@ if ( ! defined ( 'WPINC' ) )
 
 <body <?php body_class (); ?>>
 
+
+
 <!--[if lt IE 7]>
 <div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different
     browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
@@ -25,11 +27,15 @@ if ( ! defined ( 'WPINC' ) )
 
 <?php echo get_template_part ( 'templates/header' ); ?>
 
-<main class="site-main" role=main">
+<div class="main-container">
 
-<?php include WBB_System_Core::load_content(); ?>
+    <main class="site-main" role=main">
 
-</main>
+    <?php include WBB_System_Core::load_content(); ?>
+
+    </main>
+
+
 
 <?php
 
@@ -38,6 +44,12 @@ if (display_sidebar()) :
 echo get_template_part ( 'templates/sidebar' );
 
 endif;
+
+?>
+
+</div>
+
+<?php
 
 echo get_template_part ( 'templates/footer' );
 

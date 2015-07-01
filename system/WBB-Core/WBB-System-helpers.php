@@ -154,54 +154,39 @@ if ( ! function_exists ( 'wbb_categorized_blog' ) )
 if ( ! function_exists ( 'wbb_display_sidebar' ) )
 {
 
-	/************************************************************************************************************************************************
-	 * Any of these conditional tags that return true won't show the sidebar.
-	 * You can also specify your own custom function as long as it returns a boolean.
-	 *
-	 * To use a function that accepts arguments, use an array instead of just the function name as a string.
-	 *
-	 * Examples:
-	 *
-	 * 'is_single'
-	 * 'is_archive'
-	 * ['is_page', 'about-me']
-	 * ['is_tax', ['flavor', 'mild']]
-	 * ['is_page_template', 'about.php']
-	 * ['is_post_type_archive', ['foo', 'bar', 'baz']]
-	 *
-	 */
 	function wbb_display_sidebar ()
 	{
 
-		$result       = FALSE;
-		$conditionals = [
-			'is_404' ,
-			'is_front_page' ,
-			[
-				'is_page_template' ,
-				'template-custom.php'
-			]
-		];
-
+		$result           = FALSE;
+		$conditionals     = [ ];
 		$conditionalCheck = apply_filters ( 'WBB_display_sidebar' , $conditionals );
 
-		foreach ( $conditionalCheck as $conditional )
+		if ( empty( $conditionalCheck ) )
+		{
+			$result = TRUE;
+		}
+		else
 		{
 
-			$tag  = $conditional;
-			$args = FALSE;
-
-			if ( is_array ( $conditional ) )
+			foreach ( $conditionalCheck as $conditional )
 			{
 
-				list( $tag , $args ) = $conditional;
+				$tag  = $conditional;
+				$args = FALSE;
 
-			}
+				if ( is_array ( $conditional ) )
+				{
 
-			if ( function_exists ( $tag ) )
-			{
+					list( $tag , $args ) = $conditional;
 
-				$result = $args ? $tag( $args ) : $tag();
+				}
+
+				if ( function_exists ( $tag ) )
+				{
+
+					$result = $args ? $tag( $args ) : $tag();
+
+				}
 
 			}
 

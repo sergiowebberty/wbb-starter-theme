@@ -5,7 +5,6 @@
  * @package wbb-starter-theme
  */
 ?>
-
 <aside class="sidebar" role="complementary">
 
     <?php if ( is_active_sidebar( 'Side Bar' ) ) : ?>

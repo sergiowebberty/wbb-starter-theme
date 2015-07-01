@@ -39,7 +39,7 @@ header {
       width: 100%; }
       .main-container main:last-child {
         margin-right: 0; } }
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 850px) {
     .main-container main {
       float: left;
       display: block;
@@ -63,7 +63,7 @@ header {
       width: 100%; }
       .main-container aside:last-child {
         margin-right: 0; } }
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 850px) {
     .main-container aside {
       float: left;
       display: block;

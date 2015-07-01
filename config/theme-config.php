@@ -23,7 +23,18 @@ if ( get_option ( 'upload_path' ) == 'wp-content/uploads' || get_option ( 'uploa
 | ----------------------------------------------------------------------------------------------------------------------
 | Set some default sidebars ....
 */
-register_sidebars ( 1 , array ( 'name' => 'Side Bar' ) );
+register_sidebar (
+	array (
+		'name'          => __ ( 'Main Sidebar' , 'webberty' ) ,
+		'id'            => 'sidebar-1' ,
+		'description'   => __ ( 'Widgets in this area will be shown on all posts and pages.' , 'webberty' ) ,
+		'before_widget' => '<li id="%1$s" class="widget %2$s">' ,
+		'after_widget'  => '</li>' ,
+		'before_title'  => '<h2 class="widgettitle">' ,
+		'after_title'   => '</h2>' ,
+	)
+);
+
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------

@@ -11,10 +11,10 @@
 
 <footer class="site-footer" role="contentinfo">
 
-    <p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+	<p class="copyright">&copy; <?php echo date ( 'Y' ); ?> <?php bloginfo ( 'name' ); ?>.</p>
 
 
-    <?php wp_footer (); ?>
+	<?php wp_footer (); ?>
 
 </footer>
 

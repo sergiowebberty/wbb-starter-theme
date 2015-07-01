@@ -6,10 +6,10 @@
  */
 ?>
 
-<div class="alert alert-warning">
+	<div class="alert alert-warning">
 
-    <?php _e('Sorry, but the page you were trying to view does not exist.', 'webberty'); ?>
+		<?php _e ( 'Sorry, but the page you were trying to view does not exist.' , 'webberty' ); ?>
 
-</div>
+	</div>
 
-<?php get_search_form(); ?>
+<?php get_search_form (); ?>

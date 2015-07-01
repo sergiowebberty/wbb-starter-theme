@@ -1,5 +1,4 @@
-@import
-"../neat/neat",
+@import "../neat/neat",
 "../bourbon/bourbon",
 "../base/base";
 
@@ -18,7 +17,6 @@ header {
 .main-container {
 
   @include outer-container;
-
 
   main {
 

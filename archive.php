@@ -1,5 +1,5 @@
 
-
+<h2>Archive</h2>
 <?php if ( ! have_posts () ) : ?>
 
 	<div class="alert alert-warning">

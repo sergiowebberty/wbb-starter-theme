@@ -4,7 +4,6 @@
 	die( "404 Not Found" );
 }
 
-
 /*
 | ----------------------------------------------------------------------------------------------------------------------
 | Add extra meta data
@@ -21,16 +20,13 @@ if ( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) && ( strpos ( $_SERVER[ 'HTTP_USER_A
 
 }
 
-$settings[ 'meta_tags' ][ ] = '<meta charset="utf-8">';
 $settings[ 'meta_tags' ][ ] = '<meta name="viewport" content="width=device-width, initial-scale=1">';
-$settings[ 'meta_tags' ][ ] = '<link rel="shortcut icon" href="../../assets/ico/favicon.ico">';
-
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
 | Theme Support
 | ----------------------------------------------------------------------------------------------------------------------
-| Set Some Default Theme Support Settings
+| Set Some Default The	<title><?php wp_title ( '|' , TRUE , 'right' ); ?></title>me Support Settings
 */
 $settings[ 'theme_support' ][ ] = array (
 	'html5' ,

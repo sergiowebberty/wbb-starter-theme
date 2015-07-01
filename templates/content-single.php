@@ -6,6 +6,12 @@
  */
 ?>
 
+<?php if ( ! defined ( 'WPINC' ) )
+{
+	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
+	die( "404 Not Found" );
+}
+?>
 <?php while ( have_posts () ) : the_post (); ?>
 
 	<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
@@ -39,7 +45,7 @@
 
 		</footer>
 		<!-- .entry-footer -->
-
+		<?php comments_template('/templates/comments.php'); ?>
 	</article>
 
 <?php endwhile; ?>

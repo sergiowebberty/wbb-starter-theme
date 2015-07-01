@@ -4,6 +4,11 @@
  *
  * @package wbb-starter-theme
  */
+if ( ! defined ( 'WPINC' ) )
+{
+	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
+	die( "404 Not Found" );
+}
 
 
 while ( have_posts () ) : the_post ();

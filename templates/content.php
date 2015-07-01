@@ -5,7 +5,12 @@
  * @package wbb-starter-theme
  */
 ?>
-
+<?php if ( ! defined ( 'WPINC' ) )
+{
+	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
+	die( "404 Not Found" );
+}
+?>
 <article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
 
 	<header class="entry-header">

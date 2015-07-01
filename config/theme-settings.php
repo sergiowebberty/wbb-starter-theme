@@ -39,8 +39,6 @@ $settings[ 'theme_support' ][ ] = array (
 	)
 );
 
-$settings[ 'theme_support' ][ ] = array ( 'post-thumbnails' );
-
 $settings[ 'theme_support' ][ ] = array ( 'automatic-feed-links' );
 
 $settings[ 'theme_support' ][ ] = array (

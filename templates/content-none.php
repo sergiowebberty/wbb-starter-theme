@@ -5,7 +5,12 @@
  * @package wbb-starter-theme
  */
 ?>
-
+<?php if ( ! defined ( 'WPINC' ) )
+{
+	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
+	die( "404 Not Found" );
+}
+?>
 <header class="page-header">
 
 	<h1 class="page-title"><?php esc_html_e ( 'Nothing Found' , WBB_THEME_SLUG ); ?></h1>

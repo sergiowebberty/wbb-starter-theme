@@ -6,13 +6,6 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-/*------------------------------------------------------------------
-[Master Stylesheet]
-
-Project:	Framework Css
-Version:	beta
-Last change:	14/05/2015 [Start point]
--------------------------------------------------------------------*/
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300; }
@@ -23,13 +16,6 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-/*------------------------------------------------------------------
-[Master Stylesheet]
-
-Project:	Framework Css
-Version:	beta
-Last change:	14/05/2015 [Start point]
--------------------------------------------------------------------*/
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300; }

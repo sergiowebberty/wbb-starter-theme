@@ -33,9 +33,9 @@ if ( ! defined ( 'WPINC' ) )
 
 <?php
 
-if (display_sidebar()) :
+if (wbb_display_sidebar()) :
 
-echo get_template_part ( 'templates/sidebar' );
+echo wbb_get_template_part ( 'templates/sidebar' );
 
 endif;
 

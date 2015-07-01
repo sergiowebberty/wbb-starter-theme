@@ -1,108 +1,56 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,100);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,100);
-html {
-  box-sizing: border-box; }
+/*
+Error: File to import not found or unreadable: sass/neat/neat.
+        on line 4 of general.scss
 
-*, *::after, *::before {
-  box-sizing: inherit; }
+1: // IMPORTS
+2: @import
+3: "sass/bourbon/bourbon",
+4: "sass/neat/neat",
+5: "sass/base/_base",
+6: "sass/layout/_layout";
 
-/*------------------------------------------------------------------
-[Master Stylesheet]
-
-Project:	Framework Css
-Version:	beta
-Last change:	14/05/2015 [Start point]
--------------------------------------------------------------------*/
-body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300; }
-
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-/*------------------------------------------------------------------
-[Master Stylesheet]
-
-Project:	Framework Css
-Version:	beta
-Last change:	14/05/2015 [Start point]
--------------------------------------------------------------------*/
-body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300; }
-
-body {
-  max-width: 68.57143em;
-  margin: 0 auto;
-  padding: 0 2em; }
-
-header {
-  float: left;
-  display: block;
-  margin-right: 2.63158%;
-  width: 100%; }
-  header:last-child {
-    margin-right: 0; }
-
-@media screen and (min-width: 320px) {
-  main {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 100%; }
-    main:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 480px) {
-  main {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 65.78947%; }
-    main:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 768px) {
-  main {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 74.34211%; }
-    main:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: 320px) {
-  aside {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 100%; }
-    aside:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 480px) {
-  aside {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 31.57895%; }
-    aside:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 768px) {
-  aside {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 23.02632%; }
-    aside:last-child {
-      margin-right: 0; } }
-
-footer {
-  float: left;
-  display: block;
-  margin-right: 2.63158%;
-  width: 100%; }
-  footer:last-child {
-    margin-right: 0; }
-
-/*# sourceMappingURL=general.css.map */
+Backtrace:
+general.scss:4
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:45:in `import'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:28:in `imported_file'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:37:in `css_import?'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin.rb:82:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/exec/base.rb:52:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/exec/base.rb:19:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/bin/scss:13:in `<top (required)>'
+/usr/local/bin/scss:23:in `load'
+/usr/local/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: sass/neat/neat.\A         on line 4 of general.scss\A \A 1: // IMPORTS\A 2: @import\A 3: \"sass/bourbon/bourbon\",\A 4: \"sass/neat/neat\",\A 5: \"sass/base/_base\",\A 6: \"sass/layout/_layout\";"; }

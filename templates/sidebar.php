@@ -8,9 +8,9 @@
 
 <aside class="sidebar" role="complementary">
 
-    <?php if ( is_active_sidebar( 'sidebar-primary' ) ) : ?>
+    <?php if ( is_active_sidebar( 'Side Bar' ) ) : ?>
 
-        <?php dynamic_sidebar( 'sidebar-primary' ); ?>
+        <?php dynamic_sidebar( 'Side Bar' ); ?>
 
     <?php else : ?>
 

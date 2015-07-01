@@ -1,10 +1,11 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all pages.
  *
  * @package wbb-starter-theme
  */
 
 
-get_template_part('templates/content-single', get_post_type());
-?>
+get_template_part('templates/content', 'page');
+
+

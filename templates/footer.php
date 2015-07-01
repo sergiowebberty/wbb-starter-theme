@@ -13,6 +13,8 @@
 
     <p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 
+
+    <?php wp_footer (); ?>
+
 </footer>
 
-<?php wp_footer (); ?>

@@ -28,3 +28,5 @@
         ?>
 
     </nav><!-- #site-navigation -->
+
+</header>

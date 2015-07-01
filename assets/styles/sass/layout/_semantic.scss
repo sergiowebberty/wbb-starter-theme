@@ -1,18 +1,14 @@
-$mobile: new-breakpoint(min-width 320px);
-$landscape: new-breakpoint(min-width 480px);
-$tablet: new-breakpoint(min-width 768px);
-$desktop: new-breakpoint(min-width 992px);
-$wide: new-breakpoint(min-width 1200px);
+@import
+"../../sass/base/_variables";
 
 
-section{
+
 
   header{
     @include span-columns(12);
   }
 
-  main{
-  }
+
 
   article{
     @include media($mobile) {
@@ -46,4 +42,3 @@ section{
     @include span-columns(12);
   }
 
-}

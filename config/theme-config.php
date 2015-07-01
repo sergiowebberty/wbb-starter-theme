@@ -91,14 +91,16 @@ if ( ! $menu_exists )
  * ['is_post_type_archive', ['foo', 'bar', 'baz']]
  *
  ***********************************************************************************************************************************************/
-add_filter ( 'WBB_display_sidebar' , function ()
-{
-	return [
-		'is_404' ,
-		'is_home' ,
-		'is_front_page' ,
-			'is_single' ,
-			'is_singular'
-	];
+add_filter ( 'WBB_display_sidebar' ,
+	function ()
+	{
 
-} );
+		return [
+			'is_404' ,
+			'is_home' ,
+			'is_front_page' ,
+			'is_single' ,
+		];
+
+	}
+);

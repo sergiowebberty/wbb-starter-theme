@@ -157,7 +157,7 @@ if ( ! function_exists ( 'wbb_display_sidebar' ) )
 	function wbb_display_sidebar ()
 	{
 
-		$result           = FALSE;
+		$result           = [ ];
 		$conditionals     = [ ];
 		$conditionalCheck = apply_filters ( 'WBB_display_sidebar' , $conditionals );
 
@@ -184,7 +184,7 @@ if ( ! function_exists ( 'wbb_display_sidebar' ) )
 				if ( function_exists ( $tag ) )
 				{
 
-					$result = $args ? $tag( $args ) : $tag();
+					$result[ ] = $args ? $tag( $args ) : $tag();
 
 				}
 
@@ -192,7 +192,8 @@ if ( ! function_exists ( 'wbb_display_sidebar' ) )
 
 		}
 
-		return $result;
+		return in_array ( 1 , $result );
 
 	}
+
 }

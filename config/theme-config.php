@@ -27,6 +27,35 @@ register_sidebars ( 1 , array ( 'name' => 'Side Bar' ) );
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
+| Sidebars
+| ----------------------------------------------------------------------------------------------------------------------
+| Any of these conditional tags that return true won't show the sidebar.
+| You can also specify your own custom function as long as it returns a boolean.
+| To use a function that accepts arguments, use an array instead of just the function name as a string.
+| Examples:
+| 'is_single'
+| 'is_archive'
+| ['is_page', 'about-me']
+| ['is_tax', ['flavor', 'mild']]
+| ['is_page_template', 'about.php']
+| ['is_post_type_archive', ['foo', 'bar', 'baz']]
+*/
+add_filter ( 'WBB_display_sidebar' ,
+	function ()
+	{
+
+		return [
+			'is_404' ,
+			'is_home' ,
+			'is_front_page' ,
+			'is_single' ,
+		];
+
+	}
+);
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
 | Menus
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default Menu's
@@ -74,33 +103,3 @@ if ( ! $menu_exists )
 	}
 
 }
-
-/************************************************************************************************************************************************
- * Any of these conditional tags that return true won't show the sidebar.
- * You can also specify your own custom function as long as it returns a boolean.
- *
- * To use a function that accepts arguments, use an array instead of just the function name as a string.
- *
- * Examples:
- *
- * 'is_single'
- * 'is_archive'
- * ['is_page', 'about-me']
- * ['is_tax', ['flavor', 'mild']]
- * ['is_page_template', 'about.php']
- * ['is_post_type_archive', ['foo', 'bar', 'baz']]
- *
- ***********************************************************************************************************************************************/
-add_filter ( 'WBB_display_sidebar' ,
-	function ()
-	{
-
-		return [
-			'is_404' ,
-			'is_home' ,
-			'is_front_page' ,
-			'is_single' ,
-		];
-
-	}
-);

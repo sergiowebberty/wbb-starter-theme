@@ -6,20 +6,39 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemType="http://schema.org/BlogPosting">
+<?php while ( have_posts () ) : the_post (); ?>
 
-    <header>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+        <header class="entry-header">
 
-        <?php if (get_post_type() === 'post') { wbb_entry_meta(); } ?>
+            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-    </header>
+            <div class="entry-meta">
 
-    <div class="entry-summary">
+                <?php wbb_entry_meta(); ?> <!-- function for date and author and comments count /--->
 
-        <?php the_excerpt(); ?>
+            </div>
 
-    </div>
+        </header>
 
-</article>
+        <div class="entry-content">
+
+            <?php the_content (); ?>
+
+            <?php wp_link_pages ( array(
+                'before' => '<nav class="page-nav"><p>' . __ ( 'Pages:' , 'webberty' ) ,
+                'after'  => '</p></nav>'
+            ) ); ?>
+
+        </div>
+
+        <footer class="entry-footer">
+
+            <?php wbb_entry_footer(); ?>     <!-- function for categories, tags and comments/--->
+
+        </footer><!-- .entry-footer -->
+
+    </article>
+
+<?php endwhile; ?>

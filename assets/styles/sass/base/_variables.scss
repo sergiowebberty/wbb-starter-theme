@@ -4,16 +4,14 @@ $base-value: 14;
 $max-width: em(960, $base-value); // Max width of outer container
 
 //**** Breakpoints ****
+$wide: min-width 1200px;
 $desktop: min-width 850px;
 $tablet: min-width 750px;
 $tablet-only: min-width 750px max-width 849px;
 $mobile-only: max-width 749px;
+$mobile: min-width 320px;
 
 //**** Colors ****
 $black:                 #111111;
 
 
-//**** Breakpoints ****
-$mobile: new-breakpoint(min-width 320px);
-$landscape: new-breakpoint(min-width 480px);
-$wide: new-breakpoint(min-width 1200px);

@@ -6,22 +6,22 @@
  */
 
 
-if (!have_posts()) : ?>
+if ( ! have_posts () ) : ?>
 
-    <div class="alert alert-warning">
+	<div class="alert alert-warning">
 
-        <?php _e('Sorry, no results were found.', 'webberty'); ?>
+		<?php _e ( 'Sorry, no results were found.' , WBB_THEME_SLUG ); ?>
 
-    </div>
+	</div>
 
-    <?php get_search_form(); ?>
+	<?php get_search_form (); ?>
 
 <?php endif; ?>
 
-<?php while (have_posts()) : the_post(); ?>
+<?php while ( have_posts () ) : the_post (); ?>
 
-    <?php get_template_part('templates/content', 'search'); ?>
+	<?php get_template_part ( 'templates/content' , 'search' ); ?>
 
 <?php endwhile; ?>
 
-<?php the_posts_navigation(); ?>
+<?php the_posts_navigation (); ?>

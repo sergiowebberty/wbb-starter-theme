@@ -35,7 +35,7 @@ if ( ! defined ( 'WPINC' ) )
 
 	<?php if ( wbb_display_sidebar () ) : ?>
 
-		<?php echo wbb_get_template_part ( 'templates/sidebar' ); ?>
+		<?php echo get_template_part ( 'templates/sidebar' ); ?>
 
 	<?php endif; ?>
 

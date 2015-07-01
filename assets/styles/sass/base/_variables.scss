@@ -1,7 +1,8 @@
 $base-value: 14;
 
 //**** Neat Grid ****
-$max-width: em(960, $base-value); // Max width of outer container
+$max-width: em(960, $base-value);
+// Max width of outer container
 
 //**** Breakpoints ****
 $wide: min-width 1200px;
@@ -12,6 +13,5 @@ $mobile-only: max-width 749px;
 $mobile: min-width 320px;
 
 //**** Colors ****
-$black:                 #111111;
-
+$black: #111111;
 

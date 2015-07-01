@@ -23,7 +23,47 @@ if ( get_option ( 'upload_path' ) == 'wp-content/uploads' || get_option ( 'uploa
 | ----------------------------------------------------------------------------------------------------------------------
 | Set some default sidebars ....
 */
-register_sidebars ( 1 , array ( 'name' => 'Side Bar' ) );
+register_sidebar (
+	array (
+		'name'          => __ ( 'Main Sidebar' , 'webberty' ) ,
+		'id'            => 'sidebar-1' ,
+		'description'   => __ ( 'Widgets in this area will be shown on all posts and pages.' , 'webberty' ) ,
+		'before_widget' => '<li id="%1$s" class="widget %2$s">' ,
+		'after_widget'  => '</li>' ,
+		'before_title'  => '<h2 class="widgettitle">' ,
+		'after_title'   => '</h2>' ,
+	)
+);
+
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Sidebars
+| ----------------------------------------------------------------------------------------------------------------------
+| Any of these conditional tags that return true won't show the sidebar.
+| You can also specify your own custom function as long as it returns a boolean.
+| To use a function that accepts arguments, use an array instead of just the function name as a string.
+| Examples:
+| 'is_single'
+| 'is_archive'
+| ['is_page', 'about-me']
+| ['is_tax', ['flavor', 'mild']]
+| ['is_page_template', 'about.php']
+| ['is_post_type_archive', ['foo', 'bar', 'baz']]
+*/
+add_filter ( 'WBB_display_sidebar' ,
+	function ()
+	{
+
+		return [
+			'is_404' ,
+			'is_home' ,
+			'is_front_page' ,
+			'is_single' ,
+		];
+
+	}
+);
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
@@ -74,5 +114,3 @@ if ( ! $menu_exists )
 	}
 
 }
-
-

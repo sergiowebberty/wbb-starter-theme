@@ -1,7 +1,6 @@
 <head>
 
-
-	<title><?php wp_title ( '|' , true , 'right' );?></title>
+	<title><?php wp_title ( '|' , TRUE , 'right' ); ?></title>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -10,11 +9,11 @@
 	<![endif]-->
 
 	<?php if ( wp_count_posts ()->publish > 0 ) : ?>
-		<link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo ( 'name' ); ?> Feed"  href="<?php echo home_url (); ?>/feed/">
+		<link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo ( 'name' ); ?> Feed" href="<?php echo home_url (); ?>/feed/">
 	<?php endif; ?>
 
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
-    <?php wp_head (); ?>
+	<?php wp_head (); ?>
 
 </head>

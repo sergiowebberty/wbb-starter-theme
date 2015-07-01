@@ -4,6 +4,13 @@
 	die( "404 Not Found" );
 }
 
+
+
+/************************************************************************************************************************************************
+ * Define Global constants here ...
+ ***********************************************************************************************************************************************/
+define ('WBB_THEME_SLUG', 'webberty') ;
+
 /************************************************************************************************************************************************
  * A function to add the meta information in a single page.
  ***********************************************************************************************************************************************/
@@ -64,20 +71,20 @@ if ( ! function_exists ( 'wbb_entry_footer' ) )
 		{
 
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list ( esc_html__ ( ', ' , 'webberty' ) );
+			$categories_list = get_the_category_list ( esc_html__ ( ', ' , WBB_THEME_SLUG ) );
 			if ( $categories_list && wbb_categorized_blog () )
 			{
 
-				printf ( '<span class="cat-links">' . esc_html__ ( 'Posted in %1$s' , 'webberty' ) . '</span>' , $categories_list );
+				printf ( '<span class="cat-links">' . esc_html__ ( 'Posted in %1$s' , WBB_THEME_SLUG ) . '</span>' , $categories_list );
 
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list ( '' , esc_html__ ( ', ' , 'webberty' ) );
+			$tags_list = get_the_tag_list ( '' , esc_html__ ( ', ' , WBB_THEME_SLUG ) );
 			if ( $tags_list )
 			{
 
-				printf ( '<span class="tags-links">' . esc_html__ ( 'Tagged %1$s' , 'webberty' ) . '</span>' , $tags_list );
+				printf ( '<span class="tags-links">' . esc_html__ ( 'Tagged %1$s' , WBB_THEME_SLUG ) . '</span>' , $tags_list );
 
 			}
 		}
@@ -87,13 +94,13 @@ if ( ! function_exists ( 'wbb_entry_footer' ) )
 
 			echo '<span class="comments-link">';
 
-			comments_popup_link ( esc_html__ ( 'Leave a comment' , 'webberty' ) , esc_html__ ( '1 Comment' , 'webberty' ) , esc_html__ ( '% Comments' , 'webberty' ) );
+			comments_popup_link ( esc_html__ ( 'Leave a comment' , WBB_THEME_SLUG ) , esc_html__ ( '1 Comment' , WBB_THEME_SLUG ) , esc_html__ ( '% Comments' , WBB_THEME_SLUG ) );
 
 			echo '</span>';
 
 		}
 
-		edit_post_link ( esc_html__ ( 'Edit' , 'webberty' ) , '<span class="edit-link">' , '</span>' );
+		edit_post_link ( esc_html__ ( 'Edit' , WBB_THEME_SLUG ) , '<span class="edit-link">' , '</span>' );
 
 	}
 
@@ -154,60 +161,46 @@ if ( ! function_exists ( 'wbb_categorized_blog' ) )
 if ( ! function_exists ( 'wbb_display_sidebar' ) )
 {
 
-	/************************************************************************************************************************************************
-	 * Any of these conditional tags that return true won't show the sidebar.
-	 * You can also specify your own custom function as long as it returns a boolean.
-	 *
-	 * To use a function that accepts arguments, use an array instead of just the function name as a string.
-	 *
-	 * Examples:
-	 *
-	 * 'is_single'
-	 * 'is_archive'
-	 * ['is_page', 'about-me']
-	 * ['is_tax', ['flavor', 'mild']]
-	 * ['is_page_template', 'about.php']
-	 * ['is_post_type_archive', ['foo', 'bar', 'baz']]
-	 *
-	 */
 	function wbb_display_sidebar ()
 	{
 
-		$result       = FALSE;
-		$conditionals = [
-			'is_404' ,
-			'is_front_page' ,
-			[
-				'is_page_template' ,
-				'template-custom.php'
-			]
-		];
-
+		$result           = [ ];
+		$conditionals     = [ ];
 		$conditionalCheck = apply_filters ( 'WBB_display_sidebar' , $conditionals );
 
-		foreach ( $conditionalCheck as $conditional )
+		if ( empty( $conditionalCheck ) )
+		{
+			$result = TRUE;
+		}
+		else
 		{
 
-			$tag  = $conditional;
-			$args = FALSE;
-
-			if ( is_array ( $conditional ) )
+			foreach ( $conditionalCheck as $conditional )
 			{
 
-				list( $tag , $args ) = $conditional;
+				$tag  = $conditional;
+				$args = FALSE;
 
-			}
+				if ( is_array ( $conditional ) )
+				{
 
-			if ( function_exists ( $tag ) )
-			{
+					list( $tag , $args ) = $conditional;
 
-				$result = $args ? $tag( $args ) : $tag();
+				}
+
+				if ( function_exists ( $tag ) )
+				{
+
+					$result[ ] = $args ? $tag( $args ) : $tag();
+
+				}
 
 			}
 
 		}
 
-		return $result;
+		return in_array ( 1 , $result );
 
 	}
+
 }

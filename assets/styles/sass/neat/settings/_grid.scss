@@ -1,6 +1,6 @@
 @import "../../bourbon/functions/modular-scale";
-@charset "UTF-8";
 
+@charset "UTF-8";
 
 /// Sets the relative width of a single grid column. The unit used should be the same one used to define `$gutter`. To learn more about modular-scale() see [Bourbon docs](http://bourbon.io/docs/#modular-scale). Set with a `!global` flag.
 ///
@@ -14,7 +14,6 @@ $column: modular-scale(3, 1em, $perfect-fifth) !default;
 
 $gutter: modular-scale(1, 1em, $perfect-fifth) !default;
 //$gutter: modular-scale(1, $gutter-status, $perfect-fifth) !default;
-
 
 /// Sets the total number of columns in the grid. Its value can be overridden inside a media query using the `media()` mixin. Set with the `!global` flag.
 ///
@@ -46,7 +45,8 @@ $border-box-sizing: true !default;
 ///
 /// @type String
 
-$default-feature: min-width; // Default @media feature for the breakpoint() mixin
+$default-feature: min-width;
+// Default @media feature for the breakpoint() mixin
 
 ///Sets the default layout direction of the grid. Can be `LTR` or `RTL`. Set with a `!global` flag.
 ///

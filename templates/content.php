@@ -6,32 +6,34 @@
 */
 ?>
 
-<header class="page-header">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'webberty' ); ?></h1>
+    <header class="entry-header">
+        <?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-</header><!-- .page-header -->
 
-<div class="page-content">
+        <?php if ( 'post' == get_post_type() ) : ?>
 
-    <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+            <div class="entry-meta">
 
-        <p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'webberty' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+                <?php wbb_entry_meta(); ?> <!-- function for date and author and comments count /--->
 
-    <?php elseif ( is_search() ) : ?>
+            </div>
 
-        <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'webberty' ); ?></p>
+        <?php endif; ?>
 
-        <?php get_search_form(); ?>
+    </header><!-- .entry-header -->
 
-    <?php else : ?>
+    <div class="entry-summary">
 
-        <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'webberty' ); ?></p>
+        <?php the_excerpt(); ?>
 
-        <?php get_search_form(); ?>
+    </div>
 
-    <?php endif; ?>
+    <footer class="entry-footer">
 
-</div><!-- .page-content -->
+        <?php wbb_entry_footer(); ?>     <!-- function for categories, tags and comments/--->
 
-</section><!-- .no-results -->
+    </footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->

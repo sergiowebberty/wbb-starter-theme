@@ -47,55 +47,62 @@ header {
   header:last-child {
     margin-right: 0; }
 
-@media screen and (min-width: 320px) {
-  main {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 100%; }
-    main:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 480px) {
-  main {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 65.78947%; }
-    main:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 768px) {
-  main {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 74.34211%; }
-    main:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: 320px) {
-  aside {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 100%; }
-    aside:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 480px) {
-  aside {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 31.57895%; }
-    aside:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 768px) {
-  aside {
-    float: left;
-    display: block;
-    margin-right: 2.63158%;
-    width: 23.02632%; }
-    aside:last-child {
-      margin-right: 0; } }
+.main-container {
+  max-width: 68.57143em;
+  margin-left: auto;
+  margin-right: auto; }
+  .main-container::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (min-width: 320px) {
+    .main-container main {
+      float: left;
+      display: block;
+      margin-right: 2.63158%;
+      width: 100%; }
+      .main-container main:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 480px) {
+    .main-container main {
+      float: left;
+      display: block;
+      margin-right: 2.63158%;
+      width: 65.78947%; }
+      .main-container main:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 750px) {
+    .main-container main {
+      float: left;
+      display: block;
+      margin-right: 2.63158%;
+      width: 65.78947%; }
+      .main-container main:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 320px) {
+    .main-container aside {
+      float: left;
+      display: block;
+      margin-right: 2.63158%;
+      width: 100%; }
+      .main-container aside:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 480px) {
+    .main-container aside {
+      float: left;
+      display: block;
+      margin-right: 2.63158%;
+      width: 31.57895%; }
+      .main-container aside:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 750px) {
+    .main-container aside {
+      float: left;
+      display: block;
+      margin-right: 2.63158%;
+      width: 31.57895%; }
+      .main-container aside:last-child {
+        margin-right: 0; } }
 
 footer {
   float: left;

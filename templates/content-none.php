@@ -11,11 +11,6 @@
 	die( "404 Not Found" );
 }
 ?>
-<header class="page-header">
-
-	<h1 class="page-title"><?php esc_html_e ( 'Nothing Found' , WBB_THEME_SLUG ); ?></h1>
-
-</header><!-- .page-header -->
 
 <div class="page-content">
 
@@ -38,5 +33,3 @@
 	<?php endif; ?>
 
 </div><!-- .page-content -->
-
-</section><!-- .no-results -->

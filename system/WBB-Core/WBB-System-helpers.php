@@ -5,11 +5,10 @@
 }
 
 
-
 /************************************************************************************************************************************************
  * Define Global constants here ...
  ***********************************************************************************************************************************************/
-define ('WBB_THEME_SLUG', 'webberty') ;
+define ( 'WBB_THEME_SLUG' , 'webberty' );
 
 /************************************************************************************************************************************************
  * A function to add the meta information in a single page.
@@ -203,4 +202,155 @@ if ( ! function_exists ( 'wbb_display_sidebar' ) )
 
 	}
 
+}
+
+/************************************************************************************************************************************************
+ * show  breadcrumb
+ ***********************************************************************************************************************************************/
+if ( ! function_exists ( "wbb_weman_breadcrumb" ) )
+{
+
+	function wbb_weman_breadcrumb ()
+	{
+		// Settings
+		$separator  = ' > ';
+		$id         = 'breadcrumbs';
+		$class      = 'list-inline breadcrumbs';
+		$home_title = 'Home';
+		$parents    = "";
+
+		global $post , $wp_query;
+
+		$queried_object = $wp_query->queried_object;
+
+		echo '<ul id="' . $id . '" class="' . $class . '">';
+
+		if ( ! is_front_page () )
+		{
+
+			// Home page
+			echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url () . '" title="' . $home_title . '">' . $home_title . '</a></li>';
+			echo '<li class="separator separator-home"> ' . $separator . ' </li>';
+
+			if ( is_page () )
+			{
+
+				if ( $post->post_parent )
+				{
+
+					$anc = get_post_ancestors ( $post->ID );
+
+					$anc = array_reverse ( $anc );
+
+					foreach ( $anc as $ancestor )
+					{
+
+						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink ( $ancestor ) . '" title="' . get_the_title ( $ancestor ) . '">' . get_the_title ( $ancestor ) . '</a></li>';
+						$parents .= '<li class="separator separator-' . $ancestor . '"> ' . $separator . ' </li>';
+					}
+
+					echo $parents;
+
+					echo '<li class="item-current item-' . $post->ID . '"> ' . get_the_title () . '</li>';
+				}
+				else
+				{
+
+					echo '<li class="item-current item-' . $post->ID . '"> ' . get_the_title () . '</li>';
+				}
+			}
+			elseif ( is_category () )
+			{
+
+				$category = $queried_object->name;
+				echo '<li class="item-current item-cat-' . $category . ' item-cat-' . $category . '"><strong class="bread-current bread-cat-' . $category . ' bread-cat-' . $category . '">' . $category . '</strong></li>';
+			}
+			elseif ( is_tax () )
+			{
+				// The parent
+				$post_type = get_post_type ();
+
+				$post_type_object = get_post_type_object ( $post_type );
+
+				$post_type_labels = $post_type_object->labels;
+
+				$post_type_name = $post_type_labels->name;
+
+				$post_type_rewrite = $post_type_object->rewrite;
+
+				$post_type_slug = $post_type_rewrite[ 'slug' ];
+
+				$taxonomy = $queried_object->name;
+
+				echo '<li class="item-cat item-cat-' . $post_type_slug . ' item-cat-' . $post_type_slug . '"><a class="bread-cat bread-cat-' . $post_type_slug . ' bread-cat-' . $post_type_slug . '" href="/' . $post_type_slug . '" title="' . $post_type_slug . '">' . $post_type_name . '</a></li>';
+
+				echo '<li class="separator separator-' . $post_type_slug . '"> ' . $separator . ' </li>';
+
+				echo '<li class="item-current item-cat-' . $taxonomy . ' item-cat-' . $taxonomy . '"><strong class="bread-current bread-cat-' . $taxonomy . ' bread-cat-' . $taxonomy . '">' . $taxonomy . '</strong></li>';
+			}
+			elseif ( is_archive () )
+			{
+
+				$labels         = $queried_object->labels;
+				$post_type_name = $labels->name;
+				$post_type_slug = $queried_object->query_var;
+
+				echo '<li class="item-current item-cat-' . $post_type_slug . ' item-cat-' . $post_type_slug . '">' . $post_type_name . '</li>';
+			}
+			elseif ( is_single () )
+			{
+
+				$query     = $wp_query->query;
+				$post_type = isset ( $query[ 'post_type' ] ) ? $query[ 'post_type' ] : "";
+
+				if ( $post_type == "" )
+				{
+
+					// Usual post type
+					$category      = get_the_category ( get_the_ID () );
+					$the_category  = $category[ 0 ];
+					$category_name = $the_category->name;
+					$category_slug = $the_category->slug;
+					$category_id   = $the_category->cat_ID;
+
+					echo '<li class="item-cat item-cat-' . $category_slug . ' item-cat-' . $category_slug . '"><a class="bread-cat bread-cat-' . $category_slug . ' bread-cat-' . $category_slug . '" href="' . get_category_link ( $category_id ) . '" title="' . $category_slug . '">' . $category_name . '</a></li>';
+					echo '<li class="separator separator-' . $category_slug . '"> ' . $separator . ' </li>';
+					echo '<li class="item-current item-' . get_the_ID () . '"><strong class="bread-current bread-' . get_the_ID () . '" title="' . get_the_title () . '">' . get_the_title () . '</strong></li>';
+				}
+				else
+				{
+
+					// Its a custom post type
+					$post_type         = get_post_type ( get_the_ID () );
+					$post_type_object  = get_post_type_object ( $post_type );
+					$post_type_labels  = $post_type_object->labels;
+					$post_type_name    = $post_type_labels->name;
+					$post_type_rewrite = $post_type_object->rewrite;
+					$post_type_slug    = $post_type_rewrite[ 'slug' ];
+					echo '<li class="item-cat item-cat-' . $post_type_slug . ' item-cat-' . $post_type_slug . '"><a class="bread-cat bread-cat-' . $post_type_slug . ' bread-cat-' . $post_type_slug . '" href="/' . $post_type_slug . '" title="' . $post_type_slug . '">' . $post_type_name . '</a></li>';
+					echo '<li class="separator separator-' . $post_type_slug . '"> ' . $separator . ' </li>';
+					echo '<li class="item-current item-' . $post->ID . '">' . get_the_title () . '</li>';
+				}
+			}
+			elseif ( is_404 () )
+			{
+
+				// 404 page
+				echo '<li>' . 'Error 404' . '</li>';
+			}
+			elseif ( is_search () )
+			{
+
+				// 404 page
+				echo '<li>' . 'Search results' . '</li>';
+			}
+		}
+		else
+		{
+
+			//echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url () . '" title="' . $home_title . '">' . $home_title . '</a></li>' ;
+		}
+
+		echo '</ul>';
+	}
 }

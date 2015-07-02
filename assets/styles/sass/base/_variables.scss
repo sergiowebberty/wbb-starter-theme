@@ -1,4 +1,8 @@
-$base-value: 16;
+$base-value: 14;
+
+//**** Neat Grid ****
+$max-width: em(960, $base-value); // Max width of outer container
+
 
 // Typography
 $base-font-family: $helvetica;
@@ -43,9 +47,6 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 $base-duration: 150ms;
 $base-timing: ease;
 
-//**** Neat Grid ****
-$max-width: em(960, $base-value);
-// Max width of outer container
 
 //**** Breakpoints ****
 $wide: min-width 1200px;

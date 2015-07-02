@@ -11,6 +11,12 @@
 	die( "404 Not Found" );
 }
 ?>
+
+<div>
+	<!-- START BREADCRUMB -->
+	<?php wbb_weman_breadcrumb (); ?>
+</div>
+
 <article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
 
 	<header class="entry-header">

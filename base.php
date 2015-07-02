@@ -27,6 +27,11 @@ if ( ! defined ( 'WPINC' ) )
 
 <div class="main-container">
 
+	<div>
+		<!-- START BREADCRUMB -->
+		<?php wbb_weman_breadcrumb (); ?>
+	</div>
+
 	<main class="site-main" role=main">
 
 		<?php include WBB_System_Core::load_content (); ?>

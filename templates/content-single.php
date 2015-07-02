@@ -12,6 +12,7 @@
 	die( "404 Not Found" );
 }
 ?>
+
 <?php while ( have_posts () ) : the_post (); ?>
 
 	<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>

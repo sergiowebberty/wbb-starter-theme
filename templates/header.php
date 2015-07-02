@@ -28,12 +28,6 @@
 		<?php
 		if ( has_nav_menu ( 'primary_navigation' ) ) :
 
-		/*	wp_nav_menu ( [
-				'theme_location' => 'primary_navigation' ,
-				'menu_class'     => 'nav'
-			] );*/
-
-
 			wp_nav_menu ( [
 				'menu'            => 'primary' ,
 				'theme_location'  => 'primary_navigation' ,
@@ -45,7 +39,6 @@
 				'fallback_cb'     => 'wp_bootstrap_navwalker::fallback' ,
 				'walker'          => new Neat_Menu_Walker()
 			] );
-
 
 		endif;
 

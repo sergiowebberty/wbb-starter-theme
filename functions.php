@@ -4,6 +4,8 @@
 	die( "404 Not Found" );
 }
 
+// IMPORTANT : KEEP THIS FILE CLEAN AS YOU CAN ....
+
 /*
 | ----------------------------------------------------------------------------------------------------------------------
 | Required by WordPress.
@@ -38,5 +40,3 @@ require_once locate_template ( 'config/theme-scripts.php' );
 require_once locate_template ( 'system/WBB-Core/WBB-System-Core.php' );
 
 WBB_System_Core::init ();
-
-

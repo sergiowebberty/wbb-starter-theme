@@ -23,7 +23,7 @@
 	</div>
 	<!-- .site-branding -->
 
-	<nav class="site-navigation" role="navigation">
+	<nav class="site-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
 		<?php
 		if ( has_nav_menu ( 'primary_navigation' ) ) :

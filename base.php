@@ -28,6 +28,31 @@ if ( ! defined ( 'WPINC' ) )
 <div class="main-container">
 
 	<div>
+
+		<!--- TEMPORARY BREADCRUMPS CODE STYLE --->
+		<style>
+
+			#breadcrumbs{
+				list-style:none;
+				margin:10px 0;
+				overflow:hidden;
+			}
+
+			#breadcrumbs li{
+				display:inline-block;
+				vertical-align:middle;
+				margin-right:15px;
+			}
+
+			#breadcrumbs .separator{
+				font-size:18px;
+				font-weight:100;
+				color:#ccc;
+			}
+		</style>
+
+
+
 		<!-- START BREADCRUMB -->
 		<?php wbb_weman_breadcrumb (); ?>
 	</div>

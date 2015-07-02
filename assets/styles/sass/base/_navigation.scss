@@ -1,7 +1,7 @@
 /* Navigation bar */
 
 
-.navigation {
+.site-navigation {
   $large-screen: em(860) !default;
   $large-screen: $large-screen;
 
@@ -83,7 +83,7 @@
     }
   }
 }
-hover-menu {
+.hover-menu {
   $large-screen: em(860) !default;
   $submenu-width: 12em;
 

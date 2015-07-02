@@ -187,6 +187,7 @@ class Neat_Menu_Walker extends Walker_Nav_Menu
 				{
 					$fb_output .= ' class="' . $container_class . '"';
 				}
+
 				$fb_output .= '>';
 			}
 			$fb_output .= '<ul';

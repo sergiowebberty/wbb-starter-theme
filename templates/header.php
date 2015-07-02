@@ -23,28 +23,37 @@
 	</div>
 	<!-- .site-branding -->
 
-	<nav class="site-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<div class="navigation-wrapper">
+            <nav role="navigation">
 
-		<?php
-		if ( has_nav_menu ( 'primary_navigation' ) ) :
+                <?php
+                if ( has_nav_menu ( 'primary_navigation' ) ) :
 
-			wp_nav_menu ( [
-				'menu'            => 'primary' ,
-				'theme_location'  => 'primary_navigation' ,
-				'depth'           => 2 ,
-				'container'       => 'div' ,
-				'container_class' => 'collapse navbar-collapse' ,
-				'container_id'    => 'bs-example-navbar-collapse-1' ,
-				'menu_class'      => 'nav navbar-nav' ,
-				'fallback_cb'     => 'wp_bootstrap_navwalker::fallback' ,
-				'walker'          => new Neat_Menu_Walker()
-			] );
+                    wp_nav_menu ( [
+                        'menu'            => 'primary' ,
+                        'theme_location'  => 'primary_navigation' ,
+                        'depth'           => 2 ,
+                        'container'       => '' ,
+                        'menu_class'      => 'navigation-menu show' ,
+                        'menu_id'         => 'js-navigation-menu' ,
+                        'fallback_cb'     => 'Neat_Menu_Walker::fallback' ,
+                        'walker'          => new Neat_Menu_Walker()
+                    ] );
 
-		endif;
+                endif;
 
-		?>
+                ?>
 
-	</nav>
+            </nav>
+
+
+
+		</div>
+
+
+
+	</div>
 	<!-- #site-navigation -->
 
 </header>

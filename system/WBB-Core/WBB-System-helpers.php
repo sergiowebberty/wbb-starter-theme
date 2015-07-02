@@ -207,10 +207,10 @@ if ( ! function_exists ( 'wbb_display_sidebar' ) )
 /************************************************************************************************************************************************
  * show  breadcrumb
  ***********************************************************************************************************************************************/
-if ( ! function_exists ( "wbb_weman_breadcrumb" ) )
+if ( ! function_exists ( "wbb_breadcrumb" ) )
 {
 
-	function wbb_weman_breadcrumb ()
+	function wbb_breadcrumb ()
 	{
 		// Settings
 		$separator  = '&gt;';

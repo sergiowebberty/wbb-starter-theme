@@ -24,7 +24,7 @@ if ( get_option ( 'upload_path' ) == 'wp-content/uploads' || get_option ( 'uploa
 | Set some default sidebars ....
 */
 register_sidebar (
-	array (
+	[
 		'name'          => __ ( 'Main Sidebar' , 'webberty' ) ,
 		'id'            => 'sidebar-1' ,
 		'description'   => __ ( 'Widgets in this area will be shown on all posts and pages.' , 'webberty' ) ,
@@ -32,7 +32,7 @@ register_sidebar (
 		'after_widget'  => '</li>' ,
 		'before_title'  => '<h2 class="widgettitle">' ,
 		'after_title'   => '</h2>' ,
-	)
+	]
 );
 
 /*
@@ -84,12 +84,14 @@ if ( ! $menu_exists )
 	$menu_id = wp_create_nav_menu ( $menuname );
 
 	// Set up default BuddyPress links and add them to the menu.
-	wp_update_nav_menu_item ( $menu_id , 0 , array (
+	wp_update_nav_menu_item ( $menu_id , 0 ,
+	[
 		'menu-item-title'   => __ ( 'Home' ) ,
 		'menu-item-classes' => 'home' ,
 		'menu-item-url'     => ( '/' ) ,
 		'menu-item-status'  => 'publish'
-	) );
+	]
+);
 
 	//Grab the theme locations and assign our newly - created menu
 	if ( ! has_nav_menu ( $primary_navigation ) )
@@ -145,19 +147,19 @@ add_action ( 'after_setup_theme' , function ()
 {
 
 	add_theme_support ( 'html5' ,
-		array (
+		[
 			'comment-list' ,
 			'comment-form' ,
 			'search-form' ,
 			'gallery' ,
 			'caption'
-		)
+		]
 	);
 
 	add_theme_support ( 'automatic-feed-links' );
 
 	add_theme_support ( 'post-formats' ,
-		array (
+		[
 
 			//Typically styled without a title. Similar to a Facebook note update.
 			'aside' ,
@@ -191,7 +193,8 @@ add_action ( 'after_setup_theme' , function ()
 
 			// A chat transcript, like so:
 			'chat'
-		) );
+		]
+	);
 
 
 } );

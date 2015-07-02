@@ -85,13 +85,13 @@ if ( ! $menu_exists )
 
 	// Set up default BuddyPress links and add them to the menu.
 	wp_update_nav_menu_item ( $menu_id , 0 ,
-	[
-		'menu-item-title'   => __ ( 'Home' ) ,
-		'menu-item-classes' => 'home' ,
-		'menu-item-url'     => ( '/' ) ,
-		'menu-item-status'  => 'publish'
-	]
-);
+		[
+			'menu-item-title'   => __ ( 'Home' ) ,
+			'menu-item-classes' => 'home' ,
+			'menu-item-url'     => ( '/' ) ,
+			'menu-item-status'  => 'publish'
+		]
+	);
 
 	//Grab the theme locations and assign our newly - created menu
 	if ( ! has_nav_menu ( $primary_navigation ) )
@@ -220,3 +220,23 @@ add_action ( 'wp_head' , function ()
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
 
 } , 1 );
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Remove the  small segment of css in the head
+| ----------------------------------------------------------------------------------------------------------------------
+| There is a small segment of css in the head that we can remove
+*/
+add_action ( 'widgets_init' , function ()
+{
+
+	global $wp_widget_factory;
+
+	remove_action ( 'wp_head' ,
+		[
+			$wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ] ,
+			'recent_comments_style'
+		]
+	);
+
+} );

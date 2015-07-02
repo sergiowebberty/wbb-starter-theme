@@ -13,7 +13,7 @@
 ?>
 <article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
 
-	<header class="entry-header">
+	<header class="entry-header" itemprop="headline">
 
 		<?php the_title ( '<h1 class="entry-title">' , '</h1>' ); ?>
 
@@ -25,7 +25,7 @@
 		<?php the_content (); ?>
 
 		<?php wp_link_pages ( array (
-			'before' => '<nav class="pagination">' ,
+			'before' => '<nav class="pagination" itemscope itemtype="http://schema.org/SiteNavigationElement">' ,
 			'after'  => '</nav>'
 		) ); ?>
 

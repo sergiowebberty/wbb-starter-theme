@@ -13,8 +13,8 @@
 ?>
 <article <?php post_class (); ?>>
 
-	<header>
-		<h2 class="entry-title"><a href="<?php the_permalink (); ?>"><?php the_title (); ?></a></h2>
+	<header itemprop="headline">
+		<h2 class="entry-title"><a href="<?php the_permalink (); ?>" itemprop="url"><?php the_title (); ?></a></h2>
 
 		<?php if ( get_post_type () === 'post' )
 		{
@@ -23,7 +23,7 @@
 
 	</header>
 
-	<div class="entry-summary">
+	<div class="entry-summary" itemprop="text">
 
 		<?php the_excerpt (); ?>
 

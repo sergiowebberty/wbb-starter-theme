@@ -186,7 +186,7 @@ class WBB_System_Core
 	 *
 	 * @return string Filtered title.
 	 */
-	 static function wbb_wp_title ( $title , $sep )
+	static function wbb_wp_title ( $title , $sep )
 	{
 		global $paged , $page;
 
@@ -214,6 +214,21 @@ class WBB_System_Core
 		return $title;
 	}
 
+	/**
+	 * This will add itemprop=”url” markup to each link in the navigation menu.
+	 *
+	 * @param $atts
+	 * @param $item
+	 * @param $args
+	 *
+	 * @return mixed
+	 */
+	static function add_attribute ( $atts , $item , $args )
+	{
+		$atts[ 'itemprop' ] = 'url';
+
+		return $atts;
+	}
 
 	/**********************************************************************************************************************
 	 * @param $theme_settings
@@ -235,6 +250,12 @@ class WBB_System_Core
 			'WBB_System_Core' ,
 			'base_wrapper'
 		] , 99 );
+
+		//This will add itemprop=”url” markup to each link in the navigation menu.
+		add_filter ( 'nav_menu_link_attributes' , [
+			'WBB_System_Core' ,
+			'add_attribute'
+		] , 10 , 3 );
 
 		// Add custom Meta tags
 		add_action ( 'wp_head' , [

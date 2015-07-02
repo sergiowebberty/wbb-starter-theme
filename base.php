@@ -11,7 +11,7 @@ if ( ! defined ( 'WPINC' ) )
 }
 ?>
 <!DOCTYPE html>
-<html class="no-js" <?php language_attributes (); ?>>
+<html <?php html_schema(); ?> class="no-js" <?php language_attributes (); ?>>
 
 <?php echo get_template_part ( 'templates/head' ); ?>
 

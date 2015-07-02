@@ -22,11 +22,11 @@ if ( ! function_exists ( 'wbb_entry_meta' ) )
 	function wbb_entry_meta ()
 	{
 
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="entry-date published updated" itemprop="datePublished" datetime="%1$s">%2$s</time>';
 		if ( get_the_time ( 'U' ) !== get_the_modified_time ( 'U' ) )
 		{
 
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published" itemprop="datePublished" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 
 		}
 
@@ -44,7 +44,7 @@ if ( ! function_exists ( 'wbb_entry_meta' ) )
 
 		$byline = sprintf (
 			esc_html_x ( 'by %s' , 'post author' , '_s' ) ,
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url ( get_author_posts_url ( get_the_author_meta ( 'ID' ) ) ) . '">' . esc_html ( get_the_author () ) . '</a></span>'
+			'<span class="author vcard"><a class="url fn n" itemprop="url" href="' . esc_url ( get_author_posts_url ( get_the_author_meta ( 'ID' ) ) ) . '">' . esc_html ( get_the_author () ) . '</a></span>'
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -229,7 +229,7 @@ if ( ! function_exists ( "wbb_weman_breadcrumb" ) )
 		{
 
 			// Home page
-			echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url () . '" title="' . $home_title . '">' . $home_title . '</a></li>';
+			echo '<li class="item-home"><a class="bread-link bread-home" itemprop="url" href="' . get_home_url () . '" title="' . $home_title . '">' . $home_title . '</a></li>';
 			echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 
 			if ( is_page () )
@@ -245,7 +245,7 @@ if ( ! function_exists ( "wbb_weman_breadcrumb" ) )
 					foreach ( $anc as $ancestor )
 					{
 
-						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink ( $ancestor ) . '" title="' . get_the_title ( $ancestor ) . '">' . get_the_title ( $ancestor ) . '</a></li>';
+						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a itemprop="url" class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink ( $ancestor ) . '" title="' . get_the_title ( $ancestor ) . '">' . get_the_title ( $ancestor ) . '</a></li>';
 						$parents .= '<li class="separator separator-' . $ancestor . '"> ' . $separator . ' </li>';
 					}
 
@@ -282,7 +282,7 @@ if ( ! function_exists ( "wbb_weman_breadcrumb" ) )
 
 				$taxonomy = $queried_object->name;
 
-				echo '<li class="item-cat item-cat-' . $post_type_slug . ' item-cat-' . $post_type_slug . '"><a class="bread-cat bread-cat-' . $post_type_slug . ' bread-cat-' . $post_type_slug . '" href="/' . $post_type_slug . '" title="' . $post_type_slug . '">' . $post_type_name . '</a></li>';
+				echo '<li class="item-cat item-cat-' . $post_type_slug . ' item-cat-' . $post_type_slug . '"><a itemprop="url" class="bread-cat bread-cat-' . $post_type_slug . ' bread-cat-' . $post_type_slug . '" href="/' . $post_type_slug . '" title="' . $post_type_slug . '">' . $post_type_name . '</a></li>';
 
 				echo '<li class="separator separator-' . $post_type_slug . '"> ' . $separator . ' </li>';
 
@@ -313,7 +313,7 @@ if ( ! function_exists ( "wbb_weman_breadcrumb" ) )
 					$category_slug = $the_category->slug;
 					$category_id   = $the_category->cat_ID;
 
-					echo '<li class="item-cat item-cat-' . $category_slug . ' item-cat-' . $category_slug . '"><a class="bread-cat bread-cat-' . $category_slug . ' bread-cat-' . $category_slug . '" href="' . get_category_link ( $category_id ) . '" title="' . $category_slug . '">' . $category_name . '</a></li>';
+					echo '<li class="item-cat item-cat-' . $category_slug . ' item-cat-' . $category_slug . '"><a itemprop="url" class="bread-cat bread-cat-' . $category_slug . ' bread-cat-' . $category_slug . '" href="' . get_category_link ( $category_id ) . '" title="' . $category_slug . '">' . $category_name . '</a></li>';
 					echo '<li class="separator separator-' . $category_slug . '"> ' . $separator . ' </li>';
 					echo '<li class="item-current item-' . get_the_ID () . '"><strong class="bread-current bread-' . get_the_ID () . '" title="' . get_the_title () . '">' . get_the_title () . '</strong></li>';
 				}
@@ -327,7 +327,7 @@ if ( ! function_exists ( "wbb_weman_breadcrumb" ) )
 					$post_type_name    = $post_type_labels->name;
 					$post_type_rewrite = $post_type_object->rewrite;
 					$post_type_slug    = $post_type_rewrite[ 'slug' ];
-					echo '<li class="item-cat item-cat-' . $post_type_slug . ' item-cat-' . $post_type_slug . '"><a class="bread-cat bread-cat-' . $post_type_slug . ' bread-cat-' . $post_type_slug . '" href="/' . $post_type_slug . '" title="' . $post_type_slug . '">' . $post_type_name . '</a></li>';
+					echo '<li class="item-cat item-cat-' . $post_type_slug . ' item-cat-' . $post_type_slug . '"><a itemprop="url" class="bread-cat bread-cat-' . $post_type_slug . ' bread-cat-' . $post_type_slug . '" href="/' . $post_type_slug . '" title="' . $post_type_slug . '">' . $post_type_name . '</a></li>';
 					echo '<li class="separator separator-' . $post_type_slug . '"> ' . $separator . ' </li>';
 					echo '<li class="item-current item-' . $post->ID . '">' . get_the_title () . '</li>';
 				}
@@ -352,5 +352,43 @@ if ( ! function_exists ( "wbb_weman_breadcrumb" ) )
 		}
 
 		echo '</ul>';
+	}
+}
+
+/************************************************************************************************************************************************
+ * A WordPress theme doesn’t contain Schema Markup by default. In order to add it to your theme, you should read the
+ * following steps and implement them.
+ *
+ * @documentation : http://www.blogohblog.com/add-schema-markup-wordpress-theme/
+ *                **********************************************************************************************************************************************/
+if ( ! function_exists ( 'html_schema' ) )
+{
+
+	function html_schema ()
+	{
+		$schema = 'http://schema.org/';
+
+		// Is single post
+		if ( is_single () )
+		{
+			$type = "Article";
+		}
+		// Is blog home, archive or category
+		else if ( is_home () || is_archive () || is_category () )
+		{
+			$type = "Blog";
+		}
+		// Is static front page
+		else if ( is_front_page () )
+		{
+			$type = "Website";
+		}
+		// Is a general page
+		else
+		{
+			$type = 'WebPage';
+		}
+
+		echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
 	}
 }

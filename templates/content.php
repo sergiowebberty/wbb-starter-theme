@@ -17,10 +17,10 @@
 	<?php wbb_weman_breadcrumb (); ?>
 </div>
 
-<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
+<article id="post-<?php the_ID (); ?>" <?php post_class (); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
-	<header class="entry-header">
-		<?php the_title ( sprintf ( '<h1 class="entry-title"><a href="%s" rel="bookmark">' , esc_url ( get_permalink () ) ) , '</a></h1>' ); ?>
+	<header class="entry-header"  itemprop="headline">
+		<?php the_title ( sprintf ( '<h1 class="entry-title"><a href="%s" rel="bookmark" itemprop="url" >' , esc_url ( get_permalink () ) ) , '</a></h1>' ); ?>
 
 
 		<?php if ( 'post' == get_post_type () ) : ?>
@@ -36,7 +36,7 @@
 	</header>
 	<!-- .entry-header -->
 
-	<div class="entry-summary">
+	<div class="entry-summary" itemprop="text">
 
 		<?php the_excerpt (); ?>
 

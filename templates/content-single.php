@@ -15,11 +15,11 @@
 
 <?php while ( have_posts () ) : the_post (); ?>
 
-	<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
+	<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>  itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
-		<header class="entry-header">
+		<header class="entry-header"  itemprop="headline">
 
-			<?php the_title ( '<h1 class="entry-title">' , '</h1>' ); ?>
+			<?php the_title ( '<h1 class="entry-title"  itemprop="headline">' , '</h1>' ); ?>
 
 			<div class="entry-meta">
 
@@ -34,7 +34,7 @@
 			<?php the_content (); ?>
 
 			<?php wp_link_pages ( array (
-				'before' => '<nav class="page-nav"><p>' . __ ( 'Pages:' , WBB_THEME_SLUG ) ,
+				'before' => '<nav class="page-nav" itemscope itemtype="http://schema.org/SiteNavigationElement"><p>' . __ ( 'Pages:' , WBB_THEME_SLUG ) ,
 				'after'  => '</p></nav>'
 			) ); ?>
 

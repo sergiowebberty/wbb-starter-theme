@@ -5,9 +5,15 @@
  * @package wbb-starter-theme
  */
 ?>
+<?php if ( ! defined ( 'WPINC' ) )
+{
+	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
+	die( "404 Not Found" );
+}
+?>
 
 
-<article <?php post_class (); ?>>
+<div class="page-content">
 
 	<?php if ( is_home () && current_user_can ( 'publish_posts' ) ) : ?>
 
@@ -27,5 +33,4 @@
 
 	<?php endif; ?>
 
-</article>
-
+</div><!-- .page-content -->

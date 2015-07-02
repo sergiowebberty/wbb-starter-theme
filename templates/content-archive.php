@@ -5,17 +5,18 @@
  * @package wbb-starter-theme
  */
 ?>
+
 <?php if ( ! defined ( 'WPINC' ) )
 {
 	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
 	die( "404 Not Found" );
 }
 ?>
+
 <article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
 
 	<header class="entry-header">
 		<?php the_title ( sprintf ( '<h1 class="entry-title"><a href="%s" rel="bookmark">' , esc_url ( get_permalink () ) ) , '</a></h1>' ); ?>
-
 
 		<?php if ( 'post' == get_post_type () ) : ?>
 

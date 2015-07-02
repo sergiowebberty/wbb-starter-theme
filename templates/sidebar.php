@@ -5,6 +5,13 @@
  * @package wbb-starter-theme
  */
 ?>
+
+<?php if ( ! defined ( 'WPINC' ) )
+{
+	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
+	die( "404 Not Found" );
+}
+?>
 <aside class="sidebar" role="complementary">
 
 	<?php if ( is_active_sidebar ( 'sidebar-1' ) ) : ?>

@@ -1,10 +1,10 @@
-
 <?php if ( ! defined ( 'WPINC' ) )
 {
 	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
 	die( "404 Not Found" );
 }
 ?>
+<h2>Archive</h2>
 <?php if ( ! have_posts () ) : ?>
 
 	<div class="alert alert-warning">

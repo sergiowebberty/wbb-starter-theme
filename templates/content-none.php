@@ -12,7 +12,7 @@
 }
 ?>
 
-<div class="page-content">
+<article <?php post_class (); ?>>
 
 	<?php if ( is_home () && current_user_can ( 'publish_posts' ) ) : ?>
 
@@ -32,4 +32,4 @@
 
 	<?php endif; ?>
 
-</div><!-- .page-content -->
+</article>

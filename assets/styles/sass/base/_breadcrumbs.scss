@@ -1,5 +1,6 @@
 @import "../neat/neat"; // or "../neat/neat-helpers" when not in Rails
 
+
 .breadcrumbs {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -90,4 +91,3 @@
     }
   }
 }
-

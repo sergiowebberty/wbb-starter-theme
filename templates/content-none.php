@@ -6,13 +6,8 @@
  */
 ?>
 
-<header class="page-header">
 
-	<h1 class="page-title"><?php esc_html_e ( 'Nothing Found' , WBB_THEME_SLUG ); ?></h1>
-
-</header><!-- .page-header -->
-
-<div class="page-content">
+<article <?php post_class (); ?>>
 
 	<?php if ( is_home () && current_user_can ( 'publish_posts' ) ) : ?>
 
@@ -32,6 +27,5 @@
 
 	<?php endif; ?>
 
-</div><!-- .page-content -->
+</article>
 
-</section><!-- .no-results -->

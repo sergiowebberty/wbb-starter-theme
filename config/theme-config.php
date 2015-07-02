@@ -4,6 +4,9 @@
 	die( "404 Not Found" );
 }
 
+// IMPORTANT : KEEP THIS FILE CLEAN AS YOU CAN ....
+
+
 /*
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default upload folder

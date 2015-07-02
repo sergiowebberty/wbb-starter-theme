@@ -67,82 +67,6 @@ class WBB_System_Core
 	}
 
 	/**********************************************************************************************************************
-	 *  Remove actions ....
-	 *********************************************************************************************************************/
-	private static function _remove_action ()
-	{
-
-		if ( isset( self::$theme_settings->remove_action ) && ( ! empty( self::$theme_settings->remove_action ) ) )
-		{
-
-			if ( is_array ( self::$theme_settings->remove_action ) )
-			{
-
-				foreach ( self::$theme_settings->remove_action as $remove_action )
-				{
-
-					remove_action ( $remove_action[ 0 ] , $remove_action[ 1 ] , ( isset( $remove_action[ 2 ] ) ? $remove_action[ 2 ] : FALSE ) , ( isset( $remove_action[ 3 ] ) ? $remove_action[ 3 ] : 10 ) );
-
-				}
-			}
-
-		}
-
-	}
-
-	/**********************************************************************************************************************
-	 * Add Theme Support
-	 *********************************************************************************************************************/
-	private static function _theme_support ()
-	{
-
-		if ( isset( self::$theme_settings->theme_support ) && ( ! empty( self::$theme_settings->theme_support ) ) )
-		{
-
-			if ( is_array ( self::$theme_settings->theme_support ) )
-			{
-
-				foreach ( self::$theme_settings->theme_support as $theme_support )
-				{
-
-					add_theme_support ( $theme_support[ 0 ] , ( isset( $theme_support[ 1 ] ) ? $theme_support[ 1 ] : TRUE ) );
-
-				}
-			}
-
-		}
-
-	}
-
-	/**********************************************************************************************************************
-	 * Add custom Meta tags
-	 *********************************************************************************************************************/
-	static function add_meta_tags ()
-	{
-
-		if ( isset( self::$theme_settings->meta_tags ) && ( ! empty( self::$theme_settings->meta_tags ) ) )
-		{
-
-			if ( is_array ( self::$theme_settings->meta_tags ) )
-			{
-
-				foreach ( self::$theme_settings->meta_tags as $meta )
-				{
-
-					echo $meta . "\n";
-
-				}
-			}
-			else
-			{
-
-				echo self::$theme_settings->meta_tags;
-
-			}
-		}
-	}
-
-	/**********************************************************************************************************************
 	 * This Function will add the page title to the body_class for easy styling of page files
 	 *
 	 * @param $classes
@@ -231,15 +155,10 @@ class WBB_System_Core
 	}
 
 	/**********************************************************************************************************************
-	 * @param $theme_settings
+	 * Init the theme
 	 *********************************************************************************************************************/
-	static function init ( $theme_settings )
+	static function init ()
 	{
-
-		self::$theme_settings = $theme_settings;
-
-		self::_remove_action ();
-		self::_theme_support ();
 
 		add_filter ( 'wp_title' , [
 			'WBB_System_Core' ,
@@ -256,12 +175,6 @@ class WBB_System_Core
 			'WBB_System_Core' ,
 			'add_attribute'
 		] , 10 , 3 );
-
-		// Add custom Meta tags
-		add_action ( 'wp_head' , [
-			'WBB_System_Core' ,
-			'add_meta_tags'
-		] , 1 );
 
 		// This Function will add the page title to the body_class for easy styling of page files...
 		add_action ( 'body_class' , [

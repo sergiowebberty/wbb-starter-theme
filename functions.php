@@ -37,11 +37,6 @@ require_once locate_template ( 'config/theme-scripts.php' );
  *********************************************************************************************************************/
 require_once locate_template ( 'system/WBB-Core/WBB-System-Core.php' );
 
-WBB_System_Core::init (
+WBB_System_Core::init ();
 
-/**********************************************************************************************************************
- * Load Theme Settings
- *********************************************************************************************************************/
-	require_once locate_template ( 'config/theme-settings.php' )
 
-);

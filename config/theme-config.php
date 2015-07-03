@@ -26,17 +26,24 @@ if ( get_option ( 'upload_path' ) == 'wp-content/uploads' || get_option ( 'uploa
 | ----------------------------------------------------------------------------------------------------------------------
 | Set some default sidebars ....
 */
-register_sidebar (
-	[
-		'name'          => __ ( 'Main Sidebar' , 'webberty' ) ,
-		'id'            => 'sidebar-1' ,
-		'description'   => __ ( 'Widgets in this area will be shown on all posts and pages.' , 'webberty' ) ,
-		'before_widget' => '<li id="%1$s" class="widget %2$s">' ,
-		'after_widget'  => '</li>' ,
-		'before_title'  => '<h2 class="widgettitle">' ,
-		'after_title'   => '</h2>' ,
-	]
-);
+add_action ( 'widgets_init' , function ()
+{
+
+	register_sidebar (
+		[
+			'name'          => __ ( 'Main Sidebar' , 'webberty' ) ,
+			'id'            => 'sidebar-1' ,
+			'description'   => __ ( 'Widgets in this area will be shown on all posts and pages.' , 'webberty' ) ,
+			'before_widget' => '<li id="%1$s" class="widget %2$s">' ,
+			'after_widget'  => '</li>' ,
+			'before_title'  => '<h2 class="widgettitle">' ,
+			'after_title'   => '</h2>' ,
+		]
+	);
+
+
+} );
+
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
@@ -73,7 +80,7 @@ add_filter ( 'WBB_display_sidebar' ,
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default Menu's
 */
-register_nav_menu ( 'primary_navigation' , __ ( 'Main navigation for the website' ) );
+register_nav_menu ( 'primary_navigation' , __ ( 'Main navigation for the website', WBB_THEME_SLUG ) );
 
 $menuname           = 'Main Navigation';
 $primary_navigation = 'primary_navigation';
@@ -89,7 +96,7 @@ if ( ! $menu_exists )
 	// Set up default BuddyPress links and add them to the menu.
 	wp_update_nav_menu_item ( $menu_id , 0 ,
 		[
-			'menu-item-title'   => __ ( 'Home' ) ,
+			'menu-item-title'   => __ ( 'Home', WBB_THEME_SLUG ) ,
 			'menu-item-classes' => 'home' ,
 			'menu-item-url'     => ( '/' ) ,
 			'menu-item-status'  => 'publish'
@@ -160,6 +167,10 @@ add_action ( 'after_setup_theme' , function ()
 	);
 
 	add_theme_support ( 'automatic-feed-links' );
+
+	add_theme_support( "title-tag" ) ;
+
+	add_theme_support( "post-thumbnails" ) ;
 
 	add_theme_support ( 'post-formats' ,
 		[

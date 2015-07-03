@@ -66,16 +66,17 @@
       //border-bottom: $breadcrumb-height / 2 solid transparent;
       //border-left: $breadcrumb-height / 4 solid transparent;
       //border-top: $breadcrumb-height / 2 solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left: 10px solid transparent;
-      border-top: 10px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-top: 5px solid transparent;
       content: '';
       display: block;
       margin: auto;
       z-index: 2;
 
-      width: 20px;
-      height: 20px;
+
+      width: 10px;
+      height: 10px;
     }
 
     &:last-child:after,

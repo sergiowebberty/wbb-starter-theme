@@ -382,7 +382,7 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
  * following steps and implement them.
  *
  * @documentation : http://www.blogohblog.com/add-schema-markup-wordpress-theme/
- *                **********************************************************************************************************************************************/
+ ***********************************************************************************************************************************************/
 if ( ! function_exists ( 'html_schema' ) )
 {
 
@@ -413,4 +413,32 @@ if ( ! function_exists ( 'html_schema' ) )
 
 		echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
 	}
+}
+
+/************************************************************************************************************************************************
+ * Adding pagination
+ ***********************************************************************************************************************************************/
+if ( ! function_exists ( 'wbb_custom_pagination' ) )
+{
+
+	function wbb_custom_pagination ()
+	{
+
+		global $wp_query;
+
+		$big = 999999999; // need an unlikely integer
+
+		echo paginate_links ( [
+			'base'      => str_replace ( $big , '%#%' , esc_url ( get_pagenum_link ( $big ) ) ) ,
+			'format'    => '?paged=%#%' ,
+			'current'   => max ( 1 , get_query_var ( 'paged' ) ) ,
+			'total'     => $wp_query->max_num_pages ,
+			'prev_next' => FALSE ,
+			'prev_next' => TRUE ,
+			'prev_text' => __ ( '«' ) ,
+			'next_text' => __ ( '»' ) ,
+		] );
+
+	}
+
 }

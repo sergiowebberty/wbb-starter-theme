@@ -249,6 +249,22 @@ add_action ( 'widgets_init' , function ()
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
+| Loads the theme's translated strings.
+| ----------------------------------------------------------------------------------------------------------------------
+| If the current locale exists as a .mo file in the theme's root directory,
+| it will be included in the translated strings by the $domain.
+| The .mo files must be named based on the locale exactly, sv_SE.mo for example.
+| More info : https://codex.wordpress.org/Function_Reference/load_theme_textdomain
+*/
+add_action ( 'after_setup_theme' , function ()
+{
+
+	load_theme_textdomain ( WBB_THEME_SLUG , get_template_directory () . '/languages' );
+
+} );
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
 | Theme Customizer
 | ----------------------------------------------------------------------------------------------------------------------
 |  Adds the individual sections, settings, and controls to the theme customizer

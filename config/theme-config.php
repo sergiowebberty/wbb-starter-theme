@@ -249,7 +249,7 @@ add_action ( 'widgets_init' , function ()
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
-| Remove the  small segment of css in the head
+| Theme Customizer
 | ----------------------------------------------------------------------------------------------------------------------
 |  Adds the individual sections, settings, and controls to the theme customizer
 |  More documentation :

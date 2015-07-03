@@ -17,6 +17,7 @@ add_action ( 'wp_enqueue_scripts' , function ()
 {
 
 	wp_enqueue_script ( 'modernizr' , '' . get_template_directory_uri () . '/assets/scripts/vendor/modernizr.js' , array ( 'jquery' ) , NULL , FALSE );
+	wp_enqueue_script ( 'menu-navigation' , '' . get_template_directory_uri () . '/assets/scripts/vendor/navigation.js' , array ( 'jquery' ) , NULL , FALSE );
 
 } );
 

@@ -26,8 +26,8 @@
 
   li {
     background-color: $breadcrumb-background;
-    border-left: 0;
-    border: $breadcrumb-border;
+    //border-left: 0;
+    //border: $breadcrumb-border;
     color: $breadcrumb-color;
     display: inline-block;
     font-size: 0.8em;
@@ -40,9 +40,10 @@
 
     &:first-child {
       border-bottom-left-radius: $base-border-radius;
-      border-left: $breadcrumb-border;
+      //border-left: $breadcrumb-border;
       border-top-left-radius: $base-border-radius;
-      padding-left: $breadcrumb-height / 2;
+      //padding-left: $breadcrumb-height / 2;
+      padding-left: 0;
     }
 
     &:last-child {
@@ -62,13 +63,19 @@
     &:after,
     &:before {
       @include position(absolute, 0px auto 0px 100%);
-      border-bottom: $breadcrumb-height / 2 solid transparent;
-      border-left: $breadcrumb-height / 4 solid transparent;
-      border-top: $breadcrumb-height / 2 solid transparent;
+      //border-bottom: $breadcrumb-height / 2 solid transparent;
+      //border-left: $breadcrumb-height / 4 solid transparent;
+      //border-top: $breadcrumb-height / 2 solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid transparent;
+      border-top: 10px solid transparent;
       content: '';
       display: block;
       margin: auto;
       z-index: 2;
+
+      width: 20px;
+      height: 20px;
     }
 
     &:last-child:after,

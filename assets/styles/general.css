@@ -310,8 +310,6 @@ html {
   text-align: left; }
   .breadcrumbs li {
     background-color: #fff;
-    border-left: 0;
-    border: 1px solid #ddd;
     color: #999;
     display: inline-block;
     font-size: 0.8em;
@@ -323,9 +321,8 @@ html {
     text-decoration: none; }
     .breadcrumbs li:first-child {
       border-bottom-left-radius: 3px;
-      border-left: 1px solid #ddd;
       border-top-left-radius: 3px;
-      padding-left: 1.125em; }
+      padding-left: 0; }
     .breadcrumbs li:last-child {
       background-color: #fff;
       border-bottom-right-radius: 3px;
@@ -341,13 +338,15 @@ html {
       right: auto;
       bottom: 0px;
       left: 100%;
-      border-bottom: 1.125em solid transparent;
-      border-left: 0.5625em solid transparent;
-      border-top: 1.125em solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid transparent;
+      border-top: 10px solid transparent;
       content: '';
       display: block;
       margin: auto;
-      z-index: 2; }
+      z-index: 2;
+      width: 20px;
+      height: 20px; }
     .breadcrumbs li:last-child:after, .breadcrumbs li:last-child:before {
       border: none; }
     .breadcrumbs li:before {

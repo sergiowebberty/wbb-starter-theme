@@ -13,18 +13,15 @@
 */
 
 // Load Scripts for this theme here
-add_action ( 'wp_enqueue_scripts' , function ()
+add_action ( 'wp_enqueue_scripts' , 'wbb_wp_enqueue_scripts');
+function wbb_wp_enqueue_scripts()
 {
 
+	// Styles
 	wp_enqueue_script ( 'modernizr' , '' . get_template_directory_uri () . '/assets/scripts/vendor/modernizr.js' , array ( 'jquery' ) , NULL , FALSE );
 	wp_enqueue_script ( 'menu-navigation' , '' . get_template_directory_uri () . '/assets/scripts/vendor/navigation.js' , array ( 'jquery' ) , NULL , FALSE );
 
-} );
-
-// Load Styles for this theme here
-add_action ( 'wp_enqueue_scripts' , function ()
-{
-
+	// Scripts
 	wp_enqueue_style ( 'general-css' , '' . get_template_directory_uri () . '/assets/styles/general.css' , array () , '1.0.0' , 'all' );
 
-} );
+}

@@ -16,7 +16,12 @@
 	<div class="site-branding">
 
 		<h1 class="site-title">
-			<a href="<?php echo esc_url ( home_url ( '/' ) ); ?>" rel="home"><?php bloginfo ( 'name' ); ?></a></h1>
+
+			<a href="<?php echo esc_url ( home_url ( '/' ) ); ?>" rel="home">
+
+				<img src="<?php echo get_theme_mod ( 'wbb-logo-img-upload' , '' ); ?>" class="js-site-logo">
+
+				<?php bloginfo ( 'name' ); ?></a></h1>
 
 		<p class="site-description"><?php bloginfo ( 'description' ); ?></p>
 

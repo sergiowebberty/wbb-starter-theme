@@ -246,3 +246,70 @@ add_action ( 'widgets_init' , function ()
 	);
 
 } );
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Remove the  small segment of css in the head
+| ----------------------------------------------------------------------------------------------------------------------
+|  Adds the individual sections, settings, and controls to the theme customizer
+|  More documentation :
+|   - http://themefoundation.com/wordpress-theme-customizer/
+|   - https://codex.wordpress.org/Class_Reference/WP_Customize_Control
+|   - https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+*/
+function example_customizer ( $wp_customize )
+{
+
+	// ADD A NEW SECTION TO THE CUSTOMIZER
+	$wp_customize->add_section (
+
+		'wbb_theme_section_one' ,
+		[
+			'title'       => 'Wbb Theme Settings' ,
+			'description' => 'This is a settings section.' ,
+			'priority'    => 35 ,
+		]
+	);
+
+	// ADD A NEW SETTING
+	$wp_customize->add_setting ( 'wbb-logo-img-upload' );
+
+	// CREATING A CONTROL
+	$wp_customize->add_control (
+		new WP_Customize_Image_Control(
+			$wp_customize ,
+			'img-upload' ,
+			[
+				'label'    => 'Image Upload' ,
+				'section'  => 'wbb_theme_section_one' ,
+				'settings' => 'wbb-logo-img-upload'
+			]
+		)
+	);
+
+	//USING AJAX TO UPDATE THE LIVE PREVIEW
+	if ( $wp_customize->is_preview () && ! is_admin () )
+	{
+		add_action ( 'wp_footer' , function ()
+		{
+			?>
+			<script type="text/javascript">
+				(function ($)
+				{
+					wp.customize ( 'wbb-logo-img-upload' , function (value)
+					{
+						value.bind ( function (to)
+						             {
+							             $ ( '.js-site-logo' ).attr ( 'src' , to );
+						             } );
+					} );
+				}) ( jQuery )
+			</script>
+		<?php
+
+		} , 21 );
+	}
+
+}
+
+add_action ( 'customize_register' , 'example_customizer' );

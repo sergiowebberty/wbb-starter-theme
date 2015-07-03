@@ -270,6 +270,7 @@ add_action ( 'after_setup_theme' , function ()
 |  Adds the individual sections, settings, and controls to the theme customizer
 |  More documentation :
 |   - http://themefoundation.com/wordpress-theme-customizer/
+|   - https://codex.wordpress.org/Plugin_API/Action_Reference/customize_register
 |   - https://codex.wordpress.org/Class_Reference/WP_Customize_Control
 |   - https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
 */
@@ -281,8 +282,8 @@ add_action ( 'customize_register' , function ( $wp_customize )
 
 		'wbb_theme_section_one' ,
 		[
-			'title'       => 'Logo' ,
-			'description' => 'Add Site logo .' ,
+			'title'       => __ ( 'Logo' , WBB_THEME_SLUG ) ,
+			'description' => __ ( 'Add Site logo .' , WBB_THEME_SLUG ) ,
 			'priority'    => 35 ,
 		]
 	);
@@ -296,7 +297,7 @@ add_action ( 'customize_register' , function ( $wp_customize )
 			$wp_customize ,
 			'img-upload' ,
 			[
-				'label'    => 'Logo upload' ,
+				'label'    => __ ( 'Logo upload' , WBB_THEME_SLUG ) ,
 				'section'  => 'wbb_theme_section_one' ,
 				'settings' => 'wbb-logo-img-upload'
 			]

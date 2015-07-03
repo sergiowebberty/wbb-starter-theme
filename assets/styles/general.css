@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
@@ -119,6 +118,11 @@ a img.aligncenter {
 
 .sidebar li {
   list-style-type: none; }
+
+.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important; }
 
 /* Navigation bar */
 .site-navigation .navigation-menu-button {
@@ -293,6 +297,69 @@ footer {
   footer:last-child {
     margin-right: 0; }
 
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.breadcrumbs {
+  display: inline-block;
+  margin-bottom: 1.5em;
+  text-align: left; }
+  .breadcrumbs li {
+    background-color: #fff;
+    border-left: 0;
+    border: 1px solid #ddd;
+    color: #999;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 2.25em;
+    margin-bottom: 2px;
+    margin-right: -5px;
+    padding: 0 0.5625em 0 1.125em;
+    position: relative;
+    text-decoration: none; }
+    .breadcrumbs li:first-child {
+      border-bottom-left-radius: 3px;
+      border-left: 1px solid #ddd;
+      border-top-left-radius: 3px;
+      padding-left: 1.125em; }
+    .breadcrumbs li:last-child {
+      background-color: #fff;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+      color: #999;
+      padding-right: 1.125em; }
+    .breadcrumbs li:focus, .breadcrumbs li:hover {
+      background-color: #fff;
+      color: #477dca; }
+    .breadcrumbs li:after, .breadcrumbs li:before {
+      position: absolute;
+      top: 0px;
+      right: auto;
+      bottom: 0px;
+      left: 100%;
+      border-bottom: 1.125em solid transparent;
+      border-left: 0.5625em solid transparent;
+      border-top: 1.125em solid transparent;
+      content: '';
+      display: block;
+      margin: auto;
+      z-index: 2; }
+    .breadcrumbs li:last-child:after, .breadcrumbs li:last-child:before {
+      border: none; }
+    .breadcrumbs li:before {
+      border-left-color: #ddd;
+      margin-left: 1px;
+      z-index: 1; }
+    .breadcrumbs li:after {
+      border-left-color: #fff; }
+    @media screen and (min-width: 40em) {
+      .breadcrumbs li {
+        font-size: 1em;
+        padding: 0 1.125em 0 1.5em; } }
+
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   appearance: none;
   background-color: #477dca;
@@ -313,7 +380,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap; }
   button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
-    background-color: #3864a1;
+    background-color: #3964a2;
     color: #fff; }
   button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
     cursor: not-allowed;
@@ -322,7 +389,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
       background-color: #477dca; }
 
 fieldset {
-  background-color: #f6f6f6;
+  background-color: #f7f7f7;
   border: 1px solid #ddd;
   margin: 0 0 0.75em;
   padding: 1.5em; }
@@ -357,7 +424,7 @@ select[multiple=multiple] {
   width: 100%; }
   input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
   select[multiple=multiple]:hover {
-    border-color: #b0b0b0; }
+    border-color: #b1b1b1; }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
   select[multiple=multiple]:focus {
     border-color: #477dca;
@@ -412,7 +479,7 @@ table {
   width: 100%; }
 
 th {
-  border-bottom: 1px solid #a5a5a5;
+  border-bottom: 1px solid #a6a6a6;
   font-weight: 600;
   padding: 0.75em 0;
   text-align: left; }
@@ -452,7 +519,7 @@ a {
   text-decoration: none;
   transition: color 150ms ease; }
   a:active, a:focus, a:hover {
-    color: #355d97; }
+    color: #355e98; }
 
 hr {
   border-bottom: 1px solid #ddd;

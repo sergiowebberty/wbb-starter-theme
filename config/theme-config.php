@@ -4,6 +4,9 @@
 	die( "404 Not Found" );
 }
 
+// IMPORTANT : KEEP THIS FILE CLEAN AS YOU CAN ....
+
+
 /*
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default upload folder
@@ -24,7 +27,7 @@ if ( get_option ( 'upload_path' ) == 'wp-content/uploads' || get_option ( 'uploa
 | Set some default sidebars ....
 */
 register_sidebar (
-	array (
+	[
 		'name'          => __ ( 'Main Sidebar' , 'webberty' ) ,
 		'id'            => 'sidebar-1' ,
 		'description'   => __ ( 'Widgets in this area will be shown on all posts and pages.' , 'webberty' ) ,
@@ -32,9 +35,8 @@ register_sidebar (
 		'after_widget'  => '</li>' ,
 		'before_title'  => '<h2 class="widgettitle">' ,
 		'after_title'   => '</h2>' ,
-	)
+	]
 );
-
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
@@ -85,12 +87,14 @@ if ( ! $menu_exists )
 	$menu_id = wp_create_nav_menu ( $menuname );
 
 	// Set up default BuddyPress links and add them to the menu.
-	wp_update_nav_menu_item ( $menu_id , 0 , array (
-		'menu-item-title'   => __ ( 'Home' ) ,
-		'menu-item-classes' => 'home' ,
-		'menu-item-url'     => ( '/' ) ,
-		'menu-item-status'  => 'publish'
-	) );
+	wp_update_nav_menu_item ( $menu_id , 0 ,
+		[
+			'menu-item-title'   => __ ( 'Home' ) ,
+			'menu-item-classes' => 'home' ,
+			'menu-item-url'     => ( '/' ) ,
+			'menu-item-status'  => 'publish'
+		]
+	);
 
 	//Grab the theme locations and assign our newly - created menu
 	if ( ! has_nav_menu ( $primary_navigation ) )
@@ -114,3 +118,196 @@ if ( ! $menu_exists )
 	}
 
 }
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Head Clean
+| ----------------------------------------------------------------------------------------------------------------------
+| Set default Menu's
+*/
+remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 , 0 );
+remove_action ( 'wp_head' , 'feed_links' , 10 );
+remove_action ( 'wp_head' , 'rsd_link' );
+remove_action ( 'wp_head' , 'wlwmanifest_link' );
+remove_action ( 'wp_head' , 'index_rel_link' );
+remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 , 0 );
+remove_action ( 'wp_head' , 'start_post_rel_link' , 10 , 0 );
+remove_action ( 'wp_head' , 'adjacent_posts_rel_link' , 10 , 0 );
+remove_action ( 'wp_head' , 'wp_shortlink_wp_head' , 10 , 0 );
+remove_action ( 'wp_head' , 'wp_generator' , 10 , 0 );
+remove_action ( 'wp_head' , 'print_emoji_detection_script' , 7 );
+remove_action ( 'admin_print_scripts' , 'print_emoji_detection_script' );
+remove_action ( 'wp_print_styles' , 'print_emoji_styles' );
+remove_action ( 'admin_print_styles' , 'print_emoji_styles' );
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Theme Support
+| ----------------------------------------------------------------------------------------------------------------------
+| Set Some Default The	<title><?php wp_title ( '|' , TRUE , 'right' ); ?></title>me Support Settings
+*/
+add_action ( 'after_setup_theme' , function ()
+{
+
+	add_theme_support ( 'html5' ,
+		[
+			'comment-list' ,
+			'comment-form' ,
+			'search-form' ,
+			'gallery' ,
+			'caption'
+		]
+	);
+
+	add_theme_support ( 'automatic-feed-links' );
+
+	add_theme_support ( 'post-formats' ,
+		[
+
+			//Typically styled without a title. Similar to a Facebook note update.
+			'aside' ,
+
+			//A gallery of images. Post will likely contain a gallery shortcode and will have image attachments.
+			'gallery'
+			,
+			//A link to another site. Themes may wish to use the first <a href=””> tag in the post content as the external link for that post.
+			//An alternative approach could be if the post consists only of a URL, then that will be the URL and the title (post_title) will be the name attached to the anchor for it.
+			'link' ,
+
+			// A single image. The first <img /> tag in the post could be considered the image.
+			//Alternatively, if the post consists only of a URL, that will be the image URL and the title of the post (post_title) will be the title attribute for the image.
+			'image' ,
+
+			//quote - A quotation.
+			//Probably will contain a blockquote holding the quote content.
+			//Alternatively, the quote may be just the content, with the source/author being the title.
+			'quote' ,
+
+			// A short status update, similar to a Twitter status update.
+			'status' ,
+
+			//A single video. The first <video /> tag or object/embed in the post content could be considered the video.
+			//Alternatively, if the post consists only of a URL, that will be the video URL.
+			//May also contain the video as an attachment to the post, if video support is enabled on the blog (like via a plugin).
+			'video' ,
+
+			//An audio file. Could be used for Podcasting.
+			'audio' ,
+
+			// A chat transcript, like so:
+			'chat'
+		]
+	);
+
+
+} );
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Add extra meta data
+| ----------------------------------------------------------------------------------------------------------------------
+| Add extra meta data in the heade.php side when <?php wp_head (); ?> is used
+| This functionality is placed in system/WBB_Core/WBB-Core.php function name  AddMetaTags ().
+*/
+add_action ( 'wp_head' , function ()
+{
+
+	//Set custom head meta when there is MSIE ...
+	if ( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) && ( strpos ( $_SERVER[ 'HTTP_USER_AGENT' ] , 'MSIE' ) !== FALSE ) )
+	{
+
+		echo '<meta content="X-UA-Compatible: IE=edge,chrome=1" >' . "\n";
+
+	}
+
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
+
+	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo ( 'wpurl' ) . '/favicon.ico" />' . "\n";
+
+
+} , 1 );
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Remove the  small segment of css in the head
+| ----------------------------------------------------------------------------------------------------------------------
+| There is a small segment of css in the head that we can remove
+*/
+add_action ( 'widgets_init' , function ()
+{
+
+	global $wp_widget_factory;
+
+	remove_action ( 'wp_head' ,
+		[
+			$wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ] ,
+			'recent_comments_style'
+		]
+	);
+
+} );
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Theme Customizer
+| ----------------------------------------------------------------------------------------------------------------------
+|  Adds the individual sections, settings, and controls to the theme customizer
+|  More documentation :
+|   - http://themefoundation.com/wordpress-theme-customizer/
+|   - https://codex.wordpress.org/Class_Reference/WP_Customize_Control
+|   - https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+*/
+add_action ( 'customize_register' , function ( $wp_customize )
+{
+
+	// ADD A NEW SECTION TO THE CUSTOMIZER
+	$wp_customize->add_section (
+
+		'wbb_theme_section_one' ,
+		[
+			'title'       => 'Logo' ,
+			'description' => 'This is a settings section.' ,
+			'priority'    => 35 ,
+		]
+	);
+
+	// ADD A NEW SETTING
+	$wp_customize->add_setting ( 'wbb-logo-img-upload' );
+
+	// CREATING A CONTROL
+	$wp_customize->add_control (
+		new WP_Customize_Image_Control(
+			$wp_customize ,
+			'img-upload' ,
+			[
+				'label'    => 'Logo upload' ,
+				'section'  => 'wbb_theme_section_one' ,
+				'settings' => 'wbb-logo-img-upload'
+			]
+		)
+	);
+
+	//USING AJAX TO UPDATE THE LIVE PREVIEW
+	if ( $wp_customize->is_preview () && ! is_admin () )
+	{
+		add_action ( 'wp_footer' , function ()
+		{
+			?>
+			<script type="text/javascript">
+				(function ($)
+				{
+					wp.customize ( 'wbb-logo-img-upload' , function (value)
+					{
+						value.bind ( function (to)
+						             {
+							             $ ( '.js-site-logo' ).attr ( 'src' , to );
+						             } );
+					} );
+				}) ( jQuery )
+			</script>
+		<?php
+
+		} , 21 );
+	}
+
+} );

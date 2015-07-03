@@ -28,7 +28,6 @@ if ( ! defined ( 'WPINC' ) )
 <div class="main-container">
 
 	<main class="site-main" role=main">
-
 		<?php include WBB_System_Core::load_content (); ?>
 
 	</main>

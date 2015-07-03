@@ -265,7 +265,7 @@ add_action ( 'customize_register' , function ( $wp_customize )
 
 		'wbb_theme_section_one' ,
 		[
-			'title'       => 'Wbb Theme Settings' ,
+			'title'       => 'Logo' ,
 			'description' => 'This is a settings section.' ,
 			'priority'    => 35 ,
 		]
@@ -280,7 +280,7 @@ add_action ( 'customize_register' , function ( $wp_customize )
 			$wp_customize ,
 			'img-upload' ,
 			[
-				'label'    => 'Image Upload' ,
+				'label'    => 'Logo upload' ,
 				'section'  => 'wbb_theme_section_one' ,
 				'settings' => 'wbb-logo-img-upload'
 			]

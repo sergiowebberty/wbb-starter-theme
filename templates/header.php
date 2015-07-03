@@ -21,58 +21,6 @@
 		<p class="site-description"><?php bloginfo ( 'description' ); ?></p>
 
 	</div>
-	<!-- .site-branding -->
-    <!--<div class="site-navigation" role="banner">
-        <div class="navigation-wrapper">
-            <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
-            <nav role="navigation">
-                <ul id="js-navigation-menu" class="navigation-menu show">
-                    <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
-                    <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
-                    <li class="nav-link hover-menu">
-                        <a href="javascript:void(0)">More</a>
-                        <ul class="submenu">
-                            <li class="hover-menu">
-                                <a href="javascript:void(0)" class="hover-menu-item">Item with submenu</a>
-                                <ul class="submenu">
-                                    <li><a href="javascript:void(0)">Submenu Item</a></li>
-                                    <li><a href="javascript:void(0)">Another Item</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-link"><a href="javascript:void(0)">Sign up</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>-->
-
-	<!--<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">
-		<div class="navigation-wrapper">
-            <nav role="navigation">
-
-                <?php
-/*                if ( has_nav_menu ( 'primary_navigation' ) ) :
-
-                    wp_nav_menu ( [
-                        'menu'            => 'primary' ,
-                        'theme_location'  => 'primary_navigation' ,
-                        'depth'           => 2 ,
-                        'container'       => '' ,
-                        'menu_class'      => 'navigation-menu show' ,
-                        'menu_id'         => 'js-navigation-menu' ,
-                        'fallback_cb'     => 'Neat_Menu_Walker::fallback' ,
-                        'walker'          => new Neat_Menu_Walker()
-                    ] );
-
-                endif;
-
-                */?>
-
-            </nav>
-
-		</div>
-	</div>-->
 
 	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<div class="navigation-wrapper">
@@ -110,8 +58,6 @@
 
 		</div>
 	</div>
-
-
 
 	<!-- #site-navigation -->
 

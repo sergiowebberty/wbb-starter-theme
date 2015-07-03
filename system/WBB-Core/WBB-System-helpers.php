@@ -306,15 +306,15 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 				// Day archive
 
 				// Year link
-				echo '<li class="item-year item-year-' . get_the_time ( 'Y' ) . '"><a  itemprop="url" class="bread-year bread-year-' . get_the_time ( 'Y' ) . '" href="' . get_year_link ( get_the_time ( 'Y' ) ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) . ' Archives</a></li>';
+				echo '<li class="item-year item-year-' . get_the_time ( 'Y' ) . '"><a  itemprop="url" class="bread-year bread-year-' . get_the_time ( 'Y' ) . '" href="' . get_year_link ( get_the_time ( 'Y' ) ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) .  __ ( ' Archives: ', WBB_THEME_SLUG ).' </a></li>';
 				//echo '<li class="separator separator-' . get_the_time ( 'Y' ) . '"> ' . $separator . ' </li>';
 
 				// Month link
-				echo '<li class="item-month item-month-' . get_the_time ( 'm' ) . '"><a  itemprop="url" class="bread-month bread-month-' . get_the_time ( 'm' ) . '" href="' . get_month_link ( get_the_time ( 'Y' ) , get_the_time ( 'm' ) ) . '" title="' . get_the_time ( 'M' ) . '">' . get_the_time ( 'M' ) . ' Archives</a></li>';
+				echo '<li class="item-month item-month-' . get_the_time ( 'm' ) . '"><a  itemprop="url" class="bread-month bread-month-' . get_the_time ( 'm' ) . '" href="' . get_month_link ( get_the_time ( 'Y' ) , get_the_time ( 'm' ) ) . '" title="' . get_the_time ( 'M' ) . '">' . get_the_time ( 'M' ) .  __ ( ' Archives: ', WBB_THEME_SLUG ). ' </a></li>';
 				//echo '<li class="separator separator-' . get_the_time ( 'm' ) . '"> ' . $separator . ' </li>';
 
 				// Day display
-				echo '<li class="item-current item-' . get_the_time ( 'j' ) . '"><strong class="bread-current bread-' . get_the_time ( 'j' ) . '"> ' . get_the_time ( 'jS' ) . ' ' . get_the_time ( 'M' ) . ' Archives</strong></li>';
+				echo '<li class="item-current item-' . get_the_time ( 'j' ) . '"><strong class="bread-current bread-' . get_the_time ( 'j' ) . '"> ' . get_the_time ( 'jS' ) . ' ' . get_the_time ( 'M' ) .  __ ( ' Archives: ', WBB_THEME_SLUG ).' </strong></li>';
 
 			}
 			else if ( is_month () )
@@ -327,14 +327,14 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 				//echo '<li class="separator separator-' . get_the_time ( 'Y' ) . '"> ' . $separator . ' </li>';
 
 				// Month display
-				echo '<li class="item-month item-month-' . get_the_time ( 'm' ) . '"><strong class="bread-month bread-month-' . get_the_time ( 'm' ) . '" title="' . get_the_time ( 'M' ) . '">' . get_the_time ( 'M' ) . ' Archives</strong></li>';
+				echo '<li class="item-month item-month-' . get_the_time ( 'm' ) . '"><strong class="bread-month bread-month-' . get_the_time ( 'm' ) . '" title="' . get_the_time ( 'M' ) . '">' . get_the_time ( 'M' ) . __ ( ' Archives: ', WBB_THEME_SLUG ).'</strong></li>';
 
 			}
 			else if ( is_year () )
 			{
 
 				// Display year archive
-				echo '<li class="item-current item-current-' . get_the_time ( 'Y' ) . '"><strong class="bread-current bread-current-' . get_the_time ( 'Y' ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) . ' Archives</strong></li>';
+				echo '<li class="item-current item-current-' . get_the_time ( 'Y' ) . '"><strong class="bread-current bread-current-' . get_the_time ( 'Y' ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) . __ ( ' Archives: ', WBB_THEME_SLUG ). ' </strong></li>';
 
 			}
 			else if ( is_author () )
@@ -347,21 +347,21 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 				$userdata = get_userdata ( $author );
 
 				// Display author name
-				echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . 'Author: ' . $userdata->display_name . '</strong></li>';
+				echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . __ ( ' Author: ', WBB_THEME_SLUG )  . $userdata->display_name . '</strong></li>';
 
 			}
 			else if ( get_query_var ( 'paged' ) )
 			{
 
 				// Paginated archives
-				echo '<li class="item-current item-current-' . get_query_var ( 'paged' ) . '"><strong class="bread-current bread-current-' . get_query_var ( 'paged' ) . '" title="Page ' . get_query_var ( 'paged' ) . '">' . __ ( 'Page' ) . ' ' . get_query_var ( 'paged' ) . '</strong></li>';
+				echo '<li class="item-current item-current-' . get_query_var ( 'paged' ) . '"><strong class="bread-current bread-current-' . get_query_var ( 'paged' ) . '" title="Page ' . get_query_var ( 'paged' ) . '">' . __ ( 'Page', WBB_THEME_SLUG ) . ' ' . get_query_var ( 'paged' ) . '</strong></li>';
 
 			}
 			else if ( is_search () )
 			{
 
 				// Search results page
-				echo '<li class="item-current item-current-' . get_search_query () . '"><strong class="bread-current bread-current-' . get_search_query () . '" title="Search results for: ' . get_search_query () . '">Search results for: ' . get_search_query () . '</strong></li>';
+				echo '<li class="item-current item-current-' . get_search_query () . '"><strong class="bread-current bread-current-' . get_search_query () . '" title="Search results for: ' . get_search_query () . '"> '.  __ ( ' Search results for: ', WBB_THEME_SLUG )   . get_search_query () . '</strong></li>';
 
 			}
 			elseif ( is_404 () )
@@ -413,4 +413,32 @@ if ( ! function_exists ( 'html_schema' ) )
 
 		echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
 	}
+}
+
+/************************************************************************************************************************************************
+ * Adding pagination
+ ***********************************************************************************************************************************************/
+if ( ! function_exists ( 'wbb_custom_pagination' ) )
+{
+
+	function wbb_custom_pagination ()
+	{
+
+		global $wp_query;
+
+		$big = 999999999; // need an unlikely integer
+
+		echo paginate_links ( [
+			'base'      => str_replace ( $big , '%#%' , esc_url ( get_pagenum_link ( $big ) ) ) ,
+			'format'    => '?paged=%#%' ,
+			'current'   => max ( 1 , get_query_var ( 'paged' ) ) ,
+			'total'     => $wp_query->max_num_pages ,
+			'prev_next' => FALSE ,
+			'prev_next' => TRUE ,
+			'prev_text' => __ ( '«' ,WBB_THEME_SLUG) ,
+			'next_text' => __ ( '»',WBB_THEME_SLUG ) ,
+		] );
+
+	}
+
 }

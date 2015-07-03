@@ -6,7 +6,6 @@
 
 // IMPORTANT : KEEP THIS FILE CLEAN AS YOU CAN ....
 
-
 /*
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default upload folder
@@ -22,21 +21,52 @@ if ( get_option ( 'upload_path' ) == 'wp-content/uploads' || get_option ( 'uploa
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
-| Sidebars
+| Sidebars /  Remove the  small segment of css in the head / Head Clean
 | ----------------------------------------------------------------------------------------------------------------------
 | Set some default sidebars ....
+| There is a small segment of css in the head that we can remove
 */
-register_sidebar (
-	[
-		'name'          => __ ( 'Main Sidebar' , 'webberty' ) ,
-		'id'            => 'sidebar-1' ,
-		'description'   => __ ( 'Widgets in this area will be shown on all posts and pages.' , 'webberty' ) ,
-		'before_widget' => '<li id="%1$s" class="widget %2$s">' ,
-		'after_widget'  => '</li>' ,
-		'before_title'  => '<h2 class="widgettitle">' ,
-		'after_title'   => '</h2>' ,
-	]
-);
+add_action ( 'widgets_init' , 'wbb_action_widgets_init' );
+function wbb_action_widgets_init ()
+{
+
+	global $wp_widget_factory;
+
+	remove_action ( 'wp_head' ,
+		[
+			$wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ] ,
+			'recent_comments_style'
+		]
+	);
+
+	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 , 0 );
+	remove_action ( 'wp_head' , 'feed_links' , 10 );
+	remove_action ( 'wp_head' , 'rsd_link' );
+	remove_action ( 'wp_head' , 'wlwmanifest_link' );
+	remove_action ( 'wp_head' , 'index_rel_link' );
+	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 , 0 );
+	remove_action ( 'wp_head' , 'start_post_rel_link' , 10 , 0 );
+	remove_action ( 'wp_head' , 'adjacent_posts_rel_link' , 10 , 0 );
+	remove_action ( 'wp_head' , 'wp_shortlink_wp_head' , 10 , 0 );
+	remove_action ( 'wp_head' , 'wp_generator' , 10 , 0 );
+	remove_action ( 'wp_head' , 'print_emoji_detection_script' , 7 );
+	remove_action ( 'admin_print_scripts' , 'print_emoji_detection_script' );
+	remove_action ( 'wp_print_styles' , 'print_emoji_styles' );
+	remove_action ( 'admin_print_styles' , 'print_emoji_styles' );
+
+	register_sidebar (
+		[
+			'name'          => __ ( 'Main Sidebar' , WBB_THEME_SLUG ) ,
+			'id'            => 'sidebar-1' ,
+			'description'   => __ ( 'Widgets in this area will be shown on all posts and pages.' , WBB_THEME_SLUG ) ,
+			'before_widget' => '<li id="%1$s" class="widget %2$s">' ,
+			'after_widget'  => '</li>' ,
+			'before_title'  => '<h2 class="widgettitle">' ,
+			'after_title'   => '</h2>' ,
+		]
+	);
+
+}
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
@@ -53,19 +83,19 @@ register_sidebar (
 | ['is_page_template', 'about.php']
 | ['is_post_type_archive', ['foo', 'bar', 'baz']]
 */
-add_filter ( 'WBB_display_sidebar' ,
-	function ()
-	{
+function wbb_filter_display_sidebar ()
+{
 
-		return [
-			'is_404' ,
-			'is_home' ,
-			'is_front_page' ,
-			'is_single' ,
-		];
+	return [
+		'is_404' ,
+		'is_home' ,
+		'is_front_page' ,
+		'is_single' ,
+	];
 
-	}
-);
+}
+
+add_filter ( 'WBB_display_sidebar' , 'wbb_filter_display_sidebar' );
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
@@ -73,12 +103,12 @@ add_filter ( 'WBB_display_sidebar' ,
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default Menu's
 */
-register_nav_menu ( 'primary_navigation' , __ ( 'Main navigation for the website' ) );
+register_nav_menu ( 'primary_navigation' , __ ( 'Main navigation for the website' , WBB_THEME_SLUG ) );
 
-$menuname           = 'Main Navigation';
-$primary_navigation = 'primary_navigation';
-$menu_exists        = wp_get_nav_menu_object ( $menuname );
-
+$menuname                  = 'Main Navigation';
+$primary_navigation        = 'primary_navigation';
+$primary_footer_navigation = 'primary_footer_navigation';
+$menu_exists               = wp_get_nav_menu_object ( $menuname );
 
 // If it doesn't exist, let's create it.
 if ( ! $menu_exists )
@@ -89,7 +119,7 @@ if ( ! $menu_exists )
 	// Set up default BuddyPress links and add them to the menu.
 	wp_update_nav_menu_item ( $menu_id , 0 ,
 		[
-			'menu-item-title'   => __ ( 'Home' ) ,
+			'menu-item-title'   => __ ( 'Home' , WBB_THEME_SLUG ) ,
 			'menu-item-classes' => 'home' ,
 			'menu-item-url'     => ( '/' ) ,
 			'menu-item-status'  => 'publish'
@@ -121,32 +151,16 @@ if ( ! $menu_exists )
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
-| Head Clean
-| ----------------------------------------------------------------------------------------------------------------------
-| Set default Menu's
-*/
-remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 , 0 );
-remove_action ( 'wp_head' , 'feed_links' , 10 );
-remove_action ( 'wp_head' , 'rsd_link' );
-remove_action ( 'wp_head' , 'wlwmanifest_link' );
-remove_action ( 'wp_head' , 'index_rel_link' );
-remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 , 0 );
-remove_action ( 'wp_head' , 'start_post_rel_link' , 10 , 0 );
-remove_action ( 'wp_head' , 'adjacent_posts_rel_link' , 10 , 0 );
-remove_action ( 'wp_head' , 'wp_shortlink_wp_head' , 10 , 0 );
-remove_action ( 'wp_head' , 'wp_generator' , 10 , 0 );
-remove_action ( 'wp_head' , 'print_emoji_detection_script' , 7 );
-remove_action ( 'admin_print_scripts' , 'print_emoji_detection_script' );
-remove_action ( 'wp_print_styles' , 'print_emoji_styles' );
-remove_action ( 'admin_print_styles' , 'print_emoji_styles' );
-
-/*
-| ----------------------------------------------------------------------------------------------------------------------
-| Theme Support
+| Theme Support / Loads the theme's translated strings.
 | ----------------------------------------------------------------------------------------------------------------------
 | Set Some Default The	<title><?php wp_title ( '|' , TRUE , 'right' ); ?></title>me Support Settings
+| If the current locale exists as a .mo file in the theme's root directory,
+| it will be included in the translated strings by the $domain.
+| The .mo files must be named based on the locale exactly, sv_SE.mo for example.
+| More info : https://codex.wordpress.org/Function_Reference/load_theme_textdomain
 */
-add_action ( 'after_setup_theme' , function ()
+add_action ( 'after_setup_theme' , 'wbb_action_after_setup_theme' );
+function wbb_action_after_setup_theme ()
 {
 
 	add_theme_support ( 'html5' ,
@@ -160,6 +174,10 @@ add_action ( 'after_setup_theme' , function ()
 	);
 
 	add_theme_support ( 'automatic-feed-links' );
+
+	add_theme_support ( "title-tag" );
+
+	add_theme_support ( "post-thumbnails" );
 
 	add_theme_support ( 'post-formats' ,
 		[
@@ -199,8 +217,9 @@ add_action ( 'after_setup_theme' , function ()
 		]
 	);
 
+	load_theme_textdomain ( WBB_THEME_SLUG , get_template_directory () . '/languages' );
 
-} );
+}
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
@@ -209,7 +228,8 @@ add_action ( 'after_setup_theme' , function ()
 | Add extra meta data in the heade.php side when <?php wp_head (); ?> is used
 | This functionality is placed in system/WBB_Core/WBB-Core.php function name  AddMetaTags ().
 */
-add_action ( 'wp_head' , function ()
+add_action ( 'wp_head' , 'wbb_action_wp_head' , 1 );
+function wbb_action_wp_head ()
 {
 
 	//Set custom head meta when there is MSIE ...
@@ -224,28 +244,7 @@ add_action ( 'wp_head' , function ()
 
 	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo ( 'wpurl' ) . '/favicon.ico" />' . "\n";
 
-
-} , 1 );
-
-/*
-| ----------------------------------------------------------------------------------------------------------------------
-| Remove the  small segment of css in the head
-| ----------------------------------------------------------------------------------------------------------------------
-| There is a small segment of css in the head that we can remove
-*/
-add_action ( 'widgets_init' , function ()
-{
-
-	global $wp_widget_factory;
-
-	remove_action ( 'wp_head' ,
-		[
-			$wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ] ,
-			'recent_comments_style'
-		]
-	);
-
-} );
+}
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
@@ -254,19 +253,20 @@ add_action ( 'widgets_init' , function ()
 |  Adds the individual sections, settings, and controls to the theme customizer
 |  More documentation :
 |   - http://themefoundation.com/wordpress-theme-customizer/
+|   - https://codex.wordpress.org/Plugin_API/Action_Reference/customize_register
 |   - https://codex.wordpress.org/Class_Reference/WP_Customize_Control
 |   - https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
 */
-add_action ( 'customize_register' , function ( $wp_customize )
+add_action ( 'customize_register' , 'action_customize_register' );
+function action_customize_register ( $wp_customize )
 {
-
 	// ADD A NEW SECTION TO THE CUSTOMIZER
 	$wp_customize->add_section (
 
 		'wbb_theme_section_one' ,
 		[
-			'title'       => 'Logo' ,
-			'description' => 'This is a settings section.' ,
+			'title'       => __ ( 'Logo' , WBB_THEME_SLUG ) ,
+			'description' => __ ( 'Add Site logo .' , WBB_THEME_SLUG ) ,
 			'priority'    => 35 ,
 		]
 	);
@@ -280,7 +280,7 @@ add_action ( 'customize_register' , function ( $wp_customize )
 			$wp_customize ,
 			'img-upload' ,
 			[
-				'label'    => 'Logo upload' ,
+				'label'    => __ ( 'Logo upload' , WBB_THEME_SLUG ) ,
 				'section'  => 'wbb_theme_section_one' ,
 				'settings' => 'wbb-logo-img-upload'
 			]
@@ -290,24 +290,27 @@ add_action ( 'customize_register' , function ( $wp_customize )
 	//USING AJAX TO UPDATE THE LIVE PREVIEW
 	if ( $wp_customize->is_preview () && ! is_admin () )
 	{
-		add_action ( 'wp_footer' , function ()
-		{
-			?>
-			<script type="text/javascript">
-				(function ($)
-				{
-					wp.customize ( 'wbb-logo-img-upload' , function (value)
-					{
-						value.bind ( function (to)
-						             {
-							             $ ( '.js-site-logo' ).attr ( 'src' , to );
-						             } );
-					} );
-				}) ( jQuery )
-			</script>
-		<?php
-
-		} , 21 );
+		add_action ( 'wp_footer' , 'wbb_action_wp_footer' , 21 );
 	}
 
-} );
+}
+
+function wbb_action_wp_footer ()
+{
+
+	?>
+	<script type="text/javascript">
+		(function ($)
+		{
+			wp.customize ( 'wbb-logo-img-upload' , function (value)
+			{
+				value.bind ( function (to)
+				             {
+					             $ ( '.js-site-logo' ).attr ( 'src' , to );
+				             } );
+			} );
+		}) ( jQuery )
+	</script>
+<?php
+}
+

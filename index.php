@@ -1,9 +1,16 @@
-
 <?php if ( ! defined ( 'WPINC' ) )
 {
 	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
 	die( "404 Not Found" );
 }
+?>
+
+<?php
+query_posts ( [
+	'posts_per_page' => 5 ,
+	'paged'          => ( get_query_var ( 'paged' ) == 0 ) ? 1 : get_query_var ( 'paged' )
+] );
+
 ?>
 <?php if ( ! have_posts () ) : ?>
 
@@ -21,6 +28,6 @@
 
 	<?php get_template_part ( 'templates/content' , get_post_type () != 'post' ? get_post_type () : get_post_format () ); ?>
 
-<?php endwhile; ?>
+<?php endwhile; wp_reset_query(); ?>
 
-<?php the_posts_navigation (); ?>
+<?php echo wbb_custom_pagination( ); ?>

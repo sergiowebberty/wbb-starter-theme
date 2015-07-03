@@ -257,7 +257,7 @@ add_action ( 'widgets_init' , function ()
 |   - https://codex.wordpress.org/Class_Reference/WP_Customize_Control
 |   - https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
 */
-function example_customizer ( $wp_customize )
+add_action ( 'customize_register' , function ( $wp_customize )
 {
 
 	// ADD A NEW SECTION TO THE CUSTOMIZER
@@ -310,6 +310,4 @@ function example_customizer ( $wp_customize )
 		} , 21 );
 	}
 
-}
-
-add_action ( 'customize_register' , 'example_customizer' );
+} );

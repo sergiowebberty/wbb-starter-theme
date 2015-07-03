@@ -222,6 +222,9 @@ add_action ( 'wp_head' , function ()
 
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
 
+	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo ( 'wpurl' ) . '/favicon.ico" />' . "\n";
+
+
 } , 1 );
 
 /*

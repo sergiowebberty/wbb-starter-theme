@@ -266,7 +266,7 @@ add_action ( 'customize_register' , function ( $wp_customize )
 		'wbb_theme_section_one' ,
 		[
 			'title'       => 'Logo' ,
-			'description' => 'This is a settings section.' ,
+			'description' => 'Add Site logo .' ,
 			'priority'    => 35 ,
 		]
 	);

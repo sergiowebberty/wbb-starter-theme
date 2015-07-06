@@ -594,11 +594,15 @@ img {
     visibility: visible; }
 
 .sliding-panel-button {
-  padding: 10px 16px;
+  padding: 10px 10px;
   display: inline-block;
   cursor: pointer;
   position: relative;
-  outline: none; }
+  outline: none;
+  border-radius: 50%;
+  border: 1px solid #477dca;
+  color: #477dca;
+  background-color: transparent; }
   .sliding-panel-button img {
     height: 1.3em; }
 

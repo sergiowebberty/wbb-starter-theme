@@ -30,6 +30,7 @@ if ( ! defined ( 'WPINC' ) )
     <!-- START BREADCRUMB -->
     <?php wbb_breadcrumb (); ?>
 
+
 	<main class="site-main" role=main">
 		<?php include WBB_System_Core::load_content (); ?>
 
@@ -44,6 +45,19 @@ if ( ! defined ( 'WPINC' ) )
 </div>
 
 <?php echo get_template_part ( 'templates/footer' ); ?>
+
+
+<!-- Sliding panel -->
+<nav class="js-menu sliding-panel-content">
+	<ul>
+		<li><a href="javascript:void(0)">Item 1</a></li>
+		<li><a href="javascript:void(0)">Item 2</a></li>
+		<li><a href="javascript:void(0)">Item 3</a></li>
+	</ul>
+</nav>
+
+<div class="js-menu-screen sliding-panel-fade-screen"></div>
+
 
 </body>
 

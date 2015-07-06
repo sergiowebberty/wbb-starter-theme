@@ -175,7 +175,8 @@ a img.aligncenter {
       background: transparent;
       display: inline;
       text-decoration: none;
-      width: auto; } }
+      width: auto;
+      z-index: 3; } }
 .site-navigation li.menu-item a {
   display: inline-block; }
   @media screen and (min-width: 53.75em) {

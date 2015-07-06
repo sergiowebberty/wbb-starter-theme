@@ -29,7 +29,7 @@
 
 	<!-- Button launcher sliding panel -->
 	<button type="button" class="js-menu-trigger sliding-panel-button">
-		Click for Sliding Panel
+		<i class="fa fa-bars"></i>
 	</button>
 
 	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">

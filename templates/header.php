@@ -27,6 +27,11 @@
 
 	</div>
 
+	<!-- Button launcher sliding panel -->
+	<button type="button" class="js-menu-trigger sliding-panel-button">
+		<i class="fa fa-bars"></i>
+	</button>
+
 	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<div class="navigation-wrapper">
 			<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>

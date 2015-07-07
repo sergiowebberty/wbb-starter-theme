@@ -47,6 +47,15 @@ if ( ! defined ( 'WPINC' ) )
 <?php echo get_template_part ( 'templates/footer' ); ?>
 
 
+
+
+
+
+
+
+
+
+
 <!-- Sliding panel -->
 <nav class="js-menu sliding-panel-content">
 	<ul>

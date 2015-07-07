@@ -34,14 +34,14 @@ if ( ! defined ( 'WPINC' ) )
 	<main class="site-main" role=main">
 		<?php include WBB_System_Core::load_content (); ?>
 
-	</main>
+
 
 	<?php if ( wbb_display_sidebar () ) : ?>
 
 		<?php echo get_template_part ( 'templates/sidebar' ); ?>
 
 	<?php endif; ?>
-
+	</main>
 </div>
 
 <?php echo get_template_part ( 'templates/footer' ); ?>

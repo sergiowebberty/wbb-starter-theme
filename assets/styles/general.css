@@ -125,6 +125,15 @@ a img.aligncenter {
   padding: 0 !important;
   margin: 0 !important; }
 
+.sticky {
+  margin: 0; }
+
+.gallery-caption {
+  margin: 0; }
+
+.bypostauthor {
+  margin: 0; }
+
 /* Navigation bar */
 .site-navigation .navigation-menu-button {
   display: block;

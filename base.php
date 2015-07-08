@@ -30,7 +30,7 @@ if ( ! defined ( 'WPINC' ) )
 
 
 
-	<main class="site-main" role=main">
+	<div class="main-container">
 
 
 		<?php include WBB_System_Core::load_content (); ?>
@@ -43,7 +43,7 @@ if ( ! defined ( 'WPINC' ) )
 
 	<?php endif; ?>
 
-	</main>
+	</div>
 
 
 <?php echo get_template_part ( 'templates/footer' ); ?>

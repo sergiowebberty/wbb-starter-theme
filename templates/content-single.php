@@ -14,6 +14,8 @@
 ?>
 <?php wbb_breadcrumb (); ?>
 
+<main class="article" role="main">
+
 <?php while ( have_posts () ) : the_post (); ?>
 
 	<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>  itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
@@ -51,3 +53,5 @@
 	</article>
 
 <?php endwhile; ?>
+
+    </main>

@@ -11,22 +11,27 @@
 	die( "404 Not Found" );
 }
 ?>
-<article <?php post_class (); ?>>
 
-	<header itemprop="headline">
-		<h2 class="entry-title"><a href="<?php the_permalink (); ?>" itemprop="url"><?php the_title (); ?></a></h2>
+<main class="article" role="main">
 
-		<?php if ( get_post_type () === 'post' )
-		{
-			wbb_entry_meta ();
-		} ?>
+    <article <?php post_class (); ?>>
 
-	</header>
+        <header itemprop="headline">
+            <h2 class="entry-title"><a href="<?php the_permalink (); ?>" itemprop="url"><?php the_title (); ?></a></h2>
 
-	<div class="entry-summary" itemprop="text">
+            <?php if ( get_post_type () === 'post' )
+            {
+                wbb_entry_meta ();
+            } ?>
 
-		<?php the_excerpt (); ?>
+        </header>
 
-	</div>
+        <div class="entry-summary" itemprop="text">
 
-</article>
+            <?php the_excerpt (); ?>
+
+        </div>
+
+    </article>
+
+</main>

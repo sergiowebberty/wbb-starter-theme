@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying a message when no posts are found.
+ * Template part for displaying the overview items for archive, category and index
  *
  * @package wbb-starter-theme
  */
@@ -15,37 +15,37 @@
 
 
 
+    <article id="post-<?php the_ID (); ?>" <?php post_class (); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPosts">
 
-<article id="post-<?php the_ID (); ?>" <?php post_class (); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-
-	<header class="entry-header"  itemprop="headline">
-		<?php the_title ( sprintf ( '<h1 class="entry-title"><a href="%s" rel="bookmark" itemprop="url" >' , esc_url ( get_permalink () ) ) , '</a></h1>' ); ?>
+        <header class="entry-header"  itemprop="headline">
+            <?php the_title ( sprintf ( '<h1 class="entry-title"><a href="%s" rel="bookmark" itemprop="url" >' , esc_url ( get_permalink () ) ) , '</a></h1>' ); ?>
 
 
-		<?php if ( 'post' == get_post_type () ) : ?>
+            <?php if ( 'post' == get_post_type () ) : ?>
 
-			<div class="entry-meta">
+                <div class="entry-meta">
 
-				<?php wbb_entry_meta (); ?> <!-- function for date and author and comments count /--->
+                    <?php wbb_entry_meta (); ?> <!-- function for date and author and comments count /--->
 
-			</div>
+                </div>
 
-		<?php endif; ?>
+            <?php endif; ?>
 
-	</header>
-	<!-- .entry-header -->
+        </header>
+        <!-- .entry-header -->
 
-	<div class="entry-summary" itemprop="text">
+        <div class="entry-summary" itemprop="text">
 
-		<?php the_excerpt (); ?>
+            <?php the_excerpt (); ?>
 
-	</div>
+        </div>
 
-	<footer class="entry-footer">
+        <footer class="entry-footer">
 
-		<?php wbb_entry_footer (); ?>     <!-- function for categories, tags and comments/--->
+            <?php wbb_entry_footer (); ?>     <!-- function for categories, tags and comments/--->
 
-	</footer>
-	<!-- .entry-footer -->
+        </footer>
+        <!-- .entry-footer -->
 
-</article><!-- #post-## -->
+    </article><!-- #post-## -->
+

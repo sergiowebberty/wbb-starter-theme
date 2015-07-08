@@ -5,6 +5,8 @@
 }
 ?>
 
+<main class="article-list" role="main">
+
 <?php
 query_posts ( [
 	'posts_per_page' => 5 ,
@@ -32,3 +34,6 @@ query_posts ( [
 
 
 <?php echo wbb_custom_pagination( ); ?>
+
+
+</main>

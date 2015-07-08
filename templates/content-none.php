@@ -12,24 +12,28 @@
 }
 ?>
 
-<article <?php post_class (); ?>>
+<main class="article" role="main">
 
-	<?php if ( is_home () && current_user_can ( 'publish_posts' ) ) : ?>
+    <article <?php post_class (); ?>>
 
-		<p><?php printf ( wp_kses ( __ ( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.' , WBB_THEME_SLUG ) , array ( 'a' => array ( 'href' => array () ) ) ) , esc_url ( admin_url ( 'post-new.php' ) ) ); ?></p>
+        <?php if ( is_home () && current_user_can ( 'publish_posts' ) ) : ?>
 
-	<?php elseif ( is_search () ) : ?>
+            <p><?php printf ( wp_kses ( __ ( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.' , WBB_THEME_SLUG ) , array ( 'a' => array ( 'href' => array () ) ) ) , esc_url ( admin_url ( 'post-new.php' ) ) ); ?></p>
 
-		<p><?php esc_html_e ( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' , WBB_THEME_SLUG ); ?></p>
+        <?php elseif ( is_search () ) : ?>
 
-		<?php get_search_form (); ?>
+            <p><?php esc_html_e ( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' , WBB_THEME_SLUG ); ?></p>
 
-	<?php else : ?>
+            <?php get_search_form (); ?>
 
-		<p><?php esc_html_e ( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.' , WBB_THEME_SLUG ); ?></p>
+        <?php else : ?>
 
-		<?php get_search_form (); ?>
+            <p><?php esc_html_e ( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.' , WBB_THEME_SLUG ); ?></p>
 
-	<?php endif; ?>
+            <?php get_search_form (); ?>
 
-</article>
+        <?php endif; ?>
+
+    </article>
+
+</main>

@@ -14,32 +14,36 @@
 
 <?php wbb_breadcrumb (); ?>
 
-<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
+<main class="article" role="main">
 
-	<header class="entry-header" itemprop="headline">
+    <article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
 
-		<?php the_title ( '<h1 class="entry-title">' , '</h1>' ); ?>
+        <header class="entry-header" itemprop="headline">
 
-	</header>
-	<!-- .entry-header -->
+            <?php the_title ( '<h1 class="entry-title">' , '</h1>' ); ?>
 
-	<div class="entry-content">
+        </header>
+        <!-- .entry-header -->
 
-		<?php the_content (); ?>
+        <div class="entry-content">
 
-		<?php wp_link_pages ( array (
-			'before' => '<nav class="pagination" itemscope itemtype="http://schema.org/SiteNavigationElement">' ,
-			'after'  => '</nav>'
-		) ); ?>
+            <?php the_content (); ?>
 
-	</div>
-	<!-- .entry-content -->
+            <?php wp_link_pages ( array (
+                'before' => '<nav class="pagination" itemscope itemtype="http://schema.org/SiteNavigationElement">' ,
+                'after'  => '</nav>'
+            ) ); ?>
 
-	<footer class="entry-footer">
+        </div>
+        <!-- .entry-content -->
 
-		<?php edit_post_link ( esc_html__ ( 'Edit' , WBB_THEME_SLUG ) , '<span class="edit-link">' , '</span>' ); ?>
+        <footer class="entry-footer">
 
-	</footer>
-	<!-- .entry-footer -->
-	<?php comments_template('/templates/comments.php'); ?>
-</article><!-- #post-## -->
+            <?php edit_post_link ( esc_html__ ( 'Edit' , WBB_THEME_SLUG ) , '<span class="edit-link">' , '</span>' ); ?>
+
+        </footer>
+        <!-- .entry-footer -->
+        <?php comments_template('/templates/comments.php'); ?>
+    </article><!-- #post-## -->
+
+</main>

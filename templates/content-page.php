@@ -11,6 +11,9 @@
 	die( "404 Not Found" );
 }
 ?>
+
+<?php wbb_breadcrumb (); ?>
+
 <article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
 
 	<header class="entry-header" itemprop="headline">

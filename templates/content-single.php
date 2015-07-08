@@ -12,6 +12,7 @@
 	die( "404 Not Found" );
 }
 ?>
+<?php wbb_breadcrumb (); ?>
 
 <?php while ( have_posts () ) : the_post (); ?>
 

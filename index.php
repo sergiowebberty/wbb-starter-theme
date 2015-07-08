@@ -30,4 +30,5 @@ query_posts ( [
 
 <?php endwhile; wp_reset_query(); ?>
 
+
 <?php echo wbb_custom_pagination( ); ?>

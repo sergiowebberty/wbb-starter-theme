@@ -9,7 +9,7 @@
 
 <?php
 query_posts ( [
-	'posts_per_page' => 5 ,
+	'posts_per_page' => get_option('posts_per_page '),
 	'paged'          => ( get_query_var ( 'paged' ) == 0 ) ? 1 : get_query_var ( 'paged' )
 ] );
 

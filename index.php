@@ -10,7 +10,7 @@
 
 <?php if ( ! have_posts () ) : ?>
 
-	<div class="alert alert-warning">
+	<div class="flash-alert">
 
 		<?php _e ( 'Sorry, no results were found.' , WBB_THEME_SLUG ); ?>
 

@@ -8,7 +8,7 @@
 
 <main class="article" role="main">
 
-	<div class="alert alert-warning">
+	<div class="flash-error">
 
 		<?php _e ( 'Sorry, but the page you were trying to view does not exist.' , WBB_THEME_SLUG ); ?>
 

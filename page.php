@@ -10,9 +10,16 @@ if ( ! defined ( 'WPINC' ) )
 	die( "404 Not Found" );
 }
 
+wbb_breadcrumb (); ?>
+
+<main class="article" role="main">
+
+<?php
 
 while ( have_posts () ) : the_post ();
 
 	get_template_part ( 'templates/content' , 'page' );
 
-endwhile;
+endwhile; ?>
+
+</main>

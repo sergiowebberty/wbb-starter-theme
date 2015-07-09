@@ -12,11 +12,9 @@
 	die( "404 Not Found" );
 }
 ?>
-<?php wbb_breadcrumb (); ?>
 
-<main class="article" role="main">
 
-<?php while ( have_posts () ) : the_post (); ?>
+
 
 	<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>  itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
@@ -52,6 +50,3 @@
 		<?php comments_template('/templates/comments.php'); ?>
 	</article>
 
-<?php endwhile; ?>
-
-    </main>

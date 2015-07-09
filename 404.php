@@ -6,6 +6,8 @@
  */
 ?>
 
+<main class="article" role="main">
+
 	<div class="alert alert-warning">
 
 		<?php _e ( 'Sorry, but the page you were trying to view does not exist.' , WBB_THEME_SLUG ); ?>
@@ -13,3 +15,5 @@
 	</div>
 
 <?php get_search_form (); ?>
+
+ </main>

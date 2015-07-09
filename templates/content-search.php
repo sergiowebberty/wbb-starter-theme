@@ -12,7 +12,7 @@
 }
 ?>
 
-<main class="article" role="main">
+
 
     <article <?php post_class (); ?>>
 
@@ -34,4 +34,4 @@
 
     </article>
 
-</main>
+

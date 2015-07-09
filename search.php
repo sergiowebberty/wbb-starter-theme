@@ -9,7 +9,11 @@ if ( ! defined ( 'WPINC' ) )
 	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
 	die( "404 Not Found" );
 }
+?>
 
+<main class="article" role="main">
+
+    <?php
 
 if ( ! have_posts () ) : ?>
 
@@ -30,3 +34,5 @@ if ( ! have_posts () ) : ?>
 <?php endwhile; ?>
 
 <?php the_posts_navigation (); ?>
+
+    </main>

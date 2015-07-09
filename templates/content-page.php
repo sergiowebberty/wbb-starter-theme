@@ -12,9 +12,7 @@
 }
 ?>
 
-<?php wbb_breadcrumb (); ?>
 
-<main class="article" role="main">
 
     <article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
 
@@ -46,4 +44,3 @@
         <?php comments_template('/templates/comments.php'); ?>
     </article><!-- #post-## -->
 
-</main>

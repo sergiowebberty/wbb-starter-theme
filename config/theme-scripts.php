@@ -23,6 +23,5 @@ function wbb_wp_enqueue_scripts()
 
 	// Scripts
 	wp_enqueue_style ( 'general-css' , '' . get_template_directory_uri () . '/assets/styles/general.css' , array () , '1.0.0' , 'all' );
-	wp_enqueue_style ( 'font-awesome-css' , '' . get_template_directory_uri () . '/assets/styles/sass/font-awesome/font-awesome.css' , array () , '1.0.0' , 'all' );
 
 }

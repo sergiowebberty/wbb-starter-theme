@@ -5,6 +5,13 @@
   $large-screen: em(860) !default;
   $large-screen: $large-screen;
 
+  display: none;
+
+  @include media($desktop){
+    display: block;
+  }
+
+
   // Mobile view
   .navigation-menu-button {
     display: block;

@@ -12,7 +12,6 @@
 }
 ?>
 
-<main class="article" role="main">
 
     <article <?php post_class (); ?>>
 
@@ -35,5 +34,3 @@
         <?php endif; ?>
 
     </article>
-
-</main>

@@ -28,8 +28,8 @@
 	</div>
 
 	<!-- Button launcher sliding panel -->
-	<button type="button" class="js-menu-trigger sliding-panel-button">
-		<i class="fa fa-bars"></i>
+	<button type="button" class="js-menu-trigger offcanvas-button">
+		...
 	</button>
 
 	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">

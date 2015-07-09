@@ -1,4 +1,4 @@
-.sliding-panel-content {
+.offcanvas-content {
   $action-color: #477DCA !default;
   $dark-gray: #333 !default;
   $sliding-panel-border-color: $dark-gray;
@@ -50,7 +50,7 @@
   }
 }
 
-.sliding-panel-fade-screen {
+.offcanvas-fade-screen {
   @include position(fixed, 0px 0px 0px 0px);
   @include transition;
   background: black;
@@ -64,16 +64,17 @@
   }
 }
 
-.sliding-panel-button {
-  padding: 10px 10px;
-  display: inline-block;
+.offcanvas-button {
+  padding: 10px 16px;
   cursor: pointer;
   position: relative;
   outline: none;
-  border-radius: 50%;
-  border: 1px solid $action-color;
-  color: $action-color;
-  background-color: transparent;
+
+  display: block;
+
+  @include media($desktop) {
+    display: none;
+  }
 
   img {
     height: 1.3em;

@@ -59,7 +59,7 @@ if ( ! defined ( 'WPINC' ) )
 
 
 <!-- Sliding panel -->
-<nav class="js-menu sliding-panel-content">
+<nav class="js-menu offcanvas-content">
 	<ul>
 		<li><a href="javascript:void(0)">Item 1</a></li>
 		<li><a href="javascript:void(0)">Item 2</a></li>
@@ -67,7 +67,7 @@ if ( ! defined ( 'WPINC' ) )
 	</ul>
 </nav>
 
-<div class="js-menu-screen sliding-panel-fade-screen"></div>
+<div class="js-menu-screen offcanvas-fade-screen"></div>
 
 
 </body>

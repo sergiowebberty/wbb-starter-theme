@@ -38,7 +38,7 @@
     $(document).ready(function () {
 
         // NEW MENU
-        $('#pushmenu_container').multilevelpushmenu({
+        $('#offcanvas_container').multileveloffcanvas({
             containersToPush: [$('#pushobj')],
             collapsed: true,
             fullCollapse: true,
@@ -65,7 +65,7 @@
             var container = $(".js-menu-opener");
 
             var data_colapsed = container.attr("data-colapsed");
-            $('#pushmenu_container').multilevelpushmenu('collapse');
+            $('#offcanvas_container').multileveloffcanvas('collapse');
 
 
             if (!container.is(e.target) // if the target of the click isn't the container...
@@ -98,7 +98,7 @@
 
             if (data_colapsed === "0") {
 
-                $('#pushmenu_container').multilevelpushmenu('expand');
+                $('#offcanvas_container').multileveloffcanvas('expand');
 
                 $(".js-menu-trigger").attr("data-colapsed", 1);
                 $('.js-close-menu').show("slow");
@@ -107,7 +107,7 @@
 
             if (data_colapsed === "1") {
 
-                $('#pushmenu_container').multilevelpushmenu('collapse');
+                $('#offcanvas_container').multileveloffcanvas('collapse');
 
                 $(".js-menu-opener").attr("data-colapsed", 0);
                 $('.js-close-menu').hide();
@@ -121,7 +121,7 @@
 
             $(this).hide();
 
-            $('#pushmenu_container').multilevelpushmenu('collapse');
+            $('#offcanvas_container').multileveloffcanvas('collapse');
 
             $(".js-menu-opener").attr("data-colapsed", 0);
 

@@ -24,12 +24,12 @@ if ( ! defined ( 'WPINC' ) )
 </div><![endif]-->
 
 
-<?php echo get_template_part ( 'components/push-menu' ); ?>
+<?php echo get_template_part ( 'components/offcanvas-menu' ); ?>
 
 
 <div id="pushobj">
 
-	<div class="container">
+	<div class="site-container">
 
 		<?php echo get_template_part ( 'templates/header' ); ?>
 
@@ -55,6 +55,7 @@ if ( ! defined ( 'WPINC' ) )
 		<?php echo get_template_part ( 'templates/footer' ); ?>
 
 	</div>
+
 </div>
 
 

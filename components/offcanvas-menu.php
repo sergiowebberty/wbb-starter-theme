@@ -1,8 +1,8 @@
-<div id="pushmenu_container">
+<div id="offcanvas_container">
 
 	<nav>
 
-		<div id="trigger-mobile" class="close-menu js-close-menu js-collapse-pushmenu reorder-close">x</div>
+		<div id="trigger-mobile" class="close-menu js-close-menu js-collapse-offcanvas reorder-close">x</div>
 
 		<?php
 		if ( has_nav_menu ( 'primary_navigation' ) ) :

@@ -26,8 +26,6 @@
 
 <?php endwhile; ?>
 
-
 <?php echo wbb_custom_pagination( ); ?>
-
 
 </main>

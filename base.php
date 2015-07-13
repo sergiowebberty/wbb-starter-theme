@@ -39,10 +39,10 @@ if ( ! defined ( 'WPINC' ) )
 			<?php wbb_breadcrumb (); ?>
 
 
-			<main class="site-main" role=main">
+
 				<?php include WBB_System_Core::load_content (); ?>
 
-			</main>
+
 
 			<?php if ( wbb_display_sidebar () ) : ?>
 

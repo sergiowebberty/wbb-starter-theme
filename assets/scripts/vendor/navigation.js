@@ -45,7 +45,7 @@
             preventItemClick: false,
             overlapWidth: 20,
             menuWidth: 255,
-            backText: "Terug",
+            backText: "Back",
             swipe: "desktop",
             /*onMenuSwipe: function () {
 

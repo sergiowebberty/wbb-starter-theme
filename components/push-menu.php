@@ -9,7 +9,13 @@
         <ul>
             <li><a href="javascript:void(0)">Item 1</a></li>
             <li><a href="javascript:void(0)">Item 2</a></li>
-            <li><a href="javascript:void(0)">Item 3</a></li>
+            <li><a href="javascript:void(0)">Item 3</a>
+                <ul>
+                    <li><a href="javascript:void(0)">Item 1</a></li>
+                    <li><a href="javascript:void(0)">Item 2</a></li>
+                    <li><a href="javascript:void(0)">Item 3</a></li>
+                </ul>
+            </li>
         </ul>
 
     </nav>

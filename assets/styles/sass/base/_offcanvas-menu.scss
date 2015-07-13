@@ -1,90 +1,218 @@
-.offcanvas-content {
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $sliding-panel-border-color: $dark-gray;
-  $sliding-panel-background: lighten($sliding-panel-border-color, 5%);
-  $sliding-panel-color: #fff;
-  $sliding-panel-border: 1px solid $sliding-panel-border-color;
-  $sliding-panel-background-hover: $action-color;
-  $sliding-panel-color-hover: #fff;
-  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+$mp-background: #fff;
+$mp-back: #ccc;
+$mp-border: #ccc;
+$mp-font: #000;
+$mp-shadow: #000;
+$mp-font-hover: #ffe;
+$mp-list-hover: #333;
 
-  @include position(fixed, 0px auto 0px 0px);
-  @include size(220px 100%);
-  @include transform(translateX(-220px));
-  @include transition(all 0.25s linear);
-  background: $sliding-panel-background;
-  z-index: 999999;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+/*============================================
+      PUSH MENU
+==============================================*/
+#offcanvas_container{
+  position: absolute;
+}
 
-  ul {
-    padding: 0;
-    margin: 0;
-  }
 
-  li {
-    list-style: none;
-  }
 
-  li a {
-    border-bottom: $sliding-panel-border;
-    color: $sliding-panel-color;
-    display: block;
+//Arrow right for item with submenu
+
+.icon-arrow-right::after{
+  font-family: 'FontAwesome';
+  content: '\f105';
+  position: absolute;
+  right: 40px;
+  z-index: -1;
+}
+
+//Close BUTTON
+
+.close-menu {
+  @media only screen and (min-width: 320px){
+    color: $mp-font;
+    cursor: pointer;
+    font-size: 35px;
     font-weight: bold;
-    padding: 1em;
-    text-decoration: none;
-
-    &:focus {
-      background-color: $sliding-panel-background-focus;
-    }
-
-    &:hover {
-      background-color: $sliding-panel-background-hover;
-      color: $sliding-panel-color-hover;
-    }
+    margin: 0;
+    padding: 5px 20px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 2000;
   }
 
-  &.is-visible {
-    @include transform(translateX(0));
-  }
 }
 
-.offcanvas-fade-screen {
-  @include position(fixed, 0px 0px 0px 0px);
-  @include transition;
-  background: black;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 999998;
-
-  &.is-visible {
-    opacity: 0.4;
-    visibility: visible;
-  }
+.menu-trigger {
+  float: left;
+  z-index: 99;
 }
 
-.offcanvas-button {
-  padding: 10px 16px;
-  cursor: pointer;
-  position: relative;
-  outline: none;
+.menu-trigger {
+  color: $mp-font;
+  font-size: 24px;
+}
 
-  display: block;
 
-  @include media($desktop) {
+/*---------------------------------------------------*/
+
+
+#mp-menu #searchform input[type=text]{
+  color: $mp-font;
+  padding: 5px;
+
+}
+
+#mp-menu #searchsubmit{
+  color: $mp-font;
+  background-color: $mp-background;
+
+}
+
+#menu-top-menu{
+  display: none;
+}
+
+@media only screen and (min-width: 320px){
+  #trigger-mobile{
     display: none;
   }
-
-  img {
-    height: 1.3em;
-  }
 }
 
-.offcanvas-close{
-  margin-top: 10px;
+.levelHolderClass ul {
+  /*overflow-y: auto;*/
+  height: 100%;
+  width: 255px;
+  position: fixed;
 
-  i{
-    cursor: pointer;
-  }
+}
+
+.multileveloffcanvas_wrapper {
+  //font-family: MuseoSansRounded-100;
+  position: fixed;
+  /*min-width: 100%;
+  min-height: 100%;*/
+  margin: 0;
+  padding: 0;
+  z-index: 999;
+}
+
+.multileveloffcanvas_wrapper .levelHolderClass {
+  position: fixed;
+  top: 0;
+  background: $mp-background;
+  width: auto;
+  min-height: 100%;
+  //font-family: MuseoSansRounded-100;
+  font-size: inherit;
+  zoom: 1;
+  z-index: 300;
+}
+
+.multileveloffcanvas_wrapper .ltr {
+  margin-left: -100%;
+  left: 0;
+  -moz-box-shadow: 5px 0 5px -5px $mp-shadow;
+  -webkit-box-shadow: 5px 0 5px -5px $mp-shadow;
+  box-shadow: 5px 0 5px -5px $mp-shadow;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=$mp-shadow,direction=90,strength=2);
+}
+
+.multileveloffcanvas_wrapper .rtl {
+  margin-right: -100%;
+  right: 0;
+  -moz-box-shadow: 5px 0 5px 5px $mp-shadow;
+  -webkit-box-shadow: 5px 0 5px 5px $mp-shadow;
+  box-shadow: 5px 0 5px 5px $mp-shadow;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=$mp-shadow,direction=270,strength=2);
+}
+
+.multileveloffcanvas_wrapper .multileveloffcanvas_inactive {
+  background: $mp-background;
+}
+
+.multileveloffcanvas_wrapper h2 {
+  font-size: 1.5em;
+  line-height: 1em;
+  font-weight: bold;
+  color: $mp-font;
+  padding: 0.6em .4em 0 1em;
+}
+
+.multileveloffcanvas_wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.multileveloffcanvas_wrapper li {
+  cursor: pointer;
+  border-top: 1px solid $mp-border;
+  padding: .6em .6em .6em .6em;
+}
+
+.multileveloffcanvas_wrapper li:last-child {
+  border-bottom: 1px solid $mp-border;
+}
+
+.multileveloffcanvas_wrapper li:hover {
+  background-color: #333;
+}
+
+.multileveloffcanvas_wrapper a {
+  display: block;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2em;
+  line-height: 1em;
+  padding: .4em .2em .4em 1em;
+  text-decoration: none;
+  color: $mp-font;
+}
+
+.multileveloffcanvas_wrapper a:hover {
+  color: $mp-font-hover;
+}
+
+.multileveloffcanvas_wrapper .backItemClass {
+  display: block;
+  padding: .4em .4em .4em 0;
+  border-top: 1px solid $mp-border;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.multileveloffcanvas_wrapper .backItemClass a{
+  color: $mp-font;
+}
+
+.multileveloffcanvas_wrapper .floatRight {
+  float: left;
+}
+
+.multileveloffcanvas_wrapper .floatLeft {
+  float: right;
+}
+
+.multileveloffcanvas_wrapper .cursorPointer {
+  cursor: pointer;
+}
+
+.multileveloffcanvas_wrapper .iconSpacing_ltr {
+  padding: 0 .4em 0 0;
+}
+
+.multileveloffcanvas_wrapper .iconSpacing_rtl {
+  padding: 0 0 0 .4em;
+}
+
+.reorder-close{
+  position: fixed;
+  left: 200px;
+  z-index: 2000;
+}
+
+.menu-item-has-children .sub-menu .sub-menu{
+  position: relative;
+  left: 0;
 }

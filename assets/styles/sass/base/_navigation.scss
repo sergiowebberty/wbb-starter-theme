@@ -1,5 +1,9 @@
 /* Navigation bar */
 
+.site-pushmenu{
+  display: inline-block;
+}
+
 
 .site-navigation {
   $large-screen: em(860) !default;

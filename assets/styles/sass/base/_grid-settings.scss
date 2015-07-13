@@ -7,6 +7,13 @@
 // $max-width: 1200px;
 
 body {
+  //max-width: $max-width;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 2em;
@@ -20,6 +27,7 @@ header {
 .main-container {
 
   @include outer-container;
+  display: inline-block;
 
   main {
 

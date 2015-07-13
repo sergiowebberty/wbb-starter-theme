@@ -1,23 +1,32 @@
 <div id="pushmenu_container">
 
-    <nav>
+	<nav>
 
-        <div id="trigger-mobile" class="close-menu js-close-menu js-collapse-pushmenu reorder-close">x</div>
+		<div id="trigger-mobile" class="close-menu js-close-menu js-collapse-pushmenu reorder-close">x</div>
 
-        <?php /*wp_nav_menu ( array ( 'menu' => 'Top Menu' , 'container' => "" ) ) ; */?>
+		<?php
+		if ( has_nav_menu ( 'primary_navigation' ) ) :
 
-        <ul>
-            <li><a href="javascript:void(0)">Item 1</a></li>
-            <li><a href="javascript:void(0)">Item 2</a></li>
-            <li><a href="javascript:void(0)">Item 3</a>
-                <ul>
-                    <li><a href="javascript:void(0)">Item 1</a></li>
-                    <li><a href="javascript:void(0)">Item 2</a></li>
-                    <li><a href="javascript:void(0)">Item 3</a></li>
-                </ul>
-            </li>
-        </ul>
+			$defaults = array (
+				'theme_location' => 'primary_navigation' ,
+				'menu'           => 'primary' ,
+				'container'      => '' ,
+				'echo'           => TRUE ,
+				'before'         => '' ,
+				'after'          => '' ,
+				'link_before'    => '' ,
+				'link_after'     => '' ,
+				'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>' ,
+				'depth'          => 4 ,
 
-    </nav>
+			);
+
+			wp_nav_menu ( $defaults );
+
+		endif;
+
+		?>
+
+	</nav>
 
 </div>

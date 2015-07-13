@@ -55,6 +55,7 @@ if ( ! defined ( 'WPINC' ) )
 		<?php echo get_template_part ( 'templates/footer' ); ?>
 
 	</div>
+
 </div>
 
 

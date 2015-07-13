@@ -28,9 +28,11 @@
 	</div>
 
 	<!-- Button launcher sliding panel -->
-	<button type="button" class="js-menu-trigger offcanvas-button">
-		...
-	</button>
+	<div class="site-pushmenu">
+		<a href="#" id="trigger" class="menu-trigger js-menu-trigger js-menu-opener" data-colapsed = 0>Push Menu</a>
+	</div>
+
+
 
 	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<div class="navigation-wrapper">

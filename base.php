@@ -23,40 +23,39 @@ if ( ! defined ( 'WPINC' ) )
 	experience this site
 </div><![endif]-->
 
-<?php echo get_template_part ( 'templates/header' ); ?>
 
-<div class="main-container">
-
-    <!-- START BREADCRUMB -->
-    <?php wbb_breadcrumb (); ?>
+<?php echo get_template_part ( 'components/push-menu' ); ?>
 
 
-	<main class="site-main" role=main">
-		<?php include WBB_System_Core::load_content (); ?>
+<div id="pushobj">
 
-	</main>
+	<div class="container">
 
-	<?php if ( wbb_display_sidebar () ) : ?>
+		<?php echo get_template_part ( 'templates/header' ); ?>
 
-		<?php echo get_template_part ( 'templates/sidebar' ); ?>
+		<div class="main-container">
 
-	<?php endif; ?>
+			<!-- START BREADCRUMB -->
+			<?php wbb_breadcrumb (); ?>
 
+
+			<main class="site-main" role=main">
+				<?php include WBB_System_Core::load_content (); ?>
+
+			</main>
+
+			<?php if ( wbb_display_sidebar () ) : ?>
+
+				<?php echo get_template_part ( 'templates/sidebar' ); ?>
+
+			<?php endif; ?>
+
+		</div>
+
+		<?php echo get_template_part ( 'templates/footer' ); ?>
+
+	</div>
 </div>
-
-<?php echo get_template_part ( 'templates/footer' ); ?>
-
-
-<!-- Sliding panel -->
-<nav class="js-menu offcanvas-content">
-	<ul>
-		<li><a href="javascript:void(0)">Item 1</a></li>
-		<li><a href="javascript:void(0)">Item 2</a></li>
-		<li><a href="javascript:void(0)">Item 3</a></li>
-	</ul>
-</nav>
-
-<div class="js-menu-screen offcanvas-fade-screen"></div>
 
 
 </body>

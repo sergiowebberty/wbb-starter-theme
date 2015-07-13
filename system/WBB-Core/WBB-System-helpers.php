@@ -190,7 +190,7 @@ if ( ! function_exists ( 'wbb_display_sidebar' ) )
 				if ( function_exists ( $tag ) )
 				{
 
-					$result[ ] = $args ? $tag( $args ) : $tag();
+					$result[] = $args ? $tag( $args ) : $tag();
 
 				}
 
@@ -223,30 +223,31 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 		$category = get_the_category ();
 
 		// Build the breadcrums
-		echo '<div id="' . $id . '" class="' . $class . '">';
+
+		$li = FALSE;
 
 		// Do not display on the homepage
 		if ( ! is_front_page () )
 		{
 
 			// Home page
-			echo '<li class="item-home"><a class="bread-link bread-home"  itemprop="url" href="' . get_home_url () . '" title="' . $home_title . '">' . $home_title . '</a></li>';
+			$li .= '<li class="item-home"><a class="bread-link bread-home"  itemprop="url" href="' . get_home_url () . '" title="' . $home_title . '">' . $home_title . '</a></li>';
 			//echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 
 			if ( is_single () )
 			{
 
 				// Single post (Only display the first category)
-				echo '<li class="item-cat item-cat-' . $category[ 0 ]->term_id . ' item-cat-' . $category[ 0 ]->category_nicename . '"><a  itemprop="url" class="bread-cat bread-cat-' . $category[ 0 ]->term_id . ' bread-cat-' . $category[ 0 ]->category_nicename . '" href="' . get_category_link ( $category[ 0 ]->term_id ) . '" title="' . $category[ 0 ]->cat_name . '">' . $category[ 0 ]->cat_name . '</a></li>';
+				$li .= '<li class="item-cat item-cat-' . $category[ 0 ]->term_id . ' item-cat-' . $category[ 0 ]->category_nicename . '"><a  itemprop="url" class="bread-cat bread-cat-' . $category[ 0 ]->term_id . ' bread-cat-' . $category[ 0 ]->category_nicename . '" href="' . get_category_link ( $category[ 0 ]->term_id ) . '" title="' . $category[ 0 ]->cat_name . '">' . $category[ 0 ]->cat_name . '</a></li>';
 				//echo '<li class="separator separator-' . $category[ 0 ]->term_id . '"> ' . $separator . ' </li>';
-				echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title () . '">' . get_the_title () . '</strong></li>';
+				$li .= '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title () . '">' . get_the_title () . '</strong></li>';
 
 			}
 			else if ( is_category () )
 			{
 
 				// Category page
-				echo '<li class="item-current item-cat-' . $category[ 0 ]->term_id . ' item-cat-' . $category[ 0 ]->category_nicename . '"><strong class="bread-current bread-cat-' . $category[ 0 ]->term_id . ' bread-cat-' . $category[ 0 ]->category_nicename . '">' . $category[ 0 ]->cat_name . '</strong></li>';
+				$li .= '<li class="item-current item-cat-' . $category[ 0 ]->term_id . ' item-cat-' . $category[ 0 ]->category_nicename . '"><strong class="bread-current bread-cat-' . $category[ 0 ]->term_id . ' bread-cat-' . $category[ 0 ]->category_nicename . '">' . $category[ 0 ]->cat_name . '</strong></li>';
 
 			}
 			else if ( is_page () )
@@ -270,17 +271,17 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 					}
 
 					// Display parent pages
-					echo $parents;
+					$li .= $parents;
 
 					// Current page
-					echo '<li class="item-current item-' . $post->ID . '"><strong title="' . get_the_title () . '"> ' . get_the_title () . '</strong></li>';
+					$li .= '<li class="item-current item-' . $post->ID . '"><strong title="' . get_the_title () . '"> ' . get_the_title () . '</strong></li>';
 
 				}
 				else
 				{
 
 					// Just display current page if not parents
-					echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '"> ' . get_the_title () . '</strong></li>';
+					$li .= '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '"> ' . get_the_title () . '</strong></li>';
 
 				}
 
@@ -297,7 +298,7 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 				$terms    = get_terms ( $taxonomy , $args );
 
 				// Display the tag name
-				echo '<li class="item-current item-tag-' . $terms[ 0 ]->term_id . ' item-tag-' . $terms[ 0 ]->slug . '"><strong class="bread-current bread-tag-' . $terms[ 0 ]->term_id . ' bread-tag-' . $terms[ 0 ]->slug . '">' . $terms[ 0 ]->name . '</strong></li>';
+				$li .= '<li class="item-current item-tag-' . $terms[ 0 ]->term_id . ' item-tag-' . $terms[ 0 ]->slug . '"><strong class="bread-current bread-tag-' . $terms[ 0 ]->term_id . ' bread-tag-' . $terms[ 0 ]->slug . '">' . $terms[ 0 ]->name . '</strong></li>';
 
 			}
 			elseif ( is_day () )
@@ -306,15 +307,15 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 				// Day archive
 
 				// Year link
-				echo '<li class="item-year item-year-' . get_the_time ( 'Y' ) . '"><a  itemprop="url" class="bread-year bread-year-' . get_the_time ( 'Y' ) . '" href="' . get_year_link ( get_the_time ( 'Y' ) ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) .  __ ( ' Archives: ', WBB_THEME_SLUG ).' </a></li>';
+				$li .= '<li class="item-year item-year-' . get_the_time ( 'Y' ) . '"><a  itemprop="url" class="bread-year bread-year-' . get_the_time ( 'Y' ) . '" href="' . get_year_link ( get_the_time ( 'Y' ) ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) . __ ( ' Archives: ' , WBB_THEME_SLUG ) . ' </a></li>';
 				//echo '<li class="separator separator-' . get_the_time ( 'Y' ) . '"> ' . $separator . ' </li>';
 
 				// Month link
-				echo '<li class="item-month item-month-' . get_the_time ( 'm' ) . '"><a  itemprop="url" class="bread-month bread-month-' . get_the_time ( 'm' ) . '" href="' . get_month_link ( get_the_time ( 'Y' ) , get_the_time ( 'm' ) ) . '" title="' . get_the_time ( 'M' ) . '">' . get_the_time ( 'M' ) .  __ ( ' Archives: ', WBB_THEME_SLUG ). ' </a></li>';
+				$li .= '<li class="item-month item-month-' . get_the_time ( 'm' ) . '"><a  itemprop="url" class="bread-month bread-month-' . get_the_time ( 'm' ) . '" href="' . get_month_link ( get_the_time ( 'Y' ) , get_the_time ( 'm' ) ) . '" title="' . get_the_time ( 'M' ) . '">' . get_the_time ( 'M' ) . __ ( ' Archives: ' , WBB_THEME_SLUG ) . ' </a></li>';
 				//echo '<li class="separator separator-' . get_the_time ( 'm' ) . '"> ' . $separator . ' </li>';
 
 				// Day display
-				echo '<li class="item-current item-' . get_the_time ( 'j' ) . '"><strong class="bread-current bread-' . get_the_time ( 'j' ) . '"> ' . get_the_time ( 'jS' ) . ' ' . get_the_time ( 'M' ) .  __ ( ' Archives: ', WBB_THEME_SLUG ).' </strong></li>';
+				$li .= '<li class="item-current item-' . get_the_time ( 'j' ) . '"><strong class="bread-current bread-' . get_the_time ( 'j' ) . '"> ' . get_the_time ( 'jS' ) . ' ' . get_the_time ( 'M' ) . __ ( ' Archives: ' , WBB_THEME_SLUG ) . ' </strong></li>';
 
 			}
 			else if ( is_month () )
@@ -323,18 +324,18 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 				// Month Archive
 
 				// Year link
-				echo '<li class="item-year item-year-' . get_the_time ( 'Y' ) . '"><a  itemprop="url" class="bread-year bread-year-' . get_the_time ( 'Y' ) . '" href="' . get_year_link ( get_the_time ( 'Y' ) ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) . ' Archives</a></li>';
+				$li .= '<li class="item-year item-year-' . get_the_time ( 'Y' ) . '"><a  itemprop="url" class="bread-year bread-year-' . get_the_time ( 'Y' ) . '" href="' . get_year_link ( get_the_time ( 'Y' ) ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) . ' Archives</a></li>';
 				//echo '<li class="separator separator-' . get_the_time ( 'Y' ) . '"> ' . $separator . ' </li>';
 
 				// Month display
-				echo '<li class="item-month item-month-' . get_the_time ( 'm' ) . '"><strong class="bread-month bread-month-' . get_the_time ( 'm' ) . '" title="' . get_the_time ( 'M' ) . '">' . get_the_time ( 'M' ) . __ ( ' Archives: ', WBB_THEME_SLUG ).'</strong></li>';
+				$li .= '<li class="item-month item-month-' . get_the_time ( 'm' ) . '"><strong class="bread-month bread-month-' . get_the_time ( 'm' ) . '" title="' . get_the_time ( 'M' ) . '">' . get_the_time ( 'M' ) . __ ( ' Archives: ' , WBB_THEME_SLUG ) . '</strong></li>';
 
 			}
 			else if ( is_year () )
 			{
 
 				// Display year archive
-				echo '<li class="item-current item-current-' . get_the_time ( 'Y' ) . '"><strong class="bread-current bread-current-' . get_the_time ( 'Y' ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) . __ ( ' Archives: ', WBB_THEME_SLUG ). ' </strong></li>';
+				$li .= '<li class="item-current item-current-' . get_the_time ( 'Y' ) . '"><strong class="bread-current bread-current-' . get_the_time ( 'Y' ) . '" title="' . get_the_time ( 'Y' ) . '">' . get_the_time ( 'Y' ) . __ ( ' Archives: ' , WBB_THEME_SLUG ) . ' </strong></li>';
 
 			}
 			else if ( is_author () )
@@ -347,33 +348,36 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 				$userdata = get_userdata ( $author );
 
 				// Display author name
-				echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . __ ( ' Author: ', WBB_THEME_SLUG )  . $userdata->display_name . '</strong></li>';
+				$li .= '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . __ ( ' Author: ' , WBB_THEME_SLUG ) . $userdata->display_name . '</strong></li>';
 
 			}
 			else if ( get_query_var ( 'paged' ) )
 			{
 
 				// Paginated archives
-				echo '<li class="item-current item-current-' . get_query_var ( 'paged' ) . '"><strong class="bread-current bread-current-' . get_query_var ( 'paged' ) . '" title="Page ' . get_query_var ( 'paged' ) . '">' . __ ( 'Page', WBB_THEME_SLUG ) . ' ' . get_query_var ( 'paged' ) . '</strong></li>';
+				$li .= '<li class="item-current item-current-' . get_query_var ( 'paged' ) . '"><strong class="bread-current bread-current-' . get_query_var ( 'paged' ) . '" title="Page ' . get_query_var ( 'paged' ) . '">' . __ ( 'Page' , WBB_THEME_SLUG ) . ' ' . get_query_var ( 'paged' ) . '</strong></li>';
 
 			}
 			else if ( is_search () )
 			{
 
 				// Search results page
-				echo '<li class="item-current item-current-' . get_search_query () . '"><strong class="bread-current bread-current-' . get_search_query () . '" title="Search results for: ' . get_search_query () . '"> '.  __ ( ' Search results for: ', WBB_THEME_SLUG )   . get_search_query () . '</strong></li>';
+				$li .= '<li class="item-current item-current-' . get_search_query () . '"><strong class="bread-current bread-current-' . get_search_query () . '" title="Search results for: ' . get_search_query () . '"> ' . __ ( ' Search results for: ' , WBB_THEME_SLUG ) . get_search_query () . '</strong></li>';
 
 			}
 			elseif ( is_404 () )
 			{
 
 				// 404 page
-				echo '<li>' . 'Error 404' . '</li>';
+				$li .= '<li>' . 'Error 404' . '</li>';
 			}
 
 		}
 
-		echo '</div>';
+		if ( $li )
+		{
+			echo "<div id=\"" . $id . "\" class=\"" . $class . "\">$li</div>";
+		}
 	}
 }
 
@@ -428,20 +432,20 @@ if ( ! function_exists ( 'wbb_custom_pagination' ) )
 
 		$big = 999999999; // need an unlikely integer
 
-		$paginate_links =  paginate_links ( [
+		$paginate_links = paginate_links ( [
 			'base'      => str_replace ( $big , '%#%' , esc_url ( get_pagenum_link ( $big ) ) ) ,
 			'format'    => '?paged=%#%' ,
 			'current'   => max ( 1 , get_query_var ( 'paged' ) ) ,
 			'total'     => $wp_query->max_num_pages ,
 			'prev_next' => TRUE ,
-			'prev_text' => __ ( '«' ,WBB_THEME_SLUG) ,
-			'next_text' => __ ( '»',WBB_THEME_SLUG ) ,
+			'prev_text' => __ ( '«' , WBB_THEME_SLUG ) ,
+			'next_text' => __ ( '»' , WBB_THEME_SLUG ) ,
 		] );
 
 
-		if($paginate_links)
+		if ( $paginate_links )
 		{
-			echo "<div class=\"pagination\">$paginate_links</div>" ;
+			echo "<div class=\"pagination\">$paginate_links</div>";
 		}
 
 	}

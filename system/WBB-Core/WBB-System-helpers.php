@@ -441,7 +441,7 @@ if ( ! function_exists ( 'wbb_custom_pagination' ) )
 
 		if($paginate_links)
 		{
-			echo "<div class=\"pagination\">$paginate_links</div" ;
+			echo "<div class=\"pagination\">$paginate_links</div>" ;
 		}
 
 	}

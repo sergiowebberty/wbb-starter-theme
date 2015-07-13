@@ -1,3 +1,11 @@
+$mp-background: #fff;
+$mp-back: #ccc;
+$mp-border: #ccc;
+$mp-font: #000;
+$mp-shadow: #000;
+$mp-font-hover: #ffe;
+$mp-list-hover: #333;
+
 /*============================================
       PUSH MENU
 ==============================================*/
@@ -21,7 +29,7 @@
 
 .close-menu {
   @media only screen and (min-width: 320px){
-    color: black;
+    color: $mp-font;
     cursor: pointer;
     font-size: 35px;
     font-weight: bold;
@@ -41,7 +49,7 @@
 }
 
 .menu-trigger {
-  color: black;
+  color: $mp-font;
   font-size: 24px;
 }
 
@@ -50,14 +58,14 @@
 
 
 #mp-menu #searchform input[type=text]{
-  color: #d51317;
+  color: $mp-font;
   padding: 5px;
 
 }
 
 #mp-menu #searchsubmit{
-  color: #d51317;
-  background-color: #fff;
+  color: $mp-font;
+  background-color: $mp-background;
 
 }
 
@@ -92,7 +100,7 @@
 .multilevelpushmenu_wrapper .levelHolderClass {
   position: fixed;
   top: 0;
-  background: #fff;
+  background: $mp-background;
   width: auto;
   min-height: 100%;
   //font-family: MuseoSansRounded-100;
@@ -104,30 +112,30 @@
 .multilevelpushmenu_wrapper .ltr {
   margin-left: -100%;
   left: 0;
-  -moz-box-shadow: 5px 0 5px -5px #000000;
-  -webkit-box-shadow: 5px 0 5px -5px #000000;
-  box-shadow: 5px 0 5px -5px #000000;
-  filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=90,strength=2);
+  -moz-box-shadow: 5px 0 5px -5px $mp-shadow;
+  -webkit-box-shadow: 5px 0 5px -5px $mp-shadow;
+  box-shadow: 5px 0 5px -5px $mp-shadow;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=$mp-shadow,direction=90,strength=2);
 }
 
 .multilevelpushmenu_wrapper .rtl {
   margin-right: -100%;
   right: 0;
-  -moz-box-shadow: 5px 0 5px 5px #000000;
-  -webkit-box-shadow: 5px 0 5px 5px #000000;
-  box-shadow: 5px 0 5px 5px #000000;
-  filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=270,strength=2);
+  -moz-box-shadow: 5px 0 5px 5px $mp-shadow;
+  -webkit-box-shadow: 5px 0 5px 5px $mp-shadow;
+  box-shadow: 5px 0 5px 5px $mp-shadow;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=$mp-shadow,direction=270,strength=2);
 }
 
 .multilevelpushmenu_wrapper .multilevelpushmenu_inactive {
-  background: #fff;
+  background: $mp-background;
 }
 
 .multilevelpushmenu_wrapper h2 {
   font-size: 1.5em;
   line-height: 1em;
   font-weight: bold;
-  color: #000;
+  color: $mp-font;
   padding: 0.6em .4em 0 1em;
 }
 
@@ -139,12 +147,12 @@
 
 .multilevelpushmenu_wrapper li {
   cursor: pointer;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $mp-border;
   padding: .6em .6em .6em .6em;
 }
 
 .multilevelpushmenu_wrapper li:last-child {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $mp-border;
 }
 
 .multilevelpushmenu_wrapper li:hover {
@@ -159,23 +167,23 @@
   line-height: 1em;
   padding: .4em .2em .4em 1em;
   text-decoration: none;
-  color: #000;
+  color: $mp-font;
 }
 
 .multilevelpushmenu_wrapper a:hover {
-  color: #ffe;
+  color: $mp-font-hover;
 }
 
 .multilevelpushmenu_wrapper .backItemClass {
   display: block;
   padding: .4em .4em .4em 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $mp-border;
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
 .multilevelpushmenu_wrapper .backItemClass a{
-  color: #fff;
+  color: $mp-font;
 }
 
 .multilevelpushmenu_wrapper .floatRight {

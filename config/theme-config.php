@@ -287,30 +287,24 @@ function action_customize_register ( $wp_customize )
 		)
 	);
 
-	//USING AJAX TO UPDATE THE LIVE PREVIEW
-	if ( $wp_customize->is_preview () && ! is_admin () )
-	{
-		add_action ( 'wp_footer' , 'wbb_action_wp_footer' , 21 );
-	}
-
 }
 
-function wbb_action_wp_footer ()
+/**
+ * This function enqueues scripts and styles in the Customizer.
+ */
+add_action ( 'customize_controls_enqueue_scripts' , function ()
 {
 
-	?>
-	<script type="text/javascript">
-		(function ($)
-		{
-			wp.customize ( 'wbb-logo-img-upload' , function (value)
-			{
-				value.bind ( function (to)
-				             {
-					             $ ( '.js-site-logo' ).attr ( 'src' , to );
-				             } );
-			} );
-		}) ( jQuery )
-	</script>
-<?php
-}
+	/*
+	 * Our Customizer script
+	 *
+	 * Dependencies: Customizer Controls script (core)
+	 */
+	wp_enqueue_script ( 'my-customizer-script' , get_template_directory_uri () . '/assets/scripts/customizer/customizer.js' , array ( 'customize-controls' ) );
 
+	wp_localize_script ( 'my-customizer-script' , 'ajax_object' ,
+		[
+			'ajax_url' => admin_url ( 'admin-ajax.php' )
+		] );
+
+} );

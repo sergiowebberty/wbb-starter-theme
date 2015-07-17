@@ -132,7 +132,7 @@
 
                         <input type="button" value="<?php echo _e ( 'Remove' , 'wbb-starter-theme' ) ; ?>" class="button offcanvas-icon-remove" id="offcanvas-icon-remove" <?php echo $img_style ; ?> />
    
-                        <input type="button" value="<?php _e ( 'Change Image' , 'wbb-starter-theme' );?>" class="button offcanvas-icon-upload" id="offcanvas-icon-button" />
+                        <input type="button" value="<?php _e ( 'Select Image' , 'wbb-starter-theme' );?>" class="button offcanvas-icon-upload" id="offcanvas-icon-button" />
 
 
 

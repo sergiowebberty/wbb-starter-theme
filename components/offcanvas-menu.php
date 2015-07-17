@@ -7,8 +7,7 @@
 		<?php
 		if ( has_nav_menu ( 'primary_navigation' ) ) :
 
-                    
-                    $defaults = array (
+			$defaults = array (
 				'theme_location' => 'offcanvas_navigation' ,
 				'container'      => '' ,
 				'echo'           => TRUE ,

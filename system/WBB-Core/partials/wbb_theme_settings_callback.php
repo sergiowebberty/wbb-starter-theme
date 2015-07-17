@@ -12,8 +12,6 @@
 
 			<tbody>
 
-
-
 			<tr class="alternate">
 
 				<td>
@@ -40,10 +38,7 @@
 	</form>
 
 
-
-           
-
-    </form>
+	</form>
 
 </div>
 

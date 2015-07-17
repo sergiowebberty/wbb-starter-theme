@@ -39,16 +39,16 @@ function wbb_action_widgets_init ()
 		]
 	);
 
-	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10  );
+	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 );
 	remove_action ( 'wp_head' , 'feed_links' , 10 );
 	remove_action ( 'wp_head' , 'rsd_link' );
 	remove_action ( 'wp_head' , 'wlwmanifest_link' );
 	remove_action ( 'wp_head' , 'index_rel_link' );
-	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10  );
-	remove_action ( 'wp_head' , 'start_post_rel_link' , 10  );
-	remove_action ( 'wp_head' , 'adjacent_posts_rel_link' , 10  );
-	remove_action ( 'wp_head' , 'wp_shortlink_wp_head' , 10  );
-	remove_action ( 'wp_head' , 'wp_generator' , 10  );
+	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 );
+	remove_action ( 'wp_head' , 'start_post_rel_link' , 10 );
+	remove_action ( 'wp_head' , 'adjacent_posts_rel_link' , 10 );
+	remove_action ( 'wp_head' , 'wp_shortlink_wp_head' , 10 );
+	remove_action ( 'wp_head' , 'wp_generator' , 10 );
 	remove_action ( 'wp_head' , 'print_emoji_detection_script' , 7 );
 	remove_action ( 'admin_print_scripts' , 'print_emoji_detection_script' );
 	remove_action ( 'wp_print_styles' , 'print_emoji_styles' );
@@ -110,7 +110,7 @@ register_nav_menu ( 'offcanvas_navigation' , __ ( 'Menu navigation for off canva
 $menuname                  = 'Main Navigation';
 $primary_navigation        = 'primary_navigation';
 $primary_footer_navigation = 'primary_footer_navigation';
-$offcanvas_navigation = 'offcanvas_navigation';
+$offcanvas_navigation      = 'offcanvas_navigation';
 $menu_exists               = wp_get_nav_menu_object ( $menuname );
 
 // If it doesn't exist, let's create it.
@@ -149,11 +149,11 @@ if ( ! $menu_exists )
 		set_theme_mod ( 'nav_menu_locations' , $locations );
 
 	}
-        
-        if ( ! has_nav_menu ( $offcanvas_navigation ) )
+
+	if ( ! has_nav_menu ( $offcanvas_navigation ) )
 	{
 
-		$locations                               = get_theme_mod ( 'nav_menu_locations' );
+		$locations                          = get_theme_mod ( 'nav_menu_locations' );
 		$locations[ $offcanvas_navigation ] = $menu_id;
 
 		set_theme_mod ( 'nav_menu_locations' , $locations );

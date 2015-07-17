@@ -24,7 +24,6 @@ function wbb_theme_settings ()
         $activate_breadcrumb = get_option ( 'wbb_theme_activate_breadcrumb' ) ? get_option ( 'wbb_theme_activate_breadcrumb' ) : array () ;
 
 
-
 	require plugin_dir_path ( __FILE__ ) . 'partials/wbb_theme_settings_callback.php';
 }
 
@@ -40,4 +39,3 @@ function register_wbb_theme_setting ()
 }
 
 
-// PUBLIC PART

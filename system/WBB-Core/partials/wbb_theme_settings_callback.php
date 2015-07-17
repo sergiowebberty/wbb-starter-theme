@@ -15,9 +15,9 @@
 			<tr class="alternate">
 
 				<td>
-                                    
+
 					Activate Off Canvas
-                                        
+
 				</td>
 
 				<td>
@@ -27,13 +27,13 @@
 				</td>
 
 			</tr>
-                        
-                        <tr>
+
+			<tr>
 
 				<td>
-                                    
+
 					Activate Pagination
-                                        
+
 				</td>
 
 				<td>
@@ -43,13 +43,13 @@
 				</td>
 
 			</tr>
-                        
-                        <tr class="alternate">
+
+			<tr class="alternate">
 
 				<td>
-                                    
+
 					Activate Breadcrumbs
-                                        
+
 				</td>
 
 				<td>

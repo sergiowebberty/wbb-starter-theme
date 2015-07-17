@@ -8,7 +8,7 @@ add_action ( 'admin_init' , 'register_wbb_theme_setting' ) ;
 function wbb_theme_setup_menu ()
 {
 
-    add_menu_page ( 'Wbb Theme' , 'Wbb Theme' , 'manage_options' , 'wbb-theme-plugin-settings' , 'wbb_theme_settings' , 'dashicons-archive' ) ;
+    add_theme_page ( 'Wbb Theme' , 'Wbb Theme' , 'manage_options' , 'wbb-theme-plugin-settings' , 'wbb_theme_settings' , 'dashicons-archive'  ) ;
 }
 
 // Function called in settings menu item

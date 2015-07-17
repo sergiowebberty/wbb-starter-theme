@@ -462,7 +462,7 @@ if ( ! function_exists ( 'wbb_activate_offcanvas' ) )
 	function wbb_activate_offcanvas ()
 	{
 
-		 $activate_offcanvas = get_option ( 'wbb_theme_activate_offcanvas' );
+		 $activate_offcanvas = get_option ( 'wbb_theme_activate_offcanvas' ) ;
                  
                  if($activate_offcanvas == "yes"){?>
                      

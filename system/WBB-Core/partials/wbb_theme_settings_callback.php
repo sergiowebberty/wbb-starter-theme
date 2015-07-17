@@ -2,88 +2,61 @@
 
 <div class="wrap">
 
-    <form method="post" action="options.php">
+	<form method="post" action="options.php">
 
-        <?php settings_fields ( 'wbb-theme-setting-section' ) ; ?>
-        <?php do_settings_sections ( 'wbb-theme-setting-section' ) ; ?>
-
-
+		<?php settings_fields ( 'wbb-theme-setting-section' ); ?>
+		<?php do_settings_sections ( 'wbb-theme-setting-section' ); ?>
 
 
-        <table class="wp-list-table widefat fixed posts" >
+		<table class="wp-list-table widefat fixed posts">
 
-            <tbody>
+			<tbody>
 
-                <tr>
+			<tr>
 
-                    <td>
+				<td>
 
-                        Select Menu
+					Select Menu
 
-                    </td>
+				</td>
 
+				<td>
 
-                    <td>
+					<select name="wbb_theme_registered_menus" autocomplete="off">
 
-                        <select name="wbb_theme_registered_menus" autocomplete="off">
+						<?php foreach ( $menus as $menu ) : ?>
+							<option value="<?php echo $menu->slug; ?>" <?php echo isset ( $registered_menus ) && $registered_menus == $menu->slug ? ' selected ' : ''; ?>><?php echo $menu->name; ?></option>
+						<?php endforeach; ?>
 
-                            <?php
-                            foreach ( $menus as $menu )
-                            {
-                                ?>
-                                <option value="<?php echo $menu -> slug ; ?>" <?php echo isset ( $registered_menus ) && $registered_menus == $menu -> slug ? ' selected ' : '' ; ?>><?php echo $menu -> name ; ?></option>
+					</select>
 
+				</td>
 
-                            <?php }
-                            ?>
+			</tr>
 
-                        </select>
+			<tr class="alternate">
 
-                    </td>
+				<td>
 
-                </tr>
-                
-                <tr class="alternate">
+					Activate Off Canvas
 
-                    <td>
+				</td>
 
-                        Activate Off Canvas
+				<td>
 
-                    </td>
+					<input type="checkbox" name="wbb_theme_activate_offcanvas" value="yes" <?php echo $activate_offcanvas == "yes" ? ' checked ' : ''; ?>>
 
+				</td>
 
-                    <td>
+			</tr>
 
-                        <input type="checkbox" name="wbb_theme_activate_offcanvas" value="yes"  <?php echo $activate_offcanvas == "yes" ? ' checked ' : '' ; ?>>
+			</tbody>
 
-
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
+		</table>
 
 
+		<?php submit_button (); ?>
 
-
-
-
-
-
-
-
-
-
-
-
-<?php submit_button () ; ?>
-
-    </form>
+	</form>
 
 </div>
-
-
-
-

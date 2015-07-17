@@ -7,7 +7,7 @@
 		<?php
 		if ( has_nav_menu ( 'primary_navigation' ) ) :
                     
-                        $menu_offcanvas = get_option ( 'wbb_theme_registered_menus' );
+                        $menu_offcanvas = get_option ( 'wbb_theme_registered_menus' ) ? get_option ( 'wbb_theme_registered_menus' ) : "main-navigation" ;
 
 			$defaults = array (
 				'theme_location' => 'primary_navigation' ,

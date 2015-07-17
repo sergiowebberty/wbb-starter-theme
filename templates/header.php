@@ -28,9 +28,10 @@
 	</div>
 
 	<!-- Button launcher sliding panel -->
-	<div class="site-pushmenu">
+        <?php wbb_activate_offcanvas();?>
+<!--	<div class="site-pushmenu">
 		<a href="#" id="trigger" class="menu-trigger js-menu-trigger js-menu-opener" data-colapsed = 0>Push Menu</a>
-	</div>
+	</div>-->
 
 
 

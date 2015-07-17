@@ -6,10 +6,12 @@
 
 		<?php
 		if ( has_nav_menu ( 'primary_navigation' ) ) :
+                    
+                        $menu_offcanvas = get_option ( 'wbb_theme_registered_menus' );
 
 			$defaults = array (
 				'theme_location' => 'primary_navigation' ,
-				'menu'           => 'primary' ,
+				'menu'           => $menu_offcanvas ,
 				'container'      => '' ,
 				'echo'           => TRUE ,
 				'before'         => '' ,

@@ -84,4 +84,3 @@ function wbb_theme_upload_scripts ()
 }
 
 add_action ( 'admin_enqueue_scripts' , 'wbb_theme_upload_scripts' ) ;
-

@@ -2,182 +2,192 @@
 
 <div class="wrap">
 
-	<form method="post" action="options.php">
+    <form method="post" action="options.php">
 
-		<?php settings_fields ( 'wbb-theme-setting-section' ); ?>
-		<?php do_settings_sections ( 'wbb-theme-setting-section' ); ?>
+        <?php settings_fields ( 'wbb-theme-setting-section' ) ; ?>
+        <?php do_settings_sections ( 'wbb-theme-setting-section' ) ; ?>
 
 
-		<h3 class='nav-tab-wrapper'>Breadcrumb</h3>
+        <h3 class='nav-tab-wrapper'>Breadcrumb</h3>
 
-		<table class="wp-list-table widefat fixed posts">
+        <table class="wp-list-table widefat fixed posts">
 
-			<tbody>
+            <tbody>
 
 
-			<tr class="alternate">
+                <tr class="alternate">
 
-				<td>
+                    <td>
 
-					Activate Breadcrumbs
+                        Activate Breadcrumbs
 
-				</td>
+                    </td>
 
-				<td>
+                    <td>
 
-					<input type="checkbox" name="wbb_theme_activate_breadcrumb" value="yes" <?php echo $activate_breadcrumb == "yes" ? ' checked ' : ''; ?>>
+                        <input type="checkbox" name="wbb_theme_activate_breadcrumb" value="yes" <?php echo $activate_breadcrumb == "yes" ? ' checked ' : '' ; ?>>
 
-				</td>
+                    </td>
 
-			</tr>
+                </tr>
 
-			<tr>
+                <tr >
 
-				<td>
+                    <td>
 
-					Breadcrumbs Separator
+                        Breadcrumbs Separator
 
-				</td>
+                    </td>
 
-				<td>
+                    <td>
 
-					<input type="text" name="wbb_theme_breadcrumb_separator" value="<?php echo $breadcrumb_separator; ?>">
+                        <input type="text" name="wbb_theme_breadcrumb_separator" value="<?php echo $breadcrumb_separator ; ?>">
 
-				</td>
+                    </td>
 
-			</tr>
+                </tr>
 
-			</tbody>
+            </tbody>
 
-		</table>
+        </table>
 
 
-		<h3 class='nav-tab-wrapper'>Off Canvas Menu</h3>
 
-		<table class="wp-list-table widefat fixed posts">
 
-			<tbody>
+        <h3 class='nav-tab-wrapper'>Off Canvas Menu</h3>
 
-			<tr class="alternate">
+        <table class="wp-list-table widefat fixed posts">
 
-				<td>
+            <tbody>
 
-					Activate Off Canvas
+                <tr class="alternate">
 
-				</td>
+                    <td>
 
-				<td>
+                        Activate Off Canvas
 
-					<input type="checkbox" name="wbb_theme_activate_offcanvas" value="yes" <?php echo $activate_offcanvas == "yes" ? ' checked ' : ''; ?>>
+                    </td>
 
-				</td>
+                    <td>
 
-			</tr>
+                        <input type="checkbox" name="wbb_theme_activate_offcanvas" value="yes" <?php echo $activate_offcanvas == "yes" ? ' checked ' : '' ; ?>>
 
-			<tr>
+                    </td>
 
-				<td>
+                </tr>
 
-					Off Canvas Background
+                <tr>
 
-				</td>
+                    <td>
 
-				<td>
+                        Off Canvas Background
 
-					<input type="text" name="wbb_theme_offcanvas_background" value="<?php echo $offcanvas_background; ?>" class="js-color-picker">
+                    </td>
 
-				</td>
+                    <td>
 
-			</tr>
+                        <input type="text" name="wbb_theme_offcanvas_background" value="<?php echo $offcanvas_background ; ?>" class="js-color-picker">
 
-			<tr class="alternate">
+                    </td>
 
-				<td>
+                </tr>
 
-					Off Canvas Font Color
+                <tr class="alternate">
 
-				</td>
+                    <td>
 
-				<td>
+                        Off Canvas Font Color
 
-					<input type="text" name="wbb_theme_offcanvas_color" value="<?php echo $offcanvas_color; ?>" class="js-color-picker">
+                    </td>
 
-				</td>
+                    <td>
 
-			</tr>
+                        <input type="text" name="wbb_theme_offcanvas_color" value="<?php echo $offcanvas_color ; ?>" class="js-color-picker">
 
-			<tr>
+                    </td>
 
-				<td>
+                </tr>
 
-					Off Canvas Menu Icon
+                <tr>
 
-				</td>
+                    <td>
 
-				<td>
+                        Off Canvas Menu Icon
 
-					<?php $img_style = ( $offcanvas_icon != '' ) ? '' : 'style="display:none;"'; ?>
+                    </td>
 
-					<img id="offcanvas-icon-preview" src="<?php echo esc_attr ( $offcanvas_icon ); ?>" <?php echo $img_style; ?> />
+                    <td>
 
-					<?php $no_img_style = ( $offcanvas_icon != '' ) ? 'style="display:none;"' : ''; ?>
+                        <?php $img_style    = ( $offcanvas_icon != '' ) ? '' : 'style="display:none;"' ; ?>
 
+                        <img id="offcanvas-icon-preview" src="<?php echo esc_attr ( $offcanvas_icon ) ; ?>" <?php echo $img_style ; ?> />
 
-					<span class="logo-no-image" id="offcanvas-icon-preview-noimg" <?php echo $no_img_style; ?>><?php _e ( 'No image selected' , 'wbb-starter-theme' ); ?></span>
+                        <?php $no_img_style = ( $offcanvas_icon != '' ) ? 'style="display:none;"' : '' ; ?>
 
 
-					<input type="text" id="wbb_theme_offcanvas_icon" name="wbb_theme_offcanvas_icon" value="<?php echo $offcanvas_icon; ?>" class="logo-url"/>
+                        <span class="logo-no-image" id="offcanvas-icon-preview-noimg" <?php echo $no_img_style ; ?>><?php _e ( 'No image selected' , 'wbb-starter-theme' ) ; ?></span>
 
-					<input type="button" value="<?php echo _e ( 'Remove' , 'wbb-starter-theme' ); ?>" class="button offcanvas-icon-remove" id="offcanvas-icon-remove" <?php echo $img_style; ?> />
 
-					<input type="button" value="<?php _e ( 'Select Image' , 'wbb-starter-theme' ); ?>" class="button offcanvas-icon-upload" id="offcanvas-icon-button"/>
+                        <input type="hidden" id="wbb_theme_offcanvas_icon" name="wbb_theme_offcanvas_icon" value="<?php echo $offcanvas_icon ; ?>" class="logo-url" />
 
+                        <input type="button" value="<?php echo _e ( 'Remove' , 'wbb-starter-theme' ) ; ?>" class="button offcanvas-icon-remove" id="offcanvas-icon-remove" <?php echo $img_style ; ?> />
+   
+                        <input type="button" value="<?php _e ( 'Select Image' , 'wbb-starter-theme' );?>" class="button offcanvas-icon-upload" id="offcanvas-icon-button" />
 
-				</td>
 
-			</tr>
 
+                    </td>
 
-			</tbody>
+                </tr>
 
-		</table>
 
 
-		<h3 class='nav-tab-wrapper'>Pagination</h3>
 
 
-		<table class="wp-list-table widefat fixed posts">
+            </tbody>
 
-			<tbody>
+        </table>
 
 
-			<tr>
 
-				<td>
 
-					Activate Pagination
+        <h3 class='nav-tab-wrapper'>Pagination</h3>
 
-				</td>
 
-				<td>
+        <table class="wp-list-table widefat fixed posts">
 
-					<input type="checkbox" name="wbb_theme_activate_pagination" value="yes" <?php echo $activate_pagination == "yes" ? ' checked ' : ''; ?>>
+            <tbody>
 
-				</td>
 
-			</tr>
 
+                <tr>
 
-			</tbody>
+                    <td>
 
-		</table>
+                        Activate Pagination
 
+                    </td>
 
-		<?php submit_button (); ?>
+                    <td>
 
-	</form>
+                        <input type="checkbox" name="wbb_theme_activate_pagination" value="yes" <?php echo $activate_pagination == "yes" ? ' checked ' : '' ; ?>>
 
+                    </td>
 
-	</form>
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+
+
+        <?php submit_button () ; ?>
+
+    </form>
+
+
+</form>
 
 </div>

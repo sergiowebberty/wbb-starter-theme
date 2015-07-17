@@ -26,3 +26,17 @@ function wbb_wp_enqueue_scripts()
 	wp_enqueue_style ( 'general-css' , '' . get_template_directory_uri () . '/assets/styles/general.css' , array () , '1.0.0' , 'all' );
 
 }
+
+
+add_action( 'admin_enqueue_scripts', 'wbb_theme_add_color_picker' );
+function wbb_theme_add_color_picker( $hook ) {
+ 
+    if( is_admin() ) { 
+     
+        // Add the color picker css file       
+        wp_enqueue_style( 'wp-color-picker' ); 
+         
+        // Include our custom jQuery file with WordPress Color Picker dependency
+        wp_enqueue_script( 'custom-script-handle', '' . get_template_directory_uri () . '/assets/scripts/vendor/wbb-theme-script.js', array( 'wp-color-picker' ), false, true ); 
+    }
+}

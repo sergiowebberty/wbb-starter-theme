@@ -17,11 +17,30 @@ function wbb_theme_settings ()
 
 	$menus = get_terms ( 'nav_menu' , array ( 'hide_empty' => TRUE ) );
 
-        $activate_offcanvas = get_option ( 'wbb_theme_activate_offcanvas' ) ? get_option ( 'wbb_theme_activate_offcanvas' ) : array () ;
+        // Settings for Off Canvas Menu
+        
+        $activate_offcanvas = get_option ( 'wbb_theme_activate_offcanvas' ) ? get_option ( 'wbb_theme_activate_offcanvas' ) : "" ;
+        
+        $trigger_class_offcanvas = get_option ( 'wbb_theme_trigger_class_offcanvas' ) ? get_option ( 'wbb_theme_trigger_class_offcanvas' ) : "" ;
+        
+        $container_class_offcanvas = get_option ( 'wbb_theme_container_class_offcanvas' ) ? get_option ( 'wbb_theme_container_class_offcanvas' ) : "" ;
+        
+        $offcanvas_background = get_option ( 'wbb_theme_offcanvas_background' ) ? get_option ( 'wbb_theme_offcanvas_background' ) : "" ;
+        
+        $offcanvas_color = get_option ( 'wbb_theme_offcanvas_color' ) ? get_option ( 'wbb_theme_offcanvas_color' ) : "" ;
+        
+        $offcanvas_icon = get_option ( 'wbb_theme_offcanvas_icon' ) ? get_option ( 'wbb_theme_offcanvas_icon' ) : "" ;
+        
     
-        $activate_pagination = get_option ( 'wbb_theme_activate_pagination' ) ? get_option ( 'wbb_theme_activate_pagination' ) : array () ;
+        // Pagination
+        
+        $activate_pagination = get_option ( 'wbb_theme_activate_pagination' ) ? get_option ( 'wbb_theme_activate_pagination' ) : "" ;
     
-        $activate_breadcrumb = get_option ( 'wbb_theme_activate_breadcrumb' ) ? get_option ( 'wbb_theme_activate_breadcrumb' ) : array () ;
+        // Breadcrumb
+        
+        $activate_breadcrumb = get_option ( 'wbb_theme_activate_breadcrumb' ) ? get_option ( 'wbb_theme_activate_breadcrumb' ) : "" ;
+        
+        $breadcrumb_separator = get_option ( 'wbb_theme_breadcrumb_separator' ) ? get_option ( 'wbb_theme_breadcrumb_separator' ) : "&gt;" ;
 
 
 	require plugin_dir_path ( __FILE__ ) . 'partials/wbb_theme_settings_callback.php';
@@ -30,12 +49,39 @@ function wbb_theme_settings ()
 function register_wbb_theme_setting ()
 {
 
+    // Setings for Off Canvas Menu
+    
     register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_activate_offcanvas' ) ;
+    
+    register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_offcanvas_background' ) ;
+    
+    register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_offcanvas_color' ) ;
+    
+    register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_offcanvas_icon' ) ;
+    
+    // Pagination
     
     register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_activate_pagination' ) ;
     
+    // Breadcrumb
+    
     register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_activate_breadcrumb' ) ;
+    
+    register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_breadcrumb_separator' ) ;
 
 }
 
+
+function wbb_theme_upload_scripts ()
+{
+
+    global $pagenow , $wp_customize ;
+
+    if ( 'themes.php' === $pagenow || isset ( $wp_customize ) )
+    {
+        wp_enqueue_media () ;
+    }
+}
+
+add_action ( 'admin_enqueue_scripts' , 'wbb_theme_upload_scripts' ) ;
 

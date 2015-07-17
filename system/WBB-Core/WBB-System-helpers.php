@@ -213,14 +213,16 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 	function wbb_breadcrumb ()
 	{
             
-                // Flag to show it
+                // Settings Values
                 $activate_breadcrumb = get_option ( 'wbb_theme_activate_breadcrumb' );
+                
+                $breadcrumb_separator = get_option ( 'wbb_theme_breadcrumb_separator' );
                 
                 
                
             
 		// Settings
-		$separator  = '&gt;';
+		$separator  = $breadcrumb_separator;
 		$id         = 'breadcrumbs';
 		$class      = 'breadcrumbs';
 		$home_title = 'Homepage';

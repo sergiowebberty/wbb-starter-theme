@@ -212,6 +212,13 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 
 	function wbb_breadcrumb ()
 	{
+            
+                // Flag to show it
+                $activate_breadcrumb = get_option ( 'wbb_theme_activate_breadcrumb' );
+                
+                
+               
+            
 		// Settings
 		$separator  = '&gt;';
 		$id         = 'breadcrumbs';
@@ -374,7 +381,7 @@ if ( ! function_exists ( "wbb_breadcrumb" ) )
 
 		}
 
-		if ( $li )
+		if ( $li && $activate_breadcrumb == "yes" )
 		{
 			echo "<div id=\"" . $id . "\" class=\"" . $class . "\">$li</div>";
 		}
@@ -428,6 +435,11 @@ if ( ! function_exists ( 'wbb_custom_pagination' ) )
 	function wbb_custom_pagination ()
 	{
 
+            
+                // Flag to show it
+                $activate_pagination = get_option ( 'wbb_theme_activate_pagination' );
+                
+                
 		global $wp_query;
 
 		$big = 999999999; // need an unlikely integer
@@ -443,7 +455,7 @@ if ( ! function_exists ( 'wbb_custom_pagination' ) )
 		] );
 
 
-		if ( $paginate_links )
+		if ( $paginate_links && $activate_pagination == "yes" )
 		{
 			echo "<div class=\"pagination\">$paginate_links</div>";
 		}

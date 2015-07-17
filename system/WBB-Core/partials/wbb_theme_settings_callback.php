@@ -70,10 +70,7 @@
 	</form>
 
 
-
-           
-
-    </form>
+	</form>
 
 </div>
 

@@ -462,17 +462,14 @@ if ( ! function_exists ( 'wbb_activate_offcanvas' ) )
 	function wbb_activate_offcanvas ()
 	{
 
-		 $activate_offcanvas = get_option ( 'wbb_theme_activate_offcanvas' ) ;
-                 
-                 if($activate_offcanvas == "yes"){?>
-                     
-                     <div class="site-pushmenu">
-		
-                         <a href="#" id="trigger" class="menu-trigger js-menu-trigger js-menu-opener" data-colapsed = 0>Push Menu</a>
-	
-                     </div>
+		$activate_offcanvas = get_option ( 'wbb_theme_activate_offcanvas' );
 
-                 <?php }
+		if ( $activate_offcanvas == "yes" )
+		{
+
+			echo '<div class="site-pushmenu"><a href="#" id="trigger" class="menu-trigger js-menu-trigger js-menu-opener" data-colapsed = 0>Push Menu</a> </div>';
+
+		}
 
 	}
 

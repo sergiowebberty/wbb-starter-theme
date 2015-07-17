@@ -6,6 +6,7 @@
 
 		<?php
 		if ( has_nav_menu ( 'primary_navigation' ) ) :
+
                     
                     $defaults = array (
 				'theme_location' => 'offcanvas_navigation' ,

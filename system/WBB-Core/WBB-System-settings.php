@@ -53,6 +53,10 @@ function register_wbb_theme_setting ()
     
     register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_activate_offcanvas' ) ;
     
+    register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_container_class_offcanvas' ) ;
+    
+    register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_trigger_class_offcanvas' ) ;
+    
     register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_offcanvas_background' ) ;
     
     register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_offcanvas_color' ) ;

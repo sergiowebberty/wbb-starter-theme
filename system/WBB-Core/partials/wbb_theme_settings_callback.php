@@ -73,10 +73,41 @@
                         <input type="checkbox" name="wbb_theme_activate_offcanvas" value="yes" <?php echo $activate_offcanvas == "yes" ? ' checked ' : '' ; ?>>
 
                     </td>
+                    
+                    <td colspan="2"></td>
+
+                </tr>
+                
+                <tr>
+
+                    <td>
+
+                        Off Canvas Trigger Class
+
+                    </td>
+
+                    <td>
+
+                        <input type="text" name="wbb_theme_trigger_class_offcanvas" value="<?php echo $trigger_class_offcanvas ; ?>" >
+
+                    </td>
+                    
+                    <td>
+
+                        Off Canvas Container Class
+
+                    </td>
+
+                    <td>
+
+                        <input type="text" name="wbb_theme_container_class_offcanvas" value="<?php echo $container_class_offcanvas ; ?>" >
+
+                    </td>
+
 
                 </tr>
 
-                <tr>
+                <tr class="alternate">
 
                     <td>
 
@@ -89,11 +120,7 @@
                         <input type="text" name="wbb_theme_offcanvas_background" value="<?php echo $offcanvas_background ; ?>" class="js-color-picker">
 
                     </td>
-
-                </tr>
-
-                <tr class="alternate">
-
+                    
                     <td>
 
                         Off Canvas Font Color
@@ -107,6 +134,8 @@
                     </td>
 
                 </tr>
+
+
 
                 <tr>
 
@@ -124,9 +153,7 @@
 
                         <?php $no_img_style = ( $offcanvas_icon != '' ) ? 'style="display:none;"' : '' ; ?>
 
-
                         <span class="logo-no-image" id="offcanvas-icon-preview-noimg" <?php echo $no_img_style ; ?>><?php _e ( 'No image selected' , 'wbb-starter-theme' ) ; ?></span>
-
 
                         <input type="hidden" id="wbb_theme_offcanvas_icon" name="wbb_theme_offcanvas_icon" value="<?php echo $offcanvas_icon ; ?>" class="logo-url" />
 
@@ -134,9 +161,9 @@
    
                         <input type="button" value="<?php _e ( 'Select Image' , 'wbb-starter-theme' );?>" class="button offcanvas-icon-upload" id="offcanvas-icon-button" />
 
-
-
                     </td>
+                    
+                    <td colspan="2"></td>
 
                 </tr>
 

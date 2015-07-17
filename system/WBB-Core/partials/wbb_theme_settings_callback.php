@@ -14,34 +14,7 @@
 
             <tbody>
 
-                <tr>
-
-                    <td>
-
-                        Select Menu
-
-                    </td>
-
-
-                    <td>
-
-                        <select name="wbb_theme_registered_menus" autocomplete="off">
-
-                            <?php
-                            foreach ( $menus as $menu )
-                            {
-                                ?>
-                                <option value="<?php echo $menu -> slug ; ?>" <?php echo isset ( $registered_menus ) && $registered_menus == $menu -> slug ? ' selected ' : '' ; ?>><?php echo $menu -> name ; ?></option>
-
-
-                            <?php }
-                            ?>
-
-                        </select>
-
-                    </td>
-
-                </tr>
+                
                 
                 <tr class="alternate">
 

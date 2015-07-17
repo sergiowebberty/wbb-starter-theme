@@ -17,8 +17,6 @@ function wbb_theme_settings ()
 
     $menus = get_terms ( 'nav_menu' , array ( 'hide_empty' => true ) ) ;
 
-    $registered_menus = get_option ( 'wbb_theme_registered_menus' ) ? get_option ( 'wbb_theme_registered_menus' ) : array () ;
-
     $activate_offcanvas = get_option ( 'wbb_theme_activate_offcanvas' ) ? get_option ( 'wbb_theme_activate_offcanvas' ) : array () ;
 
     require plugin_dir_path ( __FILE__ ) . 'partials/wbb_theme_settings_callback.php' ;
@@ -26,8 +24,6 @@ function wbb_theme_settings ()
 
 function register_wbb_theme_setting ()
 {
-    register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_registered_menus' ) ;
-
     register_setting ( 'wbb-theme-setting-section' , 'wbb_theme_activate_offcanvas' ) ;
 }
 

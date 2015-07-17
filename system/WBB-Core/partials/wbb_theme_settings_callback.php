@@ -128,7 +128,7 @@
                         <span class="logo-no-image" id="offcanvas-icon-preview-noimg" <?php echo $no_img_style ; ?>><?php _e ( 'No image selected' , 'wbb-starter-theme' ) ; ?></span>
 
 
-                        <input type="text" id="wbb_theme_offcanvas_icon" name="wbb_theme_offcanvas_icon" value="<?php echo $offcanvas_icon ; ?>" class="logo-url" />
+                        <input type="hidden" id="wbb_theme_offcanvas_icon" name="wbb_theme_offcanvas_icon" value="<?php echo $offcanvas_icon ; ?>" class="logo-url" />
 
                         <input type="button" value="<?php echo _e ( 'Remove' , 'wbb-starter-theme' ) ; ?>" class="button offcanvas-icon-remove" id="offcanvas-icon-remove" <?php echo $img_style ; ?> />
    

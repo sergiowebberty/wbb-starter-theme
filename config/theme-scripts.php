@@ -13,8 +13,8 @@
 */
 
 // Load Scripts for this theme here
-add_action ( 'wp_enqueue_scripts' , 'wbb_wp_enqueue_scripts');
-function wbb_wp_enqueue_scripts()
+add_action ( 'wp_enqueue_scripts' , 'wbb_wp_enqueue_scripts' );
+function wbb_wp_enqueue_scripts ()
 {
 
 	// Styles
@@ -28,15 +28,17 @@ function wbb_wp_enqueue_scripts()
 }
 
 
-add_action( 'admin_enqueue_scripts', 'wbb_theme_add_color_picker' );
-function wbb_theme_add_color_picker( $hook ) {
- 
-    if( is_admin() ) { 
-     
-        // Add the color picker css file       
-        wp_enqueue_style( 'wp-color-picker' ); 
-         
-        // Include our custom jQuery file with WordPress Color Picker dependency
-        wp_enqueue_script( 'custom-script-handle', '' . get_template_directory_uri () . '/assets/scripts/vendor/wbb-theme-script.js', array( 'wp-color-picker' ), false, true ); 
-    }
+add_action ( 'admin_enqueue_scripts' , 'wbb_theme_add_color_picker' );
+function wbb_theme_add_color_picker ( $hook )
+{
+
+	if ( is_admin () )
+	{
+
+		// Add the color picker css file
+		wp_enqueue_style ( 'wp-color-picker' );
+
+		// Include our custom jQuery file with WordPress Color Picker dependency
+		wp_enqueue_script ( 'custom-script-handle' , '' . get_template_directory_uri () . '/assets/scripts/vendor/wbb-theme-script.js' , array ( 'wp-color-picker' ) , FALSE , TRUE );
+	}
 }

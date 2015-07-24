@@ -124,6 +124,25 @@ add_filter ( 'gettext' , 'change_howdy' , 10 , 3 );
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
+| Filter <figure>
+| ----------------------------------------------------------------------------------------------------------------------
+| add <figure> to each image
+*/
+function image_send_to_editor ( $html , $id , $caption , $title , $align , $url , $size , $alt )
+{
+	if ( current_theme_supports ( 'html5' ) && ! $caption )
+	{
+		$html = sprintf ( '<figure>%s</figure>' , $html );
+	} // Modify to your needs!
+
+	return $html;
+}
+
+add_filter ( 'image_send_to_editor' , 'image_send_to_editor' , 10 , 8 );
+
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
 | Menus
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default Menu's

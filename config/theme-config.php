@@ -99,6 +99,31 @@ add_filter ( 'WBB_display_sidebar' , 'wbb_filter_display_sidebar' );
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
+| Change welcome text
+| ----------------------------------------------------------------------------------------------------------------------
+| Change the welcome message from Howdy to welcome
+*/
+function change_howdy ( $translated , $text , $domain )
+{
+
+	if ( ! is_admin () || 'default' != $domain )
+	{
+		return $translated;
+	}
+
+	if ( FALSE !== strpos ( $translated , 'Howdy' ) )
+	{
+		return str_replace ( 'Howdy' , 'Welcome' , $translated );
+	}
+
+	return $translated;
+}
+
+add_filter ( 'gettext' , 'change_howdy' , 10 , 3 );
+
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
 | Menus
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default Menu's

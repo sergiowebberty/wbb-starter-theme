@@ -27,9 +27,6 @@
 
 	</div>
 
-	<!-- Button launcher sliding panel -->
-	<?php wbb_activate_offcanvas (); ?>
-
 	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<div class="navigation-wrapper">
 			<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>

@@ -149,12 +149,10 @@ add_filter ( 'image_send_to_editor' , 'image_send_to_editor' , 10 , 8 );
 */
 register_nav_menu ( 'primary_navigation' , __ ( 'Main navigation for the website' , WBB_THEME_SLUG ) );
 
-register_nav_menu ( 'offcanvas_navigation' , __ ( 'Menu navigation for off canvas option' , WBB_THEME_SLUG ) );
 
 $menuname                  = 'Main Navigation';
 $primary_navigation        = 'primary_navigation';
 $primary_footer_navigation = 'primary_footer_navigation';
-$offcanvas_navigation      = 'offcanvas_navigation';
 $menu_exists               = wp_get_nav_menu_object ( $menuname );
 
 // If it doesn't exist, let's create it.
@@ -194,15 +192,6 @@ if ( ! $menu_exists )
 
 	}
 
-	if ( ! has_nav_menu ( $offcanvas_navigation ) )
-	{
-
-		$locations                          = get_theme_mod ( 'nav_menu_locations' );
-		$locations[ $offcanvas_navigation ] = $menu_id;
-
-		set_theme_mod ( 'nav_menu_locations' , $locations );
-
-	}
 
 }
 

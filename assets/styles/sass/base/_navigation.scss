@@ -15,34 +15,6 @@
     display: block;
   }
 
-
-  // Mobile view
-  .navigation-menu-button {
-    display: block;
-    float: right;
-    margin: 0;
-    padding-top: 0.5em;
-
-    @include media ($large-screen) {
-      display: none;
-    }
-  }
-
-  // Nav menu
-  .navigation-wrapper {
-    @include clearfix;
-    position: relative;
-  }
-
-  .logo {
-    float: left;
-
-    img {
-      max-height: 2em;
-      padding-right: 1em;
-    }
-  }
-
   nav {
     float: none;
 

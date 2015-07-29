@@ -143,25 +143,6 @@ a img.aligncenter {
   @media screen and (min-width: 850px) {
     .site-navigation {
       display: block; } }
-  .site-navigation .navigation-menu-button {
-    display: block;
-    float: right;
-    margin: 0;
-    padding-top: 0.5em; }
-    @media screen and (min-width: 53.75em) {
-      .site-navigation .navigation-menu-button {
-        display: none; } }
-  .site-navigation .navigation-wrapper {
-    position: relative; }
-    .site-navigation .navigation-wrapper::after {
-      clear: both;
-      content: "";
-      display: table; }
-  .site-navigation .logo {
-    float: left; }
-    .site-navigation .logo img {
-      max-height: 2em;
-      padding-right: 1em; }
   .site-navigation nav {
     float: none; }
     @media screen and (min-width: 53.75em) {

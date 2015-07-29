@@ -28,40 +28,36 @@
 	</div>
 
 	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">
-		<div class="navigation-wrapper">
-			<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
-			<nav role="navigation">
+		<nav role="navigation">
 
-				<?php
-				if ( has_nav_menu ( 'primary_navigation' ) ) :
+			<?php
+			if ( has_nav_menu ( 'primary_navigation' ) ) :
 
-					$defaults = array (
-						'theme_location'  => 'primary_navigation' ,
-						'menu'            => 'primary' ,
-						'container'       => '' ,
-						'container_class' => 'container_class' ,
-						'container_id'    => 'container_id' ,
-						'menu_class'      => 'navigation-menu show' ,
-						'menu_id'         => 'js-navigation-menu' ,
-						'echo'            => TRUE ,
-						'before'          => '' ,
-						'after'           => '' ,
-						'link_before'     => '' ,
-						'link_after'      => '' ,
-						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>' ,
-						'depth'           => 4 ,
+				$defaults = array (
+					'theme_location'  => 'primary_navigation' ,
+					'menu'            => 'primary' ,
+					'container'       => '' ,
+					'container_class' => 'container_class' ,
+					'container_id'    => 'container_id' ,
+					'menu_class'      => 'navigation-menu show' ,
+					'menu_id'         => 'js-navigation-menu' ,
+					'echo'            => TRUE ,
+					'before'          => '' ,
+					'after'           => '' ,
+					'link_before'     => '' ,
+					'link_after'      => '' ,
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>' ,
+					'depth'           => 4 ,
 
-					);
+				);
 
-					wp_nav_menu ( $defaults );
+				wp_nav_menu ( $defaults );
 
-				endif;
+			endif;
 
-				?>
+			?>
 
-			</nav>
-
-		</div>
+		</nav>
 	</div>
 
 	<!-- #site-navigation -->

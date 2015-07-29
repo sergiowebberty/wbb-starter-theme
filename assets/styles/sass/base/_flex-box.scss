@@ -1,0 +1,74 @@
+$flex-box-gutter: 0.5em;
+
+.flex-boxes {
+  $flex-title-background: red;
+  $flex-box-width: 100%;
+  $flex-box-color: white;
+
+
+  @include clearfix;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(stretch);
+  @include flex-wrap(wrap);
+  clear: both;
+  text-align: center;
+
+  .flex-box {
+    position: relative;
+    @include transition (all 0.2s ease-in-out);
+    @include align-self(stretch);
+    display: block;
+    text-decoration: none;
+
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+
+    .title {
+      color: $flex-box-color;
+      font-size: 2em;
+      font-family: "din-probold";
+      //margin-bottom: 0.5em;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $flex-title-background;
+      padding: 0.4em;
+    }
+  }
+}
+
+.flex-left,
+.flex-right{
+  width: 100%;
+  float: left;
+
+  @include media($tablet){
+    width: 50%;
+  }
+}
+
+.flex-left .flex-boxes .flex-box,
+.flex-right .flex-boxes .flex-box{
+  margin-bottom: 1em;
+}
+
+.flex-left .flex-boxes .flex-box{
+  margin-right: 0;
+
+  @include media($tablet){
+    margin-right: $flex-box-gutter;
+  }
+}
+
+.flex-right .flex-boxes .flex-box{
+  margin-left: 0;
+
+  @include media($tablet){
+    margin-left: $flex-box-gutter;
+  }
+}

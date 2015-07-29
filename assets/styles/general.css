@@ -322,68 +322,6 @@ footer {
   footer:last-child {
     margin-right: 0; }
 
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.breadcrumbs {
-  display: inline-block;
-  margin-bottom: 1.5em;
-  text-align: left; }
-  .breadcrumbs li {
-    background-color: #fff;
-    color: #999;
-    display: inline-block;
-    font-size: 0.8em;
-    line-height: 2.25em;
-    margin-bottom: 2px;
-    margin-right: 0;
-    padding: 0 0.5625em 0 1.125em;
-    position: relative;
-    text-decoration: none; }
-    .breadcrumbs li:first-child {
-      border-bottom-left-radius: 3px;
-      border-top-left-radius: 3px;
-      padding-left: 0; }
-    .breadcrumbs li:last-child {
-      background-color: #fff;
-      border-bottom-right-radius: 3px;
-      border-top-right-radius: 3px;
-      color: #999;
-      padding-right: 1.125em; }
-    .breadcrumbs li:focus, .breadcrumbs li:hover {
-      background-color: #fff;
-      color: #477dca; }
-    .breadcrumbs li:after, .breadcrumbs li:before {
-      position: absolute;
-      top: 0px;
-      right: auto;
-      bottom: 0px;
-      left: 100%;
-      border-bottom: 5px solid transparent;
-      border-left: 5px solid transparent;
-      border-top: 5px solid transparent;
-      content: '';
-      display: block;
-      margin: auto;
-      z-index: 2;
-      width: 10px;
-      height: 10px; }
-    .breadcrumbs li:last-child:after, .breadcrumbs li:last-child:before {
-      border: none; }
-    .breadcrumbs li:before {
-      border-left-color: #ddd;
-      margin-left: 1px;
-      z-index: 1; }
-    .breadcrumbs li:after {
-      border-left-color: #fff; }
-    @media screen and (min-width: 40em) {
-      .breadcrumbs li {
-        font-size: 1em;
-        padding: 0 1.125em 0 1.5em; } }
-
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   appearance: none;
   background-color: #477dca;
@@ -773,5 +711,94 @@ img {
 .menu-item-has-children .sub-menu .sub-menu {
   position: relative;
   left: 0; }
+
+.flex-boxes {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  box-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  clear: both;
+  text-align: center; }
+  .flex-boxes::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .flex-boxes .flex-box {
+    position: relative;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-align-self: stretch;
+    -moz-align-self: stretch;
+    align-self: stretch;
+    -ms-flex-item-align: stretch;
+    display: block;
+    text-decoration: none; }
+    .flex-boxes .flex-box img {
+      display: block;
+      height: auto;
+      width: 100%; }
+    .flex-boxes .flex-box .title {
+      color: white;
+      font-size: 2em;
+      font-family: "din-probold";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: red;
+      padding: 0.4em; }
+
+.flex-left,
+.flex-right {
+  width: 100%;
+  float: left; }
+  @media screen and (min-width: 750px) {
+    .flex-left,
+    .flex-right {
+      width: 50%; } }
+
+.flex-left .flex-boxes .flex-box,
+.flex-right .flex-boxes .flex-box {
+  margin-bottom: 1em; }
+
+.flex-left .flex-boxes .flex-box {
+  margin-right: 0; }
+  @media screen and (min-width: 750px) {
+    .flex-left .flex-boxes .flex-box {
+      margin-right: 0.5em; } }
+
+.flex-right .flex-boxes .flex-box {
+  margin-left: 0; }
+  @media screen and (min-width: 750px) {
+    .flex-right .flex-boxes .flex-box {
+      margin-left: 0.5em; } }
 
 /*# sourceMappingURL=general.css.map */

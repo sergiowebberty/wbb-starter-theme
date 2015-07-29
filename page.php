@@ -13,12 +13,9 @@ if ( ! defined ( 'WPINC' ) )
 
 <main class="article" role="main">
 
-<?php
-
-while ( have_posts () ) : the_post ();
-
-	get_template_part ( 'templates/content' , 'page' );
-
-endwhile; ?>
+	<?php
+	while ( have_posts () ) : the_post ();
+		get_template_part ( 'templates/content' , 'page' );
+	endwhile; ?>
 
 </main>

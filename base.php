@@ -4,10 +4,10 @@
  *
  * @package wbb-starter-theme
  */
-if ( ! defined ( 'WPINC' ) )
+if ( !defined ( 'WPINC' ) )
 {
-	header ( 'HTTP/1.0 404 Not Found' , TRUE , 404 );
-	die( "404 Not Found" );
+    header ( 'HTTP/1.0 404 Not Found', TRUE, 404 );
+    die ( "404 Not Found" );
 }
 ?>
 <!DOCTYPE html>
@@ -19,40 +19,33 @@ if ( ! defined ( 'WPINC' ) )
 
 <!--[if lt IE 7]>
 <div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different
-	browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
-	experience this site
+    browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
+    experience this site
 </div><![endif]-->
 
 
-<?php echo get_template_part ( 'components/offcanvas-menu' ); ?>
+
+<div class="site-container">
+
+    <?php echo get_template_part ( 'templates/header' ); ?>
+
+    <div class="main-container">
+
+        <?php include WBB_System_Core::load_content (); ?>
 
 
-<div id="pushobj">
+        <?php if ( wbb_display_sidebar () ) : ?>
 
-	<div class="site-container">
+            <?php echo get_template_part ( 'templates/sidebar' ); ?>
 
-		<?php echo get_template_part ( 'templates/header' ); ?>
+        <?php endif; ?>
 
-		<div class="main-container">
+    </div>
 
-			<main class="site-main" role=main">
-				<?php include WBB_System_Core::load_content (); ?>
-
-			</main>
-
-			<?php if ( wbb_display_sidebar () ) : ?>
-
-				<?php echo get_template_part ( 'templates/sidebar' ); ?>
-
-			<?php endif; ?>
-
-		</div>
-
-		<?php echo get_template_part ( 'templates/footer' ); ?>
-
-	</div>
+    <?php echo get_template_part ( 'templates/footer' ); ?>
 
 </div>
+
 
 
 </body>

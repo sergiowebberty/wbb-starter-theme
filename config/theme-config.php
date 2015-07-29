@@ -39,16 +39,16 @@ function wbb_action_widgets_init ()
 		]
 	);
 
-	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 , 0 );
+	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 );
 	remove_action ( 'wp_head' , 'feed_links' , 10 );
 	remove_action ( 'wp_head' , 'rsd_link' );
 	remove_action ( 'wp_head' , 'wlwmanifest_link' );
 	remove_action ( 'wp_head' , 'index_rel_link' );
-	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 , 0 );
-	remove_action ( 'wp_head' , 'start_post_rel_link' , 10 , 0 );
-	remove_action ( 'wp_head' , 'adjacent_posts_rel_link' , 10 , 0 );
-	remove_action ( 'wp_head' , 'wp_shortlink_wp_head' , 10 , 0 );
-	remove_action ( 'wp_head' , 'wp_generator' , 10 , 0 );
+	remove_action ( 'wp_head' , 'parent_post_rel_link' , 10 );
+	remove_action ( 'wp_head' , 'start_post_rel_link' , 10 );
+	remove_action ( 'wp_head' , 'adjacent_posts_rel_link' , 10 );
+	remove_action ( 'wp_head' , 'wp_shortlink_wp_head' , 10 );
+	remove_action ( 'wp_head' , 'wp_generator' , 10 );
 	remove_action ( 'wp_head' , 'print_emoji_detection_script' , 7 );
 	remove_action ( 'admin_print_scripts' , 'print_emoji_detection_script' );
 	remove_action ( 'wp_print_styles' , 'print_emoji_styles' );
@@ -99,11 +99,56 @@ add_filter ( 'WBB_display_sidebar' , 'wbb_filter_display_sidebar' );
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
+| Change welcome text
+| ----------------------------------------------------------------------------------------------------------------------
+| Change the welcome message from Howdy to welcome
+*/
+function change_howdy ( $translated , $text , $domain )
+{
+
+	if ( ! is_admin () || 'default' != $domain )
+	{
+		return $translated;
+	}
+
+	if ( FALSE !== strpos ( $translated , 'Howdy' ) )
+	{
+		return str_replace ( 'Howdy' , 'Welcome' , $translated );
+	}
+
+	return $translated;
+}
+
+add_filter ( 'gettext' , 'change_howdy' , 10 , 3 );
+
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
+| Filter <figure>
+| ----------------------------------------------------------------------------------------------------------------------
+| add <figure> to each image
+*/
+function image_send_to_editor ( $html , $id , $caption , $title , $align , $url , $size , $alt )
+{
+	if ( current_theme_supports ( 'html5' ) && ! $caption )
+	{
+		$html = sprintf ( '<figure>%s</figure>' , $html );
+	} // Modify to your needs!
+
+	return $html;
+}
+
+add_filter ( 'image_send_to_editor' , 'image_send_to_editor' , 10 , 8 );
+
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
 | Menus
 | ----------------------------------------------------------------------------------------------------------------------
 | Set default Menu's
 */
 register_nav_menu ( 'primary_navigation' , __ ( 'Main navigation for the website' , WBB_THEME_SLUG ) );
+
 
 $menuname                  = 'Main Navigation';
 $primary_navigation        = 'primary_navigation';
@@ -146,6 +191,7 @@ if ( ! $menu_exists )
 		set_theme_mod ( 'nav_menu_locations' , $locations );
 
 	}
+
 
 }
 
@@ -287,30 +333,24 @@ function action_customize_register ( $wp_customize )
 		)
 	);
 
-	//USING AJAX TO UPDATE THE LIVE PREVIEW
-	if ( $wp_customize->is_preview () && ! is_admin () )
-	{
-		add_action ( 'wp_footer' , 'wbb_action_wp_footer' , 21 );
-	}
-
 }
 
-function wbb_action_wp_footer ()
+/**
+ * This function enqueues scripts and styles in the Customizer.
+ */
+add_action ( 'customize_controls_enqueue_scripts' , function ()
 {
 
-	?>
-	<script type="text/javascript">
-		(function ($)
-		{
-			wp.customize ( 'wbb-logo-img-upload' , function (value)
-			{
-				value.bind ( function (to)
-				             {
-					             $ ( '.js-site-logo' ).attr ( 'src' , to );
-				             } );
-			} );
-		}) ( jQuery )
-	</script>
-<?php
-}
+	/*
+	 * Our Customizer script
+	 *
+	 * Dependencies: Customizer Controls script (core)
+	 */
+	wp_enqueue_script ( 'my-customizer-script' , get_template_directory_uri () . '/assets/scripts/customizer/customizer.js' , array ( 'customize-controls' ) );
 
+	wp_localize_script ( 'my-customizer-script' , 'ajax_object' ,
+		[
+			'ajax_url' => admin_url ( 'admin-ajax.php' )
+		] );
+
+} );

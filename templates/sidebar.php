@@ -26,7 +26,7 @@
 		*/
 		?>
 
-		<div class="alert alert-no-widgets">
+		<div class="flash-alert">
 
 			<p><?php _e ( 'This is a widget ready area. Add some and they will appear here.' , WBB_THEME_SLUG ); ?></p>
 

@@ -35,6 +35,12 @@ require_once locate_template ( 'config/theme-config.php' );
 require_once locate_template ( 'config/theme-scripts.php' );
 
 /**********************************************************************************************************************
+ * Load Theme Settings
+ *********************************************************************************************************************/
+require_once locate_template ( 'system/WBB-Core/WBB-System-settings.php' );
+
+
+/**********************************************************************************************************************
  * Load Theme Core Functions
  *********************************************************************************************************************/
 require_once locate_template ( 'system/WBB-Core/WBB-System-Core.php' );

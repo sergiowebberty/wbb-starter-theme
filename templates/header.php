@@ -27,13 +27,6 @@
 
 	</div>
 
-	<!-- Button launcher sliding panel -->
-	<div class="site-pushmenu">
-		<a href="#" id="trigger" class="menu-trigger js-menu-trigger js-menu-opener" data-colapsed = 0>Push Menu</a>
-	</div>
-
-
-
 	<div class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<div class="navigation-wrapper">
 			<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>

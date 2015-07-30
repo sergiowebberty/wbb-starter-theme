@@ -29,7 +29,11 @@ if ( !defined ( 'WPINC' ) )
 
             <?php echo get_template_part ( 'templates/header' ); ?>
 
-            <div class="main-container">
+            <section class="main-container">
+
+
+
+
 
                 <!-- START BREADCRUMB -->
                 <?php wbb_breadcrumb (); ?>
@@ -40,13 +44,16 @@ if ( !defined ( 'WPINC' ) )
 
 
 
+
                 <?php if ( wbb_display_sidebar () ) : ?>
 
                     <?php echo get_template_part ( 'templates/sidebar' ); ?>
 
                 <?php endif; ?>
 
-            </div>
+
+
+            </section>
 
             <?php echo get_template_part ( 'templates/footer' ); ?>
 

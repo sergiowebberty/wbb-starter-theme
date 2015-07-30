@@ -10,11 +10,14 @@ if ( ! defined ( 'WPINC' ) )
 	die( "404 Not Found" );
 }
 
-wbb_breadcrumb (); ?>
+?>
 
-<main class="article" role="main">
+<main role="main">
 
-    <?php while ( have_posts () ) : the_post ();
+    <h3 class="hidden">Main</h3>
+
+
+<?php while ( have_posts () ) : the_post ();
 
     get_template_part ( 'templates/content-single' , get_post_type () );
 

@@ -14,7 +14,15 @@
 ?>
 <aside class="sidebar" role="complementary">
 
+    <h2 class="hidden">Sidebar</h2>
+
+
+
 	<?php if ( is_active_sidebar ( 'sidebar-1' ) ) : ?>
+
+    <section class="sidebar-widgets">
+
+        <ul>
 
 		<?php dynamic_sidebar ( 'sidebar-1' ); ?>
 
@@ -32,7 +40,13 @@
 
 		</div>
 
+        </ul>
+
+    </section>
+
 	<?php endif; ?>
+
+
 
 </aside>
 

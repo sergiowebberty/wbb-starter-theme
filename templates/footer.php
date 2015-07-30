@@ -15,11 +15,11 @@
 }
 ?>
 
-<section class="site-footer" role="contentinfo">
+<footer class="site-footer" role="contentinfo">
 
-    <footer>
+    <section>
 
-        <h3 class="hidden">Footer</h3>
+        <h6 class="hidden">Footer</h6>
 
         <section class="copyright">
 
@@ -27,14 +27,11 @@
 
             <p class="copyright">&copy; <?php echo date ( 'Y' ); ?> <?php bloginfo ( 'name' ); ?>.</p>
 
-
         </section>
-
-
 
         <?php wp_footer (); ?>
 
-    </footer>
+    </section>
 
-</section>
+</footer>
 

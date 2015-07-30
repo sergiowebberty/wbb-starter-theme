@@ -13,6 +13,8 @@ if ( ! defined ( 'WPINC' ) )
 
 <main class="article" role="main">
 
+    <h2 class="hidden">Main search</h2>
+
     <?php
 
 if ( ! have_posts () ) : ?>
@@ -27,11 +29,17 @@ if ( ! have_posts () ) : ?>
 
 <?php endif; ?>
 
+    <section class="search-result">
+
+    <h2 class="hidden">Search Results</h2>
+
 <?php while ( have_posts () ) : the_post (); ?>
 
 	<?php get_template_part ( 'templates/content' , 'search' ); ?>
 
 <?php endwhile; ?>
+
+    </section>
 
 <?php the_posts_navigation (); ?>
 

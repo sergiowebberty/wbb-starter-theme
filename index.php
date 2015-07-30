@@ -6,15 +6,12 @@
 ?>
 
 
-<main role="main">
+<main class="article-list" role="main">
 
 
-    <h3 class="hidden">Main</h3>
+    <section>
 
-    <section class="article-list">
-
-        <h3 class="hidden">Article list</h3>
-
+        <h5 class="hidden">Article list</h5>
 
 
         <?php if ( ! have_posts () ) : ?>

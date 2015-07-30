@@ -14,7 +14,7 @@ if ( ! defined ( 'WPINC' ) )
 
 <main role="main">
 
-    <h3 class="hidden">Main</h3>
+
 
 
 <?php while ( have_posts () ) : the_post ();

@@ -15,14 +15,26 @@
 }
 ?>
 
-<footer class="site-footer" role="contentinfo">
+<section class="site-footer" role="contentinfo">
 
-    <h3 class="hidden">Footer</h3>
+    <footer>
 
-	<p class="copyright">&copy; <?php echo date ( 'Y' ); ?> <?php bloginfo ( 'name' ); ?>.</p>
+        <h3 class="hidden">Footer</h3>
+
+        <section class="copyright">
+
+            <h3 class="hidden">Copyright</h3>
+
+            <p class="copyright">&copy; <?php echo date ( 'Y' ); ?> <?php bloginfo ( 'name' ); ?>.</p>
 
 
-	<?php wp_footer (); ?>
+        </section>
 
-</footer>
+
+
+        <?php wp_footer (); ?>
+
+    </footer>
+
+</section>
 

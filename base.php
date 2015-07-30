@@ -32,14 +32,6 @@ if ( !defined ( 'WPINC' ) )
             <section class="main-container">
 
 
-
-
-
-                <!-- START BREADCRUMB -->
-                <?php wbb_breadcrumb (); ?>
-
-
-
                 <?php include WBB_System_Core::load_content (); ?>
 
 

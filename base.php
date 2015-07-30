@@ -31,6 +31,8 @@ if ( !defined ( 'WPINC' ) )
 
             <section class="main-container">
 
+                <h4 class="hidden">Main content</h4>
+
 
                 <?php include WBB_System_Core::load_content (); ?>
 

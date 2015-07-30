@@ -11,73 +11,81 @@
 	die( "404 Not Found" );
 }
 ?>
-<h1 class="hidden"><?php bloginfo ( 'name' ); ?></h1>
-
-<section class="site-header" role="banner">
 
 
 
-    <h3 class="hidden">Header</h3>
+<header class="site-header" role="banner">
 
-    <header>
+    <section>
 
+    <h6 class="hidden">Header</h6>
 
+    <section>
 
-        <section class="site-branding">
+        <div class="site-branding">
 
-            <h3 class="hidden">Logo</h3>
+            <h1 class="site-title" itemprop="name"><?php bloginfo ( 'name' ); ?>
 
             <a href="<?php echo esc_url ( home_url ( '/' ) ); ?>" rel="home">
 
+
+
                 <img src="<?php echo get_theme_mod ( 'wbb-logo-img-upload' , '' ); ?>" class="js-site-logo">
 
-                <p class="site-description"><?php bloginfo ( 'description' ); ?></p>
+
+
+            </a>
+
+            </h1>
+
+            <h2 class="site-description"><?php bloginfo ( 'description' ); ?></h2>
+
+        </div>
 
         </section>
-
-        <nav class="site-navigation" role="banner" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-
-            <div class="navigation-wrapper">
-
-                <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
-
-
-                <h3 class="hidden">Main navigation</h3>
-
-                <?php
-                if ( has_nav_menu ( 'primary_navigation' ) ) :
-
-                    $defaults = array (
-                        'theme_location'  => 'primary_navigation' ,
-                        'menu'            => 'primary' ,
-                        'container'       => '' ,
-                        'container_class' => 'container_class' ,
-                        'container_id'    => 'container_id' ,
-                        'menu_class'      => 'navigation-menu show' ,
-                        'menu_id'         => 'js-navigation-menu' ,
-                        'echo'            => TRUE ,
-                        'before'          => '' ,
-                        'after'           => '' ,
-                        'link_before'     => '' ,
-                        'link_after'      => '' ,
-                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>' ,
-                        'depth'           => 4 ,
-
-                    );
-
-                    wp_nav_menu ( $defaults );
-
-                endif;
-
-                ?>
-
-
-
-            </div>
-        </nav>
-
-    </header>
-
-	<!-- #site-navigation -->
-
 </section>
+
+</header>
+
+
+
+ <nav class="site-navigation" itemscope="itemscope"  itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+
+        <h3 class="hidden">Navigation</h3>
+
+
+
+
+
+
+            <?php
+            if ( has_nav_menu ( 'primary_navigation' ) ) :
+
+                $defaults = array (
+                    'theme_location'  => 'primary_navigation' ,
+                    'menu'            => 'primary' ,
+                    'container'       => '' ,
+                    'container_class' => 'container_class' ,
+                    'container_id'    => 'container_id' ,
+                    'menu_class'      => 'navigation-menu show' ,
+                    'menu_id'         => 'navigation-menu' ,
+                    'echo'            => TRUE ,
+                    'before'          => '' ,
+                    'after'           => '' ,
+                    'link_before'     => '' ,
+                    'link_after'      => '' ,
+                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>' ,
+                    'depth'           => 4 ,
+
+                );
+
+                wp_nav_menu ( $defaults );
+
+            endif;
+
+            ?>
+
+
+ </nav>
+
+

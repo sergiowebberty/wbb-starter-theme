@@ -18,7 +18,7 @@
 
 	<article id="post-<?php the_ID (); ?>" <?php post_class (); ?>  itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
-		<header class="entry-header"  itemprop="headline">
+		<header class="entry-header"  itemprop="headline" role="banner">
 
 			<?php the_title ( '<h1 class="entry-title"  itemprop="headline">' , '</h1>' ); ?>
 
@@ -41,7 +41,7 @@
 
 		</div>
 
-		<footer class="entry-footer">
+		<footer class="entry-footer" role="contentinfo">
 
 			<?php wbb_entry_footer (); ?>     <!-- function for categories, tags and comments/--->
 

@@ -17,6 +17,8 @@
 
 <footer class="site-footer" role="contentinfo">
 
+    <h3 class="hidden">Footer</h3>
+
 	<p class="copyright">&copy; <?php echo date ( 'Y' ); ?> <?php bloginfo ( 'name' ); ?>.</p>
 
 

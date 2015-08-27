@@ -33,6 +33,10 @@ header {
 
 }
 
+.site-header{
+  display: inline-block;
+}
+
 .main-container {
 
   @include outer-container;

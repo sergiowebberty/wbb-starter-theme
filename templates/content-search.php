@@ -16,6 +16,8 @@
 
     <article <?php post_class (); ?>>
 
+
+
         <header itemprop="headline">
             <h2 class="entry-title"><a href="<?php the_permalink (); ?>" itemprop="url"><?php the_title (); ?></a></h2>
 

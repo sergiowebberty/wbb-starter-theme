@@ -13,41 +13,48 @@ if ( !defined ( 'WPINC' ) )
 <!DOCTYPE html>
 <html <?php html_schema (); ?> class="no-js" <?php language_attributes (); ?>>
 
-<?php echo get_template_part ( 'templates/head' ); ?>
+    <?php echo get_template_part ( 'templates/head' ); ?>
 
-<body <?php body_class (); ?>>
+    <body <?php body_class (); ?>>
 
-<!--[if lt IE 7]>
-<div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different
-    browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
-    experience this site
-</div><![endif]-->
-
-
-
-<div class="site-container">
-
-    <?php echo get_template_part ( 'templates/header' ); ?>
-
-    <div class="main-container">
-
-        <?php include WBB_System_Core::load_content (); ?>
-
-
-        <?php if ( wbb_display_sidebar () ) : ?>
-
-            <?php echo get_template_part ( 'templates/sidebar' ); ?>
-
-        <?php endif; ?>
-
-    </div>
-
-    <?php echo get_template_part ( 'templates/footer' ); ?>
-
-</div>
+        <!--[if lt IE 7]>
+        <div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different
+                browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
+                experience this site
+        </div><![endif]-->
 
 
 
-</body>
+        <div class="site-container">
+
+            <?php echo get_template_part ( 'templates/header' ); ?>
+
+            <section class="main-container">
+
+                <h4 class="hidden">Main content</h4>
+
+
+                <?php include WBB_System_Core::load_content (); ?>
+
+
+
+
+                <?php if ( wbb_display_sidebar () ) : ?>
+
+                    <?php echo get_template_part ( 'templates/sidebar' ); ?>
+
+                <?php endif; ?>
+
+
+
+            </section>
+
+            <?php echo get_template_part ( 'templates/footer' ); ?>
+
+        </div>
+
+
+
+    </body>
 
 </html>

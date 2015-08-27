@@ -12,9 +12,18 @@
 	die( "404 Not Found" );
 }
 ?>
-<aside class="sidebar" role="complementary">
+<aside class="sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
+
+    <h3 class="hidden">Sidebar</h3>
+
+    <section>
+
+
 
 	<?php if ( is_active_sidebar ( 'sidebar-1' ) ) : ?>
+
+
+        <ul class="sidebar-widgets">
 
 		<?php dynamic_sidebar ( 'sidebar-1' ); ?>
 
@@ -32,7 +41,11 @@
 
 		</div>
 
+        </ul>
+
 	<?php endif; ?>
+
+    </section>
 
 </aside>
 

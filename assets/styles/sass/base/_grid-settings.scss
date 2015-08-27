@@ -14,13 +14,22 @@ body {
 }
 
 .site-container{
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 2em;
+  @include media($mobile) {
+    padding: 0 2em;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+  @include media($tablet) {
+    padding: 0 2em;
+  }
+  @include media($desktop) {
+
+    padding:0 0 0 0;
+  }
 }
 
 header {
-  @include span-columns(12);
+  @include fill-parent();
 
 }
 
@@ -32,14 +41,13 @@ header {
   main {
 
     @include media($mobile) {
-      @include span-columns(12);
-    }
-
-    @include media($desktop) {
-      @include span-columns(8);
+      @include fill-parent();
     }
 
     @include media($tablet) {
+      @include span-columns(8);
+    }
+    @include media($desktop) {
       @include span-columns(8);
     }
 
@@ -48,14 +56,13 @@ header {
   aside {
 
     @include media($mobile) {
-      @include span-columns(12);
-    }
-
-    @include media($desktop) {
-      @include span-columns(4);
+      @include fill-parent();
     }
 
     @include media($tablet) {
+      @include span-columns(4);
+    }
+    @include media($desktop) {
       @include span-columns(4);
     }
   }
@@ -64,6 +71,6 @@ header {
 
 footer {
 
-  @include span-columns(12);
+  @include fill-parent();
 
 }

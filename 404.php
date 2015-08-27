@@ -6,7 +6,11 @@
  */
 ?>
 
-<main class="article" role="main">
+<main role="main">
+
+
+
+<h1 class="title">404 page not found</h1>
 
 	<div class="flash-error">
 
@@ -16,4 +20,5 @@
 
 <?php get_search_form (); ?>
 
- </main>
+</main>
+

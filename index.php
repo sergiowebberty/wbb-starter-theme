@@ -5,27 +5,35 @@
 }
 ?>
 
+
 <main class="article-list" role="main">
 
 
-    <?php if ( ! have_posts () ) : ?>
+    <section>
 
-        <div class="flash-alert">
+        <h5 class="hidden">Article list</h5>
 
-            <?php _e ( 'Sorry, no results were found.' , WBB_THEME_SLUG ); ?>
 
-        </div>
+        <?php if ( ! have_posts () ) : ?>
 
-        <?php get_search_form (); ?>
+            <div class="flash-alert">
 
-    <?php endif; ?>
+                <?php _e ( 'Sorry, no results were found.' , WBB_THEME_SLUG ); ?>
 
-    <?php while ( have_posts () ) : the_post (); ?>
+            </div>
 
-        <?php get_template_part ( 'templates/content' , get_post_type () != 'post' ? get_post_type () : get_post_format () ); ?>
+            <?php get_search_form (); ?>
 
-    <?php endwhile; ?>
+        <?php endif; ?>
 
-    <?php echo wbb_custom_pagination( ); ?>
+        <?php while ( have_posts () ) : the_post (); ?>
+
+            <?php get_template_part ( 'templates/content' , get_post_type () != 'post' ? get_post_type () : get_post_format () ); ?>
+
+        <?php endwhile; ?>
+
+        <?php echo wbb_custom_pagination( ); ?>
+
+    </section>
 
 </main>

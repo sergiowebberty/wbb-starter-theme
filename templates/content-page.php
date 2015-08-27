@@ -16,7 +16,7 @@
 
     <article id="post-<?php the_ID (); ?>" <?php post_class (); ?>>
 
-        <header class="entry-header" itemprop="headline">
+        <header class="entry-header" itemprop="headline" role="banner">
 
             <?php the_title ( '<h1 class="entry-title">' , '</h1>' ); ?>
 
@@ -35,7 +35,7 @@
         </div>
         <!-- .entry-content -->
 
-        <footer class="entry-footer">
+        <footer class="entry-footer" role="contentinfo">
 
             <?php edit_post_link ( esc_html__ ( 'Edit' , WBB_THEME_SLUG ) , '<span class="edit-link">' , '</span>' ); ?>
 

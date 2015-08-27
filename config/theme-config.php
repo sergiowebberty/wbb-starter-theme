@@ -21,6 +21,18 @@ if ( get_option ( 'upload_path' ) == 'wp-content/uploads' || get_option ( 'uploa
 
 /*
 | ----------------------------------------------------------------------------------------------------------------------
+| Excerpt as default option for pages
+| ----------------------------------------------------------------------------------------------------------------------
+| Add this code to have this option enabled (or if you know better way)
+*/
+add_action ( 'init' , 'wbb_add_excerpts_to_pages' );
+function wbb_add_excerpts_to_pages ()
+{
+	add_post_type_support ( 'page' , 'excerpt' );
+}
+
+/*
+| ----------------------------------------------------------------------------------------------------------------------
 | Sidebars /  Remove the  small segment of css in the head / Head Clean
 | ----------------------------------------------------------------------------------------------------------------------
 | Set some default sidebars ....
@@ -220,8 +232,6 @@ function wbb_action_after_setup_theme ()
 	);
 
 	add_theme_support ( 'automatic-feed-links' );
-
-	add_theme_support ( "title-tag" );
 
 	add_theme_support ( "post-thumbnails" );
 
